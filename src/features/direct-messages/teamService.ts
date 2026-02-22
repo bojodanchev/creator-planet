@@ -104,7 +104,7 @@ export async function getPendingInvitations(communityId: string): Promise<DbComm
 // INVITE TOKEN UTILITIES
 // ============================================================================
 
-const INVITE_BASE_URL = 'https://creatorclub.bg';
+const INVITE_BASE_URL = 'https://creator-planet.vercel.app';
 
 /**
  * Generate a unique invite token for a team member invitation

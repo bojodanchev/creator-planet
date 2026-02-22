@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const SUPABASE_PROJECT_REF = 'znqesarsluytxhuiwfkt';
+const SUPABASE_PROJECT_REF = 'ilntxxutxbygjuixrzng';
 const SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucWVzYXJzbHV5dHhodWl3Zmt0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTI5ODM5NSwiZXhwIjoyMDgwODc0Mzk1fQ.5bJYWohY-ouYft3MMSWr0ulSd1LXQgt1YMM3A9hhUzE';
 const MIGRATION_FILE = path.join(__dirname, 'supabase/migrations/003_complete_reset.sql');
 
@@ -163,7 +163,7 @@ async function main() {
   console.log('   - Copy the content from:', MIGRATION_FILE);
   console.log('   - Paste and run in the SQL editor');
   console.log('\n2. Use psql command line (requires database password):');
-  console.log('   psql -h db.znqesarsluytxhuiwfkt.supabase.co -U postgres -d postgres -f supabase/migrations/003_complete_reset.sql');
+  console.log('   psql -h db.ilntxxutxbygjuixrzng.supabase.co -U postgres -d postgres -f supabase/migrations/003_complete_reset.sql');
   console.log('\n3. Save SQL for manual execution:');
 
   const outputFile = path.join(__dirname, 'migration-to-execute.sql');

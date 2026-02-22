@@ -202,6 +202,6 @@ TBI_ENCRYPTION_KEY=Ejrg9XF@FqgOvsg3fEgdDAzG5Tce0O42Np2DjONXiQs7FRck6XCf2MP5gC#o4
 ## Risk & Open Questions
 
 1. **Encryption format**: TBI's PHP uses `openssl_encrypt()` with AES-256-CBC. Need to verify exact IV/padding config. May need to ask TBI for a test endpoint or sample encrypted payload.
-2. **Webhook URL**: Need to set `statusURL` in RegisterApplication to `https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/tbi-webhook`
+2. **Webhook URL**: Need to set `statusURL` in RegisterApplication to `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/tbi-webhook`
 3. **No TBI test environment access**: We're working against production API. First real application will be a live loan.
 4. **Encryption may not be required for GetCalculations**: Docs only mention encryption for RegisterApplication.

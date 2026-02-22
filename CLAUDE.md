@@ -20,18 +20,18 @@ npm run preview    # Preview production build
 ```
 
 ## Deployment & Testing
-- **Production URL**: https://creatorclub.bg (custom domain)
+- **Production URL**: https://creator-planet.vercel.app (custom domain)
 - **Vercel URL**: https://creator-club.vercel.app (original Vercel deployment)
 - **Hosting**: Vercel (auto-deploys from main branch)
-- **Testing**: Use the production URL (creatorclub.bg) for Playwright/browser testing, NOT localhost
+- **Testing**: Use the production URL (creator-planet.vercel.app) for Playwright/browser testing, NOT localhost
 
 ## MCP Configuration
 
 ### Available Servers
 From `.mcp.json`:
 - **supabase**: HTTP MCP server for database operations
-  - Project: `znqesarsluytxhuiwfkt`
-  - URL: `https://mcp.supabase.com/mcp?project_ref=znqesarsluytxhuiwfkt`
+  - Project: `ilntxxutxbygjuixrzng`
+  - URL: `https://mcp.supabase.com/mcp?project_ref=ilntxxutxbygjuixrzng`
 - **stripe**: HTTP MCP server for payment operations (KINGDOM LTD business account)
   - URL: `https://mcp.stripe.com/`
   - Account: `acct_1SoV6VEHrm7Q2JIn` (KINGDOM LTD)
@@ -64,7 +64,7 @@ From `.mcp.json`:
 | **Student Plus** (€9.90/mo) | `prod_Tm3yaCvF6DUXMN` | `price_1SoVqnEHrm7Q2JInAADYSo3z` |
 
 ### Webhook Configuration
-- **Endpoint**: `https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/stripe-webhook`
+- **Endpoint**: `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook`
 - **Webhook ID**: `we_1SoVv0EHrm7Q2JInLHDQ0GSl`
 - **Events**: checkout.session.completed, invoice.paid, invoice.payment_failed, customer.subscription.*, account.updated, charge.dispute.created, charge.dispute.closed
 
@@ -379,7 +379,7 @@ Custom skills in `.claude/skills/`:
 - **Currency in cents**: All amounts in database stored as integer cents (€30 = 3000)
 - **RLS for billing**: `webhook_events` uses service_role only policy
 - **Live mode webhook**: Must configure separately from test mode in Stripe Dashboard
-- **Webhook endpoint**: `https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/stripe-webhook` — MUST be deployed with `--no-verify-jwt`
+- **Webhook endpoint**: `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook` — MUST be deployed with `--no-verify-jwt`
 - **Stripe fee estimation**: Webhook estimates Stripe fee as `amount * 2.9% + €0.25` (conservative). Actual fees vary by card type (EEA: 1.5% + €0.25, non-EEA: 2.9% + €0.25). We don't query actual fees from Stripe API.
 - **Sale amount source**: Always use `session.amount_total` from Stripe (actual charged amount), NOT `community.price_cents` (list price). The actual amount differs for discounts, monthly subscriptions, and dual-pricing communities.
 - **RLS on `creator_sales`/`billing_transactions`**: Must use `get_my_profile_id()` in policies, NOT `auth.uid()` — these tables store profile IDs, not auth user IDs
@@ -626,7 +626,7 @@ WHERE email = 'user@example.com';
 
 **Option 2: Edge Function** (requires creator auth token)
 ```bash
-curl -X POST 'https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/admin-reset-password' \
+curl -X POST 'https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/admin-reset-password' \
   -H 'Authorization: Bearer CREATOR_JWT_TOKEN' \
   -H 'Content-Type: application/json' \
   -d '{"email": "user@example.com", "newPassword": "newpass123"}'

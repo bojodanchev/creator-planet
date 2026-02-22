@@ -6,7 +6,7 @@
 
 1. **Open this URL in your browser:**
    ```
-   https://supabase.com/dashboard/project/znqesarsluytxhuiwfkt/sql/new
+   https://supabase.com/dashboard/project/ilntxxutxbygjuixrzng/sql/new
    ```
 
 2. **Paste the SQL:**

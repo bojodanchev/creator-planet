@@ -8,7 +8,7 @@ An all-in-one platform for mentors, coaches, and course creators. Replaces Disco
 
 ## Live URLs
 
-- **Production**: https://creatorclub.bg
+- **Production**: https://creator-planet.vercel.app
 - **Vercel Deployment**: https://creator-club.vercel.app
 
 ## Tech Stack

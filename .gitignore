@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 .vercel
 
-# Test files
+# Environment variables
+.env
 .env.test
 tests/.auth/*.json
 test-results/

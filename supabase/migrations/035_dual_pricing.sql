@@ -23,11 +23,13 @@ ALTER TABLE public.communities
   ADD COLUMN IF NOT EXISTS stripe_monthly_price_id TEXT;
 
 -- Update constraint: 'both' requires both prices > 0
+-- NOTE: Cannot reference new enum value in same transaction as ALTER TYPE ADD VALUE.
+-- Use text cast to work around Postgres limitation (SQLSTATE 55P04).
 ALTER TABLE public.communities DROP CONSTRAINT IF EXISTS paid_community_has_price;
 ALTER TABLE public.communities ADD CONSTRAINT paid_community_has_price CHECK (
-  (pricing_type = 'free' AND price_cents = 0) OR
-  (pricing_type IN ('one_time', 'monthly') AND price_cents > 0) OR
-  (pricing_type = 'both' AND price_cents > 0 AND monthly_price_cents > 0)
+  (pricing_type::text = 'free' AND price_cents = 0) OR
+  (pricing_type::text IN ('one_time', 'monthly') AND price_cents > 0) OR
+  (pricing_type::text = 'both' AND price_cents > 0 AND monthly_price_cents > 0)
 );
 
 -- Add constraint for monthly price validation

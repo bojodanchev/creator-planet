@@ -1,6 +1,6 @@
 // Test configuration and constants
 export const TEST_CONFIG = {
-  baseUrl: process.env.BASE_URL || 'https://creator-club.vercel.app',
+  baseUrl: process.env.BASE_URL || 'https://creator-planet.vercel.app',
 
   // Timeouts
   defaultTimeout: 30000,

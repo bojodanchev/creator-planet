@@ -26,7 +26,7 @@ jobs:
       - name: Release Pending Balances
         run: |
           response=$(curl -s -w "\n%{http_code}" -X POST \
-            'https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/release-pending-balances' \
+            'https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/release-pending-balances' \
             -H 'Content-Type: application/json' \
             -d '{"secret":"${{ secrets.CRON_SECRET }}"}')
 
@@ -48,7 +48,7 @@ jobs:
       - name: Process Weekly Payouts
         run: |
           response=$(curl -s -w "\n%{http_code}" -X POST \
-            'https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/process-payouts' \
+            'https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/process-payouts' \
             -H 'Content-Type: application/json' \
             -d '{"secret":"${{ secrets.CRON_SECRET }}"}')
 

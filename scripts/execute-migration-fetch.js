@@ -13,8 +13,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const SUPABASE_PROJECT_REF = 'znqesarsluytxhuiwfkt';
-const SUPABASE_URL = 'https://znqesarsluytxhuiwfkt.supabase.co';
+const SUPABASE_PROJECT_REF = 'ilntxxutxbygjuixrzng';
+const SUPABASE_URL = 'https://ilntxxutxbygjuixrzng.supabase.co';
 const SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucWVzYXJzbHV5dHhodWl3Zmt0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTI5ODM5NSwiZXhwIjoyMDgwODc0Mzk1fQ.5bJYWohY-ouYft3MMSWr0ulSd1LXQgt1YMM3A9hhUzE';
 const MIGRATION_FILE = path.join(__dirname, 'supabase/migrations/003_complete_reset.sql');
 

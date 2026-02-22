@@ -1,6 +1,12 @@
 -- Fix the handle_new_user trigger to safely handle role casting
 -- The previous version had an unsafe CAST that happened before COALESCE
 
+-- Ensure user_role type exists (may not exist if 001_profiles was skipped)
+DO $$ BEGIN
+  CREATE TYPE user_role AS ENUM ('superadmin', 'creator', 'student', 'member');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+
 -- Drop and recreate the trigger function with safe role handling
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$

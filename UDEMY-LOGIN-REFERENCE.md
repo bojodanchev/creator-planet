@@ -190,7 +190,7 @@ All screenshots are saved in `.playwright-mcp/` directory:
 
 ### Supabase Auth (from .env.local):
 ```
-VITE_SUPABASE_URL=https://znqesarsluytxhuiwfkt.supabase.co
+VITE_SUPABASE_URL=https://ilntxxutxbygjuixrzng.supabase.co
 ```
 
 Supabase supports:

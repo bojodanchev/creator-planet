@@ -26,7 +26,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.BASE_URL || 'https://creator-club.vercel.app',
+    baseURL: process.env.BASE_URL || 'https://creator-planet.vercel.app',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

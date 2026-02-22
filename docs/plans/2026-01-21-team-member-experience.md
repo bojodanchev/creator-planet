@@ -33,7 +33,7 @@ When creator invites someone:
 
 **Token format**: Simple UUID, e.g., `a1b2c3d4-e5f6-7890-abcd-ef1234567890`
 
-**Link format**: `https://creatorclub.bg/invite/team/{token}`
+**Link format**: `https://creator-planet.vercel.app/invite/team/{token}`
 
 ### 1.3 Invitation Flow
 

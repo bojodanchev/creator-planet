@@ -245,7 +245,7 @@ Last Updated: 2025-12-30 (Stripe Infrastructure Fully Deployed - Edge Functions,
 
 - [X] All 7 Edge Functions deployed to Supabase (ACTIVE status)
 - [X] Stripe Webhook Endpoint configured (LIVE mode)
-  - URL: `https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/stripe-webhook`
+  - URL: `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook`
   - Events: checkout.session.completed, invoice.paid/failed, customer.subscription.*, payment_intent.*, account.updated, payout.*
 - [X] Supabase Secrets configured
   - `STRIPE_SECRET_KEY` (live key)
@@ -472,7 +472,7 @@ Last Updated: 2025-12-30 (Stripe Infrastructure Fully Deployed - Edge Functions,
 - `ai-chat` - AI conversation handling
 
 **Live Infrastructure Deployed (2025-12-30):**
-- Stripe Webhook Endpoint: `https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/stripe-webhook`
+- Stripe Webhook Endpoint: `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook`
 - Webhook ID: `we_1Sk4MdFbO001Rr4nPMqOLW9x` (LIVE mode)
 - Events: checkout.session.completed, invoice.paid, invoice.payment_failed, customer.subscription.*, payment_intent.*, account.updated, payout.*
 - Supabase Secrets: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`

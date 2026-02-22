@@ -1,4 +1,13 @@
 -- ============================================================================
+-- HELPER FUNCTION: get_my_profile_id()
+-- Needed by RLS policies below and in later migrations
+-- ============================================================================
+CREATE OR REPLACE FUNCTION public.get_my_profile_id()
+RETURNS UUID AS $$
+  SELECT id FROM public.profiles WHERE user_id = auth.uid() LIMIT 1;
+$$ LANGUAGE sql STABLE SECURITY DEFINER;
+
+-- ============================================================================
 -- CREATOR CLUB - COMMUNITY MONETIZATION SCHEMA
 -- ============================================================================
 -- Migration: 013_community_monetization.sql

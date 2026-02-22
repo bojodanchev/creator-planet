@@ -4,7 +4,7 @@
 
 **Date:** 2025-12-11
 **Migration File:** `003_complete_reset.sql`
-**Supabase Project:** `znqesarsluytxhuiwfkt`
+**Supabase Project:** `ilntxxutxbygjuixrzng`
 
 ---
 
@@ -64,7 +64,7 @@
 ### Step-by-Step Instructions
 
 1. **Open Supabase SQL Editor:**
-   - URL: https://supabase.com/dashboard/project/znqesarsluytxhuiwfkt/sql/new
+   - URL: https://supabase.com/dashboard/project/ilntxxutxbygjuixrzng/sql/new
 
 2. **Copy Migration SQL:**
    - Source file: `/Users/bojodanchev/creator-club™/supabase/migrations/003_complete_reset.sql`

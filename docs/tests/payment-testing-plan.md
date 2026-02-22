@@ -246,7 +246,7 @@ WHERE user_id = '<student_id>';
 **Using Stripe CLI:**
 ```bash
 # Listen to webhooks locally
-stripe listen --forward-to https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/stripe-webhook
+stripe listen --forward-to https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook
 
 # Trigger specific events
 stripe trigger checkout.session.completed

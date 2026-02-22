@@ -206,7 +206,7 @@ serve(async (req: Request): Promise<Response> => {
     const egnHash = await hashEGN(customer.egn);
 
     // Build webhook/status URL
-    const statusUrl = 'https://znqesarsluytxhuiwfkt.supabase.co/functions/v1/tbi-webhook';
+    const statusUrl = 'https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/tbi-webhook';
 
     // Calculate expiry date
     const expiresAt = new Date();

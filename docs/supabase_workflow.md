@@ -3,7 +3,7 @@
 ## Quick Reference
 
 ### Project Details
-- **Project ID:** `znqesarsluytxhuiwfkt`
+- **Project ID:** `ilntxxutxbygjuixrzng`
 - **Project Name:** Creator Club
 - **Region:** (check dashboard)
 
@@ -15,7 +15,7 @@ The Supabase MCP is configured in `.mcp.json`. It provides direct API access - m
   "mcpServers": {
     "supabase": {
       "type": "http",
-      "url": "https://mcp.supabase.com/mcp?project_ref=znqesarsluytxhuiwfkt"
+      "url": "https://mcp.supabase.com/mcp?project_ref=ilntxxutxbygjuixrzng"
     }
   }
 }
@@ -184,7 +184,7 @@ If MCP is unavailable, use Playwright to interact with Supabase Dashboard:
 
 Required in `.env`:
 ```
-VITE_SUPABASE_URL=https://znqesarsluytxhuiwfkt.supabase.co
+VITE_SUPABASE_URL=https://ilntxxutxbygjuixrzng.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_key
 ```
 

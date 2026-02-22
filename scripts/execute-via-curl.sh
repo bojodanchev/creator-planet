@@ -3,7 +3,7 @@
 # Execute Supabase Migration via Management API
 # This uses the Supabase Management API to run migrations
 
-SUPABASE_PROJECT_REF="znqesarsluytxhuiwfkt"
+SUPABASE_PROJECT_REF="ilntxxutxbygjuixrzng"
 SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucWVzYXJzbHV5dHhodWl3Zmt0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTI5ODM5NSwiZXhwIjoyMDgwODc0Mzk1fQ.5bJYWohY-ouYft3MMSWr0ulSd1LXQgt1YMM3A9hhUzE"
 MIGRATION_FILE="supabase/migrations/003_complete_reset.sql"
 
@@ -38,7 +38,7 @@ echo "Please enter your Supabase database password when prompted."
 echo ""
 
 # Construct connection string
-DB_HOST="db.znqesarsluytxhuiwfkt.supabase.co"
+DB_HOST="db.ilntxxutxbygjuixrzng.supabase.co"
 DB_PORT="5432"
 DB_NAME="postgres"
 DB_USER="postgres"
