@@ -14,11 +14,11 @@ interface LogoProps {
 }
 
 const sizeConfig = {
-  xs: { height: 24, textSize: 'text-sm', gap: 'gap-1.5' },
-  sm: { height: 32, textSize: 'text-base', gap: 'gap-2' },
-  md: { height: 40, textSize: 'text-lg', gap: 'gap-2' },
-  lg: { height: 56, textSize: 'text-xl', gap: 'gap-3' },
-  xl: { height: 72, textSize: 'text-2xl', gap: 'gap-3' },
+  xs: { height: 28, textSize: 'text-sm', gap: 'gap-1.5' },
+  sm: { height: 36, textSize: 'text-base', gap: 'gap-2' },
+  md: { height: 44, textSize: 'text-lg', gap: 'gap-2' },
+  lg: { height: 48, textSize: 'text-xl', gap: 'gap-3' },
+  xl: { height: 80, textSize: 'text-2xl', gap: 'gap-3' },
 };
 
 export const Logo: React.FC<LogoProps> = ({
