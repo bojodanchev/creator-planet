@@ -113,7 +113,7 @@ const PendingSurveysWidget: React.FC<PendingSurveysWidgetProps> = ({ studentId }
           {pendingSurveys.map((survey) => (
             <div
               key={survey.id}
-              className="flex items-center justify-between p-3 bg-[#EAB308]/10 border border-amber-100 rounded-lg hover:bg-[#EAB308]/10 transition-colors"
+              className="flex items-center justify-between p-3 bg-[#EAB308]/10 border border-[#EAB308]/20 rounded-lg hover:bg-[#EAB308]/10 transition-colors"
             >
               <div className="flex-1 min-w-0">
                 <h4 className="font-medium text-[#FAFAFA] truncate">{survey.survey_title}</h4>

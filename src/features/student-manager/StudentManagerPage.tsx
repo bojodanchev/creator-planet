@@ -607,7 +607,7 @@ const StudentManagerPage: React.FC<StudentManagerPageProps> = ({ creatorId }) =>
                             </button>
                             <button
                               onClick={() => handleBonusClick(student)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#EAB308]/10 text-[#EAB308] hover:bg-amber-200 rounded-lg font-medium text-sm transition-colors"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#EAB308]/10 text-[#EAB308] hover:bg-[#EAB308]/20 rounded-lg font-medium text-sm transition-colors"
                             >
                               <Award className="w-4 h-4" />
                               {t('studentManager.actions.bonus')}

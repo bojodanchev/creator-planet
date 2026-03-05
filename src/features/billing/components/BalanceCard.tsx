@@ -114,7 +114,7 @@ const BalanceCard: React.FC<BalanceCardProps> = ({
       {/* Balance Grid */}
       <div className="grid md:grid-cols-2 gap-4 mb-6">
         {/* Pending Balance */}
-        <div className="p-4 bg-[#EAB308]/10 border border-amber-100 rounded-lg">
+        <div className="p-4 bg-[#EAB308]/10 border border-[#EAB308]/20 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <Clock size={18} className="text-[#EAB308]" />
             <span className="font-medium text-[#FAFAFA]">

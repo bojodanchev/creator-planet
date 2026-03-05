@@ -143,7 +143,7 @@ const PendingSurveyBanner: React.FC<PendingSurveyBannerProps> = ({
           {/* Close button (mobile-friendly alternative) */}
           <button
             onClick={handleDismiss}
-            className="shrink-0 p-1 text-amber-400 hover:text-[#EAB308] hover:bg-[#EAB308]/10 rounded-lg transition-colors lg:hidden"
+            className="shrink-0 p-1 text-[#EAB308] hover:text-[#EAB308] hover:bg-[#EAB308]/10 rounded-lg transition-colors lg:hidden"
             aria-label={t('surveys.banner.dismiss')}
           >
             <X className="w-5 h-5" />

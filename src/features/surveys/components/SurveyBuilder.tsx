@@ -680,7 +680,7 @@ const SurveyBuilder: React.FC<SurveyBuilderProps> = ({
               disabled={isLoading}
               className={`px-4 py-2 text-sm font-medium rounded-lg flex items-center gap-2 ${
                 survey.is_published
-                  ? 'bg-[#EAB308]/10 text-[#EAB308] hover:bg-amber-200'
+                  ? 'bg-[#EAB308]/10 text-[#EAB308] hover:bg-[#EAB308]/20'
                   : 'bg-[#22C55E] text-white hover:bg-[#22C55E]/80'
               }`}
             >
