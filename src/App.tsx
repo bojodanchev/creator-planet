@@ -22,6 +22,7 @@ const CommunitiesDirectory = React.lazy(() => import('./public-pages/communities
 const CourseCatalogPage = React.lazy(() => import('./features/landing').then(m => ({ default: m.LandingPage })));
 const TeamInvitePage = React.lazy(() => import('./public-pages/invite/TeamInvitePage'));
 const TBIStatusPage = React.lazy(() => import('./features/billing/pages/TBIStatusPage'));
+const TrackingPage = React.lazy(() => import('./features/tracking/TrackingPage'));
 
 // Auth pages (lazy-loaded)
 const LoginPage = React.lazy(() => import('./features/auth').then(m => ({ default: m.LoginPage })));
@@ -372,6 +373,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/creators" element={<LandingPage onGetStarted={() => window.location.href = '/onboarding/creator'} />} />
       <Route path="/landing" element={<MarketingLandingPage />} />
       <Route path="/discover" element={<WhopLandingPage />} />
+      <Route path="/analytics" element={<TrackingPage />} />
       <Route path="/explore" element={<CourseCatalogPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   ArrowRight,
@@ -316,6 +316,13 @@ const MarketingLandingPage: React.FC = () => {
               <a href="#pillars" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors font-medium">{t('marketingLanding.nav.pillars')}</a>
               <a href="#pricing" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors font-medium">{t('marketingLanding.nav.pricing')}</a>
               <a href="#testimonials" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors font-medium">{t('marketingLanding.nav.testimonials')}</a>
+              <Link to="/analytics" className="hidden md:inline-flex items-center gap-1.5 text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors font-medium">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#22C55E]" />
+                </span>
+                {t('nav.analytics')}
+              </Link>
               <LanguageSwitcher variant="minimal" />
               <button
                 onClick={handleGetStarted}

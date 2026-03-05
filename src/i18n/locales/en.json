@@ -48,7 +48,8 @@
     "about": "About",
     "privacy": "Privacy",
     "terms": "Terms",
-    "contact": "Contact"
+    "contact": "Contact",
+    "analytics": "Analytics"
   },
 
   "hero": {
@@ -433,6 +434,35 @@
     "changePassword": "Change Password",
     "deleteAccount": "Delete Account",
     "exportData": "Export Data"
+  },
+
+  "notificationSettings": {
+    "title": "Notifications",
+    "description": "Manage how you receive notifications",
+    "pushNotifications": "Push Notifications",
+    "pushDescription": "Receive browser notifications when you're not using the app",
+    "enable": "Enable",
+    "disable": "Disable",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "permissionDenied": "Notifications are blocked by your browser. Please enable them in your browser settings.",
+    "notSupported": "Push notifications are not supported in this browser.",
+    "categories": "Notification Categories",
+    "categoriesDescription": "Choose which notifications you want to receive",
+    "dmMessages": "Direct Messages",
+    "dmMessagesDescription": "When someone sends you a direct message",
+    "eventCreated": "New Events",
+    "eventCreatedDescription": "When a new event is created in your community",
+    "eventReminder": "Event Reminders",
+    "eventReminderDescription": "Reminders before events you've registered for",
+    "courseNewLesson": "New Lessons",
+    "courseNewLessonDescription": "When a new lesson is added to your courses",
+    "courseEnrollment": "Course Enrollment",
+    "courseEnrollmentDescription": "When a student enrolls in your course",
+    "communityNewPost": "Community Posts",
+    "communityNewPostDescription": "When someone posts in your community",
+    "communityCommentReply": "Comment Replies",
+    "communityCommentReplyDescription": "When someone replies to your comment"
   },
 
   "languages": {
@@ -4059,5 +4089,21 @@
       "fillNow": "Fill Now",
       "dismiss": "Later"
     }
+  },
+
+  "tracking": {
+    "badge": "Updating in real time",
+    "title": "Live Platform Analytics",
+    "subtitle": "Real-time usage data from creators and students across the Founders Club platform",
+    "status": "All systems operational",
+    "activeUsers": "Active Users",
+    "countries": "Countries",
+    "cities": "Cities",
+    "uptime": "Uptime",
+    "free": "Free",
+    "pro": "Pro",
+    "exclusive": "Exclusive",
+    "planDistribution": "Plan Distribution",
+    "usersInCity": "users"
   }
 }

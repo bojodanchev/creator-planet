@@ -48,7 +48,8 @@
     "about": "За нас",
     "privacy": "Поверителност",
     "terms": "Условия",
-    "contact": "Контакт"
+    "contact": "Контакт",
+    "analytics": "Аналитика"
   },
 
   "hero": {
@@ -402,6 +403,35 @@
     "changePassword": "Смени паролата",
     "deleteAccount": "Изтрий акаунта",
     "exportData": "Експортирай данни"
+  },
+
+  "notificationSettings": {
+    "title": "Известия",
+    "description": "Управлявайте как получавате известия",
+    "pushNotifications": "Push известия",
+    "pushDescription": "Получавайте известия в браузъра, когато не използвате приложението",
+    "enable": "Включи",
+    "disable": "Изключи",
+    "enabled": "Включени",
+    "disabled": "Изключени",
+    "permissionDenied": "Известията са блокирани от браузъра. Моля, включете ги от настройките на браузъра.",
+    "notSupported": "Push известията не се поддържат в този браузър.",
+    "categories": "Категории известия",
+    "categoriesDescription": "Изберете кои известия искате да получавате",
+    "dmMessages": "Лични съобщения",
+    "dmMessagesDescription": "Когато някой ви изпрати лично съобщение",
+    "eventCreated": "Нови събития",
+    "eventCreatedDescription": "Когато е създадено ново събитие в общността ви",
+    "eventReminder": "Напомняния за събития",
+    "eventReminderDescription": "Напомняния преди събития, за които сте записани",
+    "courseNewLesson": "Нови уроци",
+    "courseNewLessonDescription": "Когато нов урок е добавен в курсовете ви",
+    "courseEnrollment": "Записване в курс",
+    "courseEnrollmentDescription": "Когато студент се запише в курса ви",
+    "communityNewPost": "Публикации в общността",
+    "communityNewPostDescription": "Когато някой публикува в общността ви",
+    "communityCommentReply": "Отговори на коментари",
+    "communityCommentReplyDescription": "Когато някой отговори на коментара ви"
   },
 
   "languages": {
@@ -4155,5 +4185,21 @@
       "fillNow": "Попълни сега",
       "dismiss": "По-късно"
     }
+  },
+
+  "tracking": {
+    "badge": "Обновява се в реално време",
+    "title": "Аналитика в реално време",
+    "subtitle": "Данни за използването от ментори и студенти в платформата Founders Club",
+    "status": "Всички системи работят",
+    "activeUsers": "Активни потребители",
+    "countries": "Държави",
+    "cities": "Градове",
+    "uptime": "Аптайм",
+    "free": "Безплатен",
+    "pro": "Про",
+    "exclusive": "Ексклузив",
+    "planDistribution": "Разпределение по план",
+    "usersInCity": "потребители"
   }
 }

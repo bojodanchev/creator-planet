@@ -47,6 +47,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <a href="#features" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150">{t('nav.features')}</a>
               <a href="#pricing" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150">{t('nav.pricing')}</a>
               <a href="#testimonials" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150">{t('nav.testimonials')}</a>
+              <Link to="/analytics" className="inline-flex items-center gap-1.5 text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150 font-medium">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#22C55E]" />
+                </span>
+                {t('nav.analytics')}
+              </Link>
               <LanguageSwitcher variant="minimal" />
               <Link
                 to="/login"
