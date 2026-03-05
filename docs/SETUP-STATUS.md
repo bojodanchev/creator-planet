@@ -2,19 +2,19 @@
 
 ## Overview
 
-Creator Planet is an independent instance of the Creator Club platform, deployed as a separate project with its own Supabase backend, Vercel frontend, and shared Stripe account (KINGDOM LTD). This document tracks the setup progress, completed phases, and remaining tasks.
+Creator Planet is an independent instance of the Founders Club platform, deployed as a separate project with its own Supabase backend, Vercel frontend, and shared Stripe account (KINGDOM LTD). This document tracks the setup progress, completed phases, and remaining tasks.
 
 ## Infrastructure
 
 | Component | Value |
 |-----------|-------|
 | **GitHub Repo** | https://github.com/bojodanchev/creator-planet |
-| **Local Directory** | ~/new-creator-club/ |
+| **Local Directory** | ~/new-founders-club/ |
 | **Supabase Project Ref** | ilntxxutxbygjuixrzng |
 | **Supabase URL** | https://ilntxxutxbygjuixrzng.supabase.co |
 | **Supabase Region** | eu-central-1 |
-| **Stripe Account** | KINGDOM LTD (acct_1SoV6VEHrm7Q2JIn) — shared with Creator Club |
-| **Stripe Products** | Same IDs as Creator Club (see products table below) |
+| **Stripe Account** | KINGDOM LTD (acct_1SoV6VEHrm7Q2JIn) — shared with Founders Club |
+| **Stripe Products** | Same IDs as Founders Club (see products table below) |
 | **Vercel URL (planned)** | creator-planet.vercel.app (not yet deployed) |
 | **Vercel Deployment** | Auto-deploy from main branch (when configured) |
 
@@ -24,7 +24,7 @@ Creator Planet is an independent instance of the Creator Club platform, deployed
 - **Account ID**: `acct_1SoV6VEHrm7Q2JIn`
 - **Mode**: Live only (single account, no test mode)
 - **Connect**: Express accounts enabled
-- **Shared with**: Original Creator Club instance (both instances share same products)
+- **Shared with**: Original Founders Club instance (both instances share same products)
 
 ### Product & Price IDs (Shared)
 
@@ -35,7 +35,7 @@ Creator Planet is an independent instance of the Creator Club platform, deployed
 | **Scale Plan** | `prod_Tm3yyZw4qEQRGI` | `price_1SoVqmEHrm7Q2JInneH7wG9d` | €99/month |
 | **Student Plus** | `prod_Tm3yaCvF6DUXMN` | `price_1SoVqnEHrm7Q2JInAADYSo3z` | €9.90/month |
 
-**Note**: Both Creator Club and Creator Planet instances use the same Stripe products. Each instance only processes webhook events matching its own database records. Webhook cross-talk is handled gracefully via stripe_event_id idempotency checks.
+**Note**: Both Founders Club and Creator Planet instances use the same Stripe products. Each instance only processes webhook events matching its own database records. Webhook cross-talk is handled gracefully via stripe_event_id idempotency checks.
 
 ## Completed Phases
 
@@ -43,7 +43,7 @@ Creator Planet is an independent instance of the Creator Club platform, deployed
 
 **Status**: Complete
 
-- All source files copied from ~/creator-club™/ via rsync
+- All source files copied from ~/founders-club™/ via rsync
 - Excluded: node_modules, dist, .git, .claude, .supabase-emails, .playwright-mcp, .codex-council, supabase/.temp
 - Fresh git repo initialized: `git init && git remote add origin https://github.com/bojodanchev/creator-planet.git`
 - Pushed to GitHub as private repo
@@ -82,7 +82,7 @@ Creator Planet is an independent instance of the Creator Club platform, deployed
 
 **Status**: Complete
 
-- Using SAME product/price IDs as original Creator Club
+- Using SAME product/price IDs as original Founders Club
 - Shared KINGDOM LTD Stripe account (acct_1SoV6VEHrm7Q2JIn)
 - All 4 products available: Activation Fee, Pro Plan, Scale Plan, Student Plus
 - **Webhook endpoint**: NOT YET created (see Phase 9: Remaining Tasks)
@@ -172,7 +172,7 @@ All 22 edge functions deployed and showing ACTIVE status in Supabase Dashboard.
 Set the following environment secrets in Supabase Dashboard → Project Settings → Secrets, or via CLI:
 
 ```bash
-cd ~/new-creator-club
+cd ~/new-founders-club
 
 # Stripe secret key (obtain from Stripe Dashboard → Developers → API Keys)
 npx supabase secrets set STRIPE_SECRET_KEY=sk_live_51SoV6VEHrm7Q2JIn...
@@ -191,7 +191,7 @@ npx supabase secrets set VITE_GEMINI_API_KEY=...
 
 **References**:
 - Stripe keys: https://dashboard.stripe.com/apikeys
-- TBI encryption key: Same value used in original Creator Club
+- TBI encryption key: Same value used in original Founders Club
 - Gemini API key: https://ai.google.dev/
 
 ### 2. Create Stripe Webhook Endpoint
@@ -231,7 +231,7 @@ Choose one approach:
 
 **Option B — Vercel CLI**:
 ```bash
-cd ~/new-creator-club
+cd ~/new-founders-club
 npx vercel --prod
 ```
 
@@ -332,11 +332,11 @@ If Vercel assigns a different URL or you add a custom domain, update:
 
 ## Key Differences from Original
 
-| Aspect | Creator Club (Original) | Creator Planet (Clone) |
+| Aspect | Founders Club (Original) | Creator Planet (Clone) |
 |--------|------------------------|----------------------|
 | **Supabase Project Ref** | znqesarsluytxhuiwfkt | ilntxxutxbygjuixrzng |
 | **Production Domain** | creatorclub.bg | creator-planet.vercel.app |
-| **GitHub Repo** | bojodanchev/creator-club | bojodanchev/creator-planet |
+| **GitHub Repo** | bojodanchev/founders-club | bojodanchev/creator-planet |
 | **Stripe Account** | KINGDOM LTD (shared) | KINGDOM LTD (shared) |
 | **Stripe Products** | Same IDs | Same IDs |
 | **Database** | Independent (separate Supabase) | Independent (separate Supabase) |
@@ -350,7 +350,7 @@ If Vercel assigns a different URL or you add a custom domain, update:
 
 ### Shared Stripe Account Implications
 
-Both Creator Club and Creator Planet share the same KINGDOM LTD Stripe account (`acct_1SoV6VEHrm7Q2JIn`) and product IDs. This means:
+Both Founders Club and Creator Planet share the same KINGDOM LTD Stripe account (`acct_1SoV6VEHrm7Q2JIn`) and product IDs. This means:
 
 - **Checkout sessions**: Both instances can create checkout sessions using the same products
 - **Webhooks**: Single webhook endpoint cannot serve both instances
@@ -456,4 +456,4 @@ supabase migration list
 4. **Then**: Run smoke tests
 5. **Finally**: Announce creator-planet.vercel.app is live
 
-For questions or blockers, refer to original Creator Club at ~/creator-club™ and CLAUDE.md in the root of this project.
+For questions or blockers, refer to original Founders Club at ~/founders-club™ and CLAUDE.md in the root of this project.

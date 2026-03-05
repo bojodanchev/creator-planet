@@ -190,13 +190,13 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden">
+      <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] max-w-lg w-full mx-4 overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
-          <h3 className="text-lg font-semibold text-slate-900">{t('imageCrop.title')}</h3>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#1F1F1F]">
+          <h3 className="text-lg font-semibold text-[#FAFAFA]">{t('imageCrop.title')}</h3>
           <button
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-slate-600 transition-colors"
+            className="p-1 text-[#666666] hover:text-[#FAFAFA] transition-colors"
           >
             <X size={20} />
           </button>
@@ -205,14 +205,14 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
         {/* Crop Area */}
         <div className="p-6">
           {!imageUrl ? (
-            <div className="w-64 h-64 mx-auto flex items-center justify-center bg-slate-100 rounded-full">
-              <div className="w-8 h-8 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+            <div className="w-64 h-64 mx-auto flex items-center justify-center bg-[#151515] rounded-full">
+              <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
             </div>
           ) : (
           <>
           <div
             ref={containerRef}
-            className="relative w-64 h-64 mx-auto overflow-hidden rounded-full bg-slate-100 cursor-move"
+            className="relative w-64 h-64 mx-auto overflow-hidden rounded-full bg-[#151515] cursor-move"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -246,7 +246,7 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
             <div className="absolute inset-0 pointer-events-none border-4 border-white/30 rounded-full" />
           </div>
 
-          <p className="text-center text-sm text-slate-500 mt-4">
+          <p className="text-center text-sm text-[#666666] mt-4">
             {t('imageCrop.instructions')}
           </p>
 

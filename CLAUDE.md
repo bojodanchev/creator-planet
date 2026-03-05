@@ -1,7 +1,7 @@
-# Creator Club™ - Project Context
+# Founders Club - Project Context
 
 ## Overview
-Creator Club™ is an all-in-one platform/OS for mentors, coaches, and course creators. It replaces 4-5 separate tools (Discord, Kajabi, Calendly, Skool, Zapier, Whop) and adds an AI Success Manager that tracks student progress.
+Founders Club is an all-in-one platform/OS for mentors, coaches, and course creators. It replaces 4-5 separate tools (Discord, Kajabi, Calendly, Skool, Zapier, Whop) and adds an AI Success Manager that tracks student progress.
 
 ## Tech Stack
 - **Frontend**: React 19 + TypeScript + Vite
@@ -20,10 +20,10 @@ npm run preview    # Preview production build
 ```
 
 ## Deployment & Testing
-- **Production URL**: https://creator-planet.vercel.app (custom domain)
-- **Vercel URL**: https://creator-club.vercel.app (original Vercel deployment)
+- **Production URL**: TBD (new domain pending)
+- **Vercel URL**: https://creator-planet.vercel.app (current deployment, will change)
 - **Hosting**: Vercel (auto-deploys from main branch)
-- **Testing**: Use the production URL (creator-planet.vercel.app) for Playwright/browser testing, NOT localhost
+- **Testing**: Use the Vercel URL for Playwright/browser testing, NOT localhost
 
 ## MCP Configuration
 
@@ -32,9 +32,9 @@ From `.mcp.json`:
 - **supabase**: HTTP MCP server for database operations
   - Project: `ilntxxutxbygjuixrzng`
   - URL: `https://mcp.supabase.com/mcp?project_ref=ilntxxutxbygjuixrzng`
-- **stripe**: HTTP MCP server for payment operations (KINGDOM LTD business account)
+- **stripe**: HTTP MCP server for payment operations (new Stripe account TBD)
   - URL: `https://mcp.stripe.com/`
-  - Account: `acct_1SoV6VEHrm7Q2JIn` (KINGDOM LTD)
+  - Account: TBD (new account pending setup)
   - Use: `mcp__stripe__*` tools
 
 ### Key Tools & Their Uses
@@ -49,34 +49,35 @@ From `.mcp.json`:
 
 ## Stripe Configuration
 
-### Business Account: KINGDOM LTD
-- **Account ID**: `acct_1SoV6VEHrm7Q2JIn`
-- **Mode**: Live only (single account, no test mode)
+### Business Account: TBD (New Account)
+- **Account ID**: TBD (new Stripe account pending setup)
+- **Mode**: TBD
 - **Connect**: Express accounts enabled
 
 ### Product & Price IDs
+TBD — will be created on the new Stripe account. Same structure:
 
-| Product | Product ID | Price ID |
-|---------|------------|----------|
-| **Activation Fee** (€9.90 one-time) | `prod_Tm3yvErLQFwjjM` | `price_1Sput3EHrm7Q2JInE9dmsu4c` |
-| **Pro Plan** (€30/mo) | `prod_Tm3yo6o2IkxEjW` | `price_1SoVqmEHrm7Q2JIncZnyu9SY` |
-| **Scale Plan** (€99/mo) | `prod_Tm3yyZw4qEQRGI` | `price_1SoVqmEHrm7Q2JInneH7wG9d` |
-| **Student Plus** (€9.90/mo) | `prod_Tm3yaCvF6DUXMN` | `price_1SoVqnEHrm7Q2JInAADYSo3z` |
+| Product | Expected Price |
+|---------|---------------|
+| **Activation Fee** | €9.90 one-time |
+| **Pro Plan** | €30/mo |
+| **Scale Plan** | €99/mo |
+| **Student Plus** | €9.90/mo |
 
 ### Webhook Configuration
 - **Endpoint**: `https://ilntxxutxbygjuixrzng.supabase.co/functions/v1/stripe-webhook`
-- **Webhook ID**: `we_1SoVv0EHrm7Q2JInLHDQ0GSl`
+- **Webhook ID**: TBD (configure on new Stripe account)
 - **Events**: checkout.session.completed, invoice.paid, invoice.payment_failed, customer.subscription.*, account.updated, charge.dispute.created, charge.dispute.closed
 
 ### Environment Variables
 ```bash
 # Supabase Edge Functions (secrets)
-STRIPE_SECRET_KEY=sk_live_51SoV6VEHrm7Q2JIn...
-STRIPE_WEBHOOK_SECRET=whsec_qIngTZOqYaH4wMpNs1MSpaQa06OaSpst
+STRIPE_SECRET_KEY=sk_live_...  # New Stripe account key
+STRIPE_WEBHOOK_SECRET=whsec_...  # New webhook signing secret
 CRON_SECRET=<secure_random_string>  # Authenticates GitHub Actions cron calls
 
 # Vercel Frontend
-VITE_STRIPE_PUBLISHABLE_KEY=pk_live_51SoV6VEHrm7Q2JIn...
+VITE_STRIPE_PUBLISHABLE_KEY=pk_live_...  # New Stripe publishable key
 
 # GitHub Actions (repository secrets)
 CRON_SECRET=<same_as_supabase>  # Must match Supabase secret
@@ -139,7 +140,8 @@ src/
 | `docs/plans/2025-12-29-billing-system-design.md` | Complete billing architecture |
 | `src/shared/Avatar.tsx` | Shared avatar component with consistent defaults |
 | `src/shared/Logo.tsx` | Shared logo component with dark/light variants |
-| `public/logo.png` | Main logo image (Logo 2 - black with play button) |
+| `public/logo-dark.png` | Main logo (black, for light backgrounds) |
+| `public/logo-light.png` | Main logo (white, for dark backgrounds) |
 | `src/features/courses/quizService.ts` | Quiz CRUD, submission, pass checking |
 | `src/features/courses/components/QuizBuilder.tsx` | Creator quiz editing UI |
 | `src/features/courses/components/QuizPlayer.tsx` | Student quiz-taking experience |
@@ -159,11 +161,12 @@ The billing system uses a hybrid pricing model with:
 | Pro | €30 | 3.9% | 500 students, 10 courses, 3 communities |
 | Scale | €99 | 1.9% | Unlimited, white-label, API access |
 
-### Stripe Products (KINGDOM LTD - acct_1SoV6VEHrm7Q2JIn)
-- `prod_Tm3yvErLQFwjjM` - Activation Fee (€9.90 one-time)
-- `prod_Tm3yo6o2IkxEjW` - Pro Plan (€30/month)
-- `prod_Tm3yyZw4qEQRGI` - Scale Plan (€99/month)
-- `prod_Tm3yaCvF6DUXMN` - Student Plus (€9.90/month)
+### Stripe Products (New Account — TBD)
+Products will be created on the new Stripe account with the same pricing:
+- Activation Fee (€9.90 one-time)
+- Pro Plan (€30/month)
+- Scale Plan (€99/month)
+- Student Plus (€9.90/month)
 
 ### Database Tables
 - `billing_plans` - Plan configurations
@@ -284,7 +287,7 @@ This project supports Agent Mail for MCP-based multi-agent coordination. **Follo
 At the beginning of each session, call:
 ```
 macro_start_session(
-  human_key="/Users/bojodanchev/creator-club™",
+  human_key="/Users/bojodanchev/founders-club",
   program="claude-code",  // or "codex-cli" for Codex
   model="<your_model>",   // e.g., "opus", "sonnet", "gpt-5-codex"
   task_description="<brief description of your current task>"
@@ -296,7 +299,7 @@ This registers you as an agent and fetches any pending messages.
 **Example (Codex CLI):**
 ```
 macro_start_session(
-  human_key="/Users/bojodanchev/creator-club™",
+  human_key="/Users/bojodanchev/founders-club",
   program="codex-cli",
   model="gpt-5-codex",
   task_description="Describe the task succinctly"
@@ -319,14 +322,14 @@ macro_start_session(
 ### Check Inbox Regularly
 After completing significant work units, check for coordination messages:
 ```
-fetch_inbox(project_key="/Users/bojodanchev/creator-club™", agent_name="<YourAgentName>")
+fetch_inbox(project_key="/Users/bojodanchev/founders-club", agent_name="<YourAgentName>")
 ```
 
 ### File Reservations (Before Editing Contested Files)
 Before editing files that other agents might touch, reserve them:
 ```
 file_reservation_paths(
-  project_key="/Users/bojodanchev/creator-club™",
+  project_key="/Users/bojodanchev/founders-club",
   agent_name="<YourAgentName>",
   paths=["src/important-file.ts", "src/shared/**/*.ts"],
   ttl_seconds=3600,
@@ -337,14 +340,14 @@ file_reservation_paths(
 
 Release when done:
 ```
-release_file_reservations(project_key="/Users/bojodanchev/creator-club™", agent_name="<YourAgentName>")
+release_file_reservations(project_key="/Users/bojodanchev/founders-club", agent_name="<YourAgentName>")
 ```
 
 ### Send Status Updates
 When completing major tasks or needing input from other agents:
 ```
 send_message(
-  project_key="/Users/bojodanchev/creator-club™",
+  project_key="/Users/bojodanchev/founders-club",
   sender_name="<YourAgentName>",
   to=["<OtherAgentName>"],  // or check resource://agents/<project> for active agents
   subject="Completed auth refactor",
@@ -356,13 +359,13 @@ send_message(
 ### Acknowledge Messages
 When you receive messages with `ack_required=true`:
 ```
-acknowledge_message(project_key="/Users/bojodanchev/creator-club™", agent_name="<YourAgentName>", message_id=<id>)
+acknowledge_message(project_key="/Users/bojodanchev/founders-club", agent_name="<YourAgentName>", message_id=<id>)
 ```
 
 ### Discover Other Agents
 To see who else is working on this project, check the agents resource or use:
 ```
-whois(project_key="/Users/bojodanchev/creator-club™", agent_name="<AgentName>")
+whois(project_key="/Users/bojodanchev/founders-club", agent_name="<AgentName>")
 ```
 
 ## Skills
@@ -426,7 +429,7 @@ This bug existed in both `stripe-webhook` and `community-checkout` — Exclusive
 
 ### TBI Bank Fusion Pay (BNPL)
 - **API URL**: `https://beta.tbibank.support/api` — "beta" IS the production URL
-- **Credentials**: reseller_code=BJKZ, reseller_key=creatorclub, encryption via TBI_ENCRYPTION_KEY secret
+- **Credentials**: reseller_code=BJKZ, reseller_key=foundersclub, encryption via TBI_ENCRYPTION_KEY secret
 - **Encryption**: AES-256-CBC, key=first 32 bytes, IV=first 16 bytes of key, PKCS7+base64 output
 - **Required item fields**: `category` (use "255" for generic), `name`, `qty`, `price`
 - **EUR mandatory**: `currency: "EUR"` required in encrypted payload from Jan 2026
@@ -661,3 +664,4 @@ Supabase's built-in email (`noreply@mail.app.supabase.io`) has known issues:
 > - [2026-02-14] Dual Pricing Migration Applied (both one-time + monthly)
 > - [2026-02-14] Payment Success Notification Redesign + Broken i18n Fix
 > - [2026-02-14] Billing Settings: Wired creator_sales, Fixed Fee Calculation, Deduplicated Sections
+> - [2026-03-05] Full Rebrand: Creator Club → Founders Club (assets, i18n, source, edge functions, docs)

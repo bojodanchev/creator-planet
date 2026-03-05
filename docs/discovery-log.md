@@ -1,4 +1,4 @@
-# Creator Club - Discovery Log
+# Founders Club - Discovery Log
 
 Implementation history and lessons learned. This file is referenced by CLAUDE.md but extracted to reduce context window usage.
 
@@ -406,7 +406,7 @@ switch (module.unlock_type) {
 interface LogoProps {
   variant?: 'light' | 'dark';  // light = white (for dark bg), dark = black (for light bg)
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';  // 24px, 32px, 40px, 56px, 72px
-  showText?: boolean;  // Show "Creator Club" text
+  showText?: boolean;  // Show "Founders Club" text
   showTagline?: boolean;  // Show "COURSES & COMMUNITIES"
 }
 ```

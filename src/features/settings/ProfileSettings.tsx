@@ -125,7 +125,7 @@ const ProfileSettings: React.FC = () => {
           <img
             src={formData.avatar_url || authProfile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(formData.full_name || authProfile?.full_name || 'User')}&background=6366f1&color=fff&size=96&bold=true`}
             alt="Profile"
-            className="w-24 h-24 rounded-full border-2 border-slate-200 object-cover"
+            className="w-24 h-24 rounded-full border-2 border-[#333333] object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(formData.full_name || 'User')}&background=6366f1&color=fff&size=96&bold=true`;
             }}
@@ -155,13 +155,13 @@ const ProfileSettings: React.FC = () => {
 
         {/* User Info & Upload Button */}
         <div className="flex-1">
-          <h3 className="font-medium text-slate-900">{authProfile?.full_name || 'User'}</h3>
-          <p className="text-sm text-slate-500 capitalize mb-3">{authProfile?.role || 'Member'}</p>
+          <h3 className="font-medium text-[#FAFAFA]">{authProfile?.full_name || 'User'}</h3>
+          <p className="text-sm text-[#666666] capitalize mb-3">{authProfile?.role || 'Member'}</p>
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={uploading}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#FAFAFA] border border-[#1F1F1F] rounded-lg hover:bg-[#151515] hover:border-[#333333] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {uploading ? (
               <>
@@ -175,7 +175,7 @@ const ProfileSettings: React.FC = () => {
               </>
             )}
           </button>
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-xs text-[#666666]">
             {t('creatorSettings.profile.avatar.formats')}
           </p>
         </div>
@@ -183,7 +183,7 @@ const ProfileSettings: React.FC = () => {
 
       {/* Full Name */}
       <div>
-        <label htmlFor="full_name" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="full_name" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.fullName.label')}
         </label>
         <input
@@ -191,14 +191,14 @@ const ProfileSettings: React.FC = () => {
           id="full_name"
           value={formData.full_name}
           onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
           placeholder={t('creatorSettings.profile.fullName.placeholder')}
         />
       </div>
 
       {/* Bio */}
       <div>
-        <label htmlFor="bio" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="bio" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.bio.label')}
         </label>
         <textarea
@@ -207,15 +207,15 @@ const ProfileSettings: React.FC = () => {
           onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
           rows={3}
           maxLength={500}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 resize-none"
           placeholder={t('creatorSettings.profile.bio.placeholder')}
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.profile.bio.characterCount', { count: formData.bio.length })}
         </p>
-        <div className="mt-2 flex items-start gap-2 p-2 bg-blue-50 rounded-lg border border-blue-100">
-          <Info size={14} className="text-blue-500 mt-0.5 shrink-0" />
-          <p className="text-xs text-blue-700">
+        <div className="mt-2 flex items-start gap-2 p-2 bg-[#151515] rounded-lg border border-[#1F1F1F]">
+          <Info size={14} className="text-[#A0A0A0] mt-0.5 shrink-0" />
+          <p className="text-xs text-[#A0A0A0]">
             {t('creatorSettings.profile.bio.visibilityHint')}
           </p>
         </div>
@@ -223,7 +223,7 @@ const ProfileSettings: React.FC = () => {
 
       {/* Avatar URL (Advanced) */}
       <div>
-        <label htmlFor="avatar_url" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="avatar_url" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.avatarUrl.label')}
         </label>
         <input
@@ -231,17 +231,17 @@ const ProfileSettings: React.FC = () => {
           id="avatar_url"
           value={formData.avatar_url}
           onChange={(e) => setFormData({ ...formData, avatar_url: e.target.value })}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 text-sm"
           placeholder={t('creatorSettings.profile.avatarUrl.placeholder')}
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.profile.avatarUrl.description')}
         </p>
       </div>
 
       {/* Email (Read-only) */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="email" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.email.label')}
         </label>
         <input
@@ -249,19 +249,19 @@ const ProfileSettings: React.FC = () => {
           id="email"
           value={authProfile?.email || ''}
           disabled
-          className="w-full px-4 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-500 cursor-not-allowed"
+          className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg bg-[#0A0A0A] text-[#666666] cursor-not-allowed"
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.profile.email.note')}
         </p>
       </div>
 
       {/* Role Badge (Read-only) */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-2">
+        <label className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.role.label')}
         </label>
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium capitalize">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1F1F1F] text-[#A0A0A0] rounded-full text-sm font-medium capitalize">
           <User size={14} />
           {authProfile?.role || 'Member'}
         </div>
@@ -269,10 +269,10 @@ const ProfileSettings: React.FC = () => {
 
       {/* Member Since (Read-only) */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-2">
+        <label className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.profile.memberSince.label')}
         </label>
-        <p className="text-slate-900">
+        <p className="text-[#FAFAFA]">
           {formatDate(authProfile?.created_at || null)}
         </p>
       </div>
@@ -282,8 +282,8 @@ const ProfileSettings: React.FC = () => {
         <div
           className={`p-4 rounded-lg ${
             message.type === 'success'
-              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-              : 'bg-rose-50 text-rose-700 border border-rose-200'
+              ? 'bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20'
+              : 'bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20'
           }`}
         >
           {message.text}
@@ -291,11 +291,11 @@ const ProfileSettings: React.FC = () => {
       )}
 
       {/* Save Button */}
-      <div className="flex justify-end pt-4 border-t border-slate-200">
+      <div className="flex justify-end pt-4 border-t border-[#1F1F1F]">
         <button
           onClick={handleSave}
           disabled={saving}
-          className="px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-[#E0E0E0] focus:outline-none focus:ring-1 focus:ring-white/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {saving ? (
             <>

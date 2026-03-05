@@ -1,7 +1,7 @@
 -- ============================================================================
 -- CREATOR CLUB - PHASE 2 DATABASE SCHEMA
 -- ============================================================================
--- This migration creates all Phase 2 tables for the Creator Club platform:
+-- This migration creates all Phase 2 tables for the Founders Club platform:
 -- - Creator profiles, communities, channels, memberships
 -- - Courses, modules, lessons, enrollments
 -- - Events, calendar, attendees

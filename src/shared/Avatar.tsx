@@ -28,7 +28,7 @@ const sizePixels: Record<AvatarSize, number> = {
 
 function getInitialsUrl(name: string, size: number): string {
   const encodedName = encodeURIComponent(name || 'User');
-  return `https://ui-avatars.com/api/?name=${encodedName}&background=6366f1&color=fff&size=${size}&bold=true`;
+  return `https://ui-avatars.com/api/?name=${encodedName}&background=1F1F1F&color=FAFAFA&size=${size}&bold=true`;
 }
 
 export const Avatar = React.memo(function Avatar({ src, name, size = 'md', className = '', onClick }: AvatarProps) {
@@ -37,7 +37,7 @@ export const Avatar = React.memo(function Avatar({ src, name, size = 'md', class
   const imageUrl = src || fallbackUrl;
 
   const baseClasses = `${sizeClasses[size]} rounded-full object-cover`;
-  const interactiveClasses = onClick ? 'cursor-pointer hover:ring-2 hover:ring-indigo-300 transition-all' : '';
+  const interactiveClasses = onClick ? 'cursor-pointer hover:ring-2 hover:ring-[#333333] transition-all' : '';
 
   return (
     <img

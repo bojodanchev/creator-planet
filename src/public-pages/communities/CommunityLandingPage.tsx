@@ -55,18 +55,18 @@ const CreatorBioModal: React.FC<CreatorBioModalProps> = ({ creator, isOpen, onCl
 
       {/* Modal */}
       <div
-        className="relative bg-white rounded-2xl shadow-xl max-w-lg w-full mx-4 max-h-[85vh] flex flex-col"
+        className="relative bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl max-w-lg w-full mx-4 max-h-[85vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with gradient and avatar */}
         <div className="relative flex-shrink-0">
           {/* Gradient background */}
-          <div className="h-28 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-t-2xl" />
+          <div className="h-28 bg-[#1F1F1F] rounded-t-xl" />
 
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors z-10"
+            className="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors duration-150 z-10"
           >
             <X className="w-5 h-5 text-white" />
           </button>
@@ -74,9 +74,9 @@ const CreatorBioModal: React.FC<CreatorBioModalProps> = ({ creator, isOpen, onCl
           {/* Avatar - positioned to overlap */}
           <div className="absolute left-6 -bottom-14">
             <img
-              src={creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(creator.full_name)}&background=6366f1&color=fff&size=128`}
+              src={creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(creator.full_name)}&background=1F1F1F&color=FAFAFA&size=128`}
               alt={creator.full_name}
-              className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg bg-white"
+              className="w-28 h-28 rounded-full object-cover border-4 border-[#0A0A0A] bg-[#0A0A0A]"
             />
           </div>
         </div>
@@ -90,22 +90,22 @@ const CreatorBioModal: React.FC<CreatorBioModalProps> = ({ creator, isOpen, onCl
             {/* Creator info */}
             <div className="space-y-4">
               <div>
-                <h2 className="text-2xl font-bold text-slate-900">
+                <h2 className="text-2xl font-bold text-[#FAFAFA]">
                   {creator.brand_name || creator.full_name}
                 </h2>
                 {creator.brand_name && (
-                  <p className="text-slate-500">{creator.full_name}</p>
+                  <p className="text-[#666666]">{creator.full_name}</p>
                 )}
               </div>
 
               {creator.bio ? (
-                <div className="prose prose-slate max-w-none">
-                  <p className="text-slate-700 whitespace-pre-wrap leading-relaxed">
+                <div className="prose max-w-none">
+                  <p className="text-[#A0A0A0] whitespace-pre-wrap leading-relaxed">
                     {creator.bio}
                   </p>
                 </div>
               ) : (
-                <p className="text-slate-500 italic">
+                <p className="text-[#666666] italic">
                   {t('publicCommunities.landing.creator.noBio')}
                 </p>
               )}
@@ -271,8 +271,8 @@ export const CommunityLandingPage: React.FC = () => {
       <PublicLayout>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mx-auto" />
-            <p className="mt-4 text-slate-600">{t('publicCommunities.landing.loading')}</p>
+            <Loader2 className="w-12 h-12 text-white animate-spin mx-auto" />
+            <p className="mt-4 text-[#A0A0A0]">{t('publicCommunities.landing.loading')}</p>
           </div>
         </div>
       </PublicLayout>
@@ -285,14 +285,14 @@ export const CommunityLandingPage: React.FC = () => {
       <PublicLayout>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center max-w-md mx-auto px-4">
-            <AlertCircle className="w-16 h-16 text-slate-400 mx-auto" />
-            <h1 className="mt-4 text-2xl font-bold text-slate-900">{t('publicCommunities.landing.error.title')}</h1>
-            <p className="mt-2 text-slate-600">
+            <AlertCircle className="w-16 h-16 text-[#666666] mx-auto" />
+            <h1 className="mt-4 text-2xl font-bold text-[#FAFAFA]">{t('publicCommunities.landing.error.title')}</h1>
+            <p className="mt-2 text-[#A0A0A0]">
               {error || t('publicCommunities.landing.error.defaultMessage')}
             </p>
             <button
               onClick={() => navigate('/communities')}
-              className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-[#E0E0E0] transition-colors duration-150"
             >
               <ArrowLeft className="w-4 h-4" />
               {t('publicCommunities.landing.error.browseCommunities')}
@@ -309,11 +309,11 @@ export const CommunityLandingPage: React.FC = () => {
       <PublicLayout>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mx-auto" />
-            <p className="mt-4 text-lg font-medium text-slate-900">
+            <Loader2 className="w-12 h-12 text-white animate-spin mx-auto" />
+            <p className="mt-4 text-lg font-medium text-[#FAFAFA]">
               {t('publicCommunities.landing.joining.title', { name: communityData.community.name })}
             </p>
-            <p className="mt-1 text-slate-600">{t('publicCommunities.landing.joining.subtitle')}</p>
+            <p className="mt-1 text-[#A0A0A0]">{t('publicCommunities.landing.joining.subtitle')}</p>
           </div>
         </div>
       </PublicLayout>
@@ -321,7 +321,7 @@ export const CommunityLandingPage: React.FC = () => {
   }
 
   const { community, memberCount, channelPreviews, recentPosts, creator } = communityData;
-  const placeholderImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(community.name)}&background=6366f1&color=fff&size=800`;
+  const placeholderImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(community.name)}&background=1F1F1F&color=FAFAFA&size=800`;
 
   return (
     <PublicLayout>
@@ -444,7 +444,7 @@ export const CommunityLandingPage: React.FC = () => {
             alt={community.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent" />
         </div>
 
         {/* Hero Content */}
@@ -495,24 +495,24 @@ export const CommunityLandingPage: React.FC = () => {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* About / Description */}
-            <section className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-              <div className="px-6 py-4 border-b border-slate-100">
+            <section className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#1F1F1F]">
                 <div className="flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-indigo-600" />
-                  <h2 className="text-lg font-semibold text-slate-900">{t('publicCommunities.landing.about.title')}</h2>
+                  <FileText className="w-5 h-5 text-[#FAFAFA]" />
+                  <h2 className="text-lg font-semibold text-[#FAFAFA]">{t('publicCommunities.landing.about.title')}</h2>
                 </div>
               </div>
               <div className="p-6">
                 {community.description ? (
-                  <div className="prose prose-slate max-w-none">
-                    <p className="text-slate-700 whitespace-pre-wrap leading-relaxed">
+                  <div className="prose max-w-none">
+                    <p className="text-[#A0A0A0] whitespace-pre-wrap leading-relaxed">
                       {community.description}
                     </p>
                   </div>
                 ) : (
                   <div className="text-center py-8">
-                    <FileText className="w-12 h-12 text-slate-300 mx-auto" />
-                    <p className="mt-3 text-slate-500">{t('publicCommunities.landing.about.noDescription')}</p>
+                    <FileText className="w-12 h-12 text-[#333333] mx-auto" />
+                    <p className="mt-3 text-[#666666]">{t('publicCommunities.landing.about.noDescription')}</p>
                   </div>
                 )}
               </div>
@@ -520,11 +520,11 @@ export const CommunityLandingPage: React.FC = () => {
 
             {/* VSL Video Player - Only shown if VSL exists */}
             {community.vsl_url && (
-              <section className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div className="px-6 py-4 border-b border-slate-100">
+              <section className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] overflow-hidden">
+                <div className="px-6 py-4 border-b border-[#1F1F1F]">
                   <div className="flex items-center gap-2">
-                    <Play className="w-5 h-5 text-indigo-600" />
-                    <h2 className="text-lg font-semibold text-slate-900">{t('publicCommunities.landing.video.title')}</h2>
+                    <Play className="w-5 h-5 text-[#FAFAFA]" />
+                    <h2 className="text-lg font-semibold text-[#FAFAFA]">{t('publicCommunities.landing.video.title')}</h2>
                   </div>
                 </div>
                 <div className="p-0">
@@ -545,11 +545,11 @@ export const CommunityLandingPage: React.FC = () => {
             )}
 
             {/* Join CTA Banner */}
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border border-indigo-100 p-6">
+            <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] p-6">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{t('publicCommunities.landing.joinCta.title', { name: community.name })}</h3>
-                  <p className="text-sm text-slate-600 mt-1">
+                  <h3 className="text-lg font-semibold text-[#FAFAFA]">{t('publicCommunities.landing.joinCta.title', { name: community.name })}</h3>
+                  <p className="text-sm text-[#A0A0A0] mt-1">
                     {t('publicCommunities.landing.joinCta.subtitle')}
                   </p>
                 </div>
@@ -577,26 +577,26 @@ export const CommunityLandingPage: React.FC = () => {
             {/* Creator Card - Clickable */}
             <button
               onClick={() => setIsCreatorModalOpen(true)}
-              className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 w-full text-left hover:border-indigo-300 hover:shadow-md transition-all group"
+              className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] p-6 w-full text-left hover:border-[#333333] hover:bg-[#151515] transition-all duration-150 group"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-sm font-medium text-slate-500 uppercase tracking-wide">
+                <h3 className="text-sm font-medium text-[#666666] uppercase tracking-wide">
                   {t('publicCommunities.landing.creator.createdBy')}
                 </h3>
-                <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
+                <ChevronRight className="w-4 h-4 text-[#666666] group-hover:text-[#FAFAFA] group-hover:translate-x-0.5 transition-all duration-150" />
               </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(creator.full_name)}&background=6366f1&color=fff&size=64`}
+                  src={creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(creator.full_name)}&background=1F1F1F&color=FAFAFA&size=64`}
                   alt={creator.full_name}
-                  className="w-16 h-16 rounded-full object-cover ring-2 ring-transparent group-hover:ring-indigo-200 transition-all"
+                  className="w-16 h-16 rounded-full object-cover ring-2 ring-transparent group-hover:ring-[#333333] transition-all duration-150"
                 />
                 <div>
-                  <h4 className="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                  <h4 className="font-semibold text-[#FAFAFA] group-hover:text-white transition-colors duration-150">
                     {creator.brand_name || creator.full_name}
                   </h4>
                   {creator.brand_name && (
-                    <p className="text-sm text-slate-500">{creator.full_name}</p>
+                    <p className="text-sm text-[#666666]">{creator.full_name}</p>
                   )}
                 </div>
               </div>

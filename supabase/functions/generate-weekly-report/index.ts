@@ -171,7 +171,7 @@ interface DashboardStats {
 }
 
 // AI System prompt for report generation
-const REPORT_SYSTEM_INSTRUCTION = `You are the AI Success Manager for Creator Club, generating a Weekly Success Report for a creator.
+const REPORT_SYSTEM_INSTRUCTION = `You are the AI Success Manager for Founders Club, generating a Weekly Success Report for a creator.
 
 Your role:
 - Analyze student data and community metrics to provide actionable insights

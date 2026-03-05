@@ -8,12 +8,12 @@ Get your waitlist up and running in 5 minutes.
 1. Go to your Supabase project
 2. Click "SQL Editor" in sidebar
 3. Click "New Query"
-4. Copy/paste content from `/Users/bojodanchev/creator-club™/supabase/migrations/001_create_waitlist_table.sql`
+4. Copy/paste content from `/Users/bojodanchev/founders-club/supabase/migrations/001_create_waitlist_table.sql`
 5. Click "Run"
 
 ### Option B: Supabase CLI
 ```bash
-cd "/Users/bojodanchev/creator-club™"
+cd "/Users/bojodanchev/founders-club"
 supabase db push
 ```
 
@@ -117,7 +117,7 @@ You should see your entry!
 ## File Locations Reference
 
 ```
-/Users/bojodanchev/creator-club™/
+/Users/bojodanchev/founders-club/
 ├── components/landing/
 │   ├── WaitlistSection.tsx       # Main component
 │   ├── WAITLIST_USAGE.md        # Detailed docs

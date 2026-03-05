@@ -276,7 +276,7 @@ const SummaryScreen: React.FC<SummaryScreenProps> = ({
             }`}
             style={{ transitionDelay: '300ms' }}
           >
-            {t('onboarding.summary.creatorClubOffers', 'Creator Club offers you:')}
+            {t('onboarding.summary.foundersClubOffers', 'Founders Club offers you:')}
           </p>
           {checkmarkItems.map((item, index) => (
             <AnimatedCheck
@@ -355,8 +355,8 @@ const SummaryScreen: React.FC<SummaryScreenProps> = ({
           style={{ transitionDelay: '700ms' }}
         >
           <p className="text-sm text-slate-300 leading-relaxed">
-            <span className="font-semibold text-white">Creator Club</span>{' '}
-            {t('onboarding.summary.creatorClubReplaces')}{' '}
+            <span className="font-semibold text-white">Founders Club</span>{' '}
+            {t('onboarding.summary.foundersClubReplaces')}{' '}
             <span className="text-indigo-400">{toolsText}</span>{' '}
             {t('onboarding.summary.withOnePlatform')}{' '}
             <span className="text-white font-medium">

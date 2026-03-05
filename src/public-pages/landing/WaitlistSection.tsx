@@ -107,7 +107,7 @@ export default function WaitlistSection({
             </div>
             <h2 className="text-4xl font-bold">You're on the list!</h2>
             <p className="text-xl text-indigo-100">
-              We'll notify you as soon as Creator Club™ launches.
+              We'll notify you as soon as Founders Club launches.
             </p>
           </div>
         ) : (
@@ -118,7 +118,7 @@ export default function WaitlistSection({
                 Join the Waitlist
               </h2>
               <p className="text-xl text-indigo-100">
-                Be the first to know when Creator Club™ launches. Get early
+                Be the first to know when Founders Club launches. Get early
                 access and exclusive perks.
               </p>
             </div>

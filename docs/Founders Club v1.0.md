@@ -1,11 +1,11 @@
-## **ПРОЕКТЕН ПЛАН \- Creator Club™ – Клубът на Създателя (v1.0)**
+## **ПРОЕКТЕН ПЛАН \- Founders Club – Клубът на Създателя (v1.0)**
 
 ---
 
 ### **1\. Визия и Цел на Проекта**
 
 **Визия:**
- Creator Club™ (Клубът на Създателя) е **all-in-one платформа / операционна система (OS)** за ментори, коучове и създатели на курсове, която **заменя 4–5 отделни инструмента** (Discord, Kajabi, Calendly, Skool, Zapier, Whop) и добавя **Success Manager**, който следи реалния прогрес на студентите.
+ Founders Club (Клубът на Създателя) е **all-in-one платформа / операционна система (OS)** за ментори, коучове и създатели на курсове, която **заменя 4–5 отделни инструмента** (Discord, Kajabi, Calendly, Skool, Zapier, Whop) и добавя **Success Manager**, който следи реалния прогрес на студентите.
 
 **Мисия (за екипа):** До 15 дни да имаме **MVP платформа \+ готова фуния за лансиране**, която:
 
@@ -83,7 +83,7 @@
 **Цел 3 – Система за скалиране**
 
 * KR3.1: Имейл nurture секвенция.
-* KR3.2:  Reels/TikTok видеа за Creator Club, пуснати по време на launch window.
+* KR3.2:  Reels/TikTok видеа за Founders Club, пуснати по време на launch window.
 * KR3.3: Създадена вътрешна документация (help docs \+ onboarding guide).
 
 ---
@@ -93,7 +93,7 @@
 #### **ФАЗА 0 – Alignment & Setup (ден 0–1)**
 
 * Потвърждаваме: name, позициониране, pricing за v1.
-* Създаваме план за „Creator Club – HQ“:
+* Създаваме план за „Founders Club – HQ“:
 
   * Vision & Scope
   * Roadmap
@@ -118,7 +118,7 @@
   * PAIN section: „Platform Chaos“ – Telegram \+ Viber \+ Skool \+ Discord \+ Kajabi \+ Calendly \+ Zapier \+ Whop
   * PROMISE section: „Automated Success Engine“ – AI Success Manager (Assistant), OS за създателя както и за всеки студент.
   * ORIGIN STORY: кратка история „създадохме инструмента, който ни липсваше“.
-  * SYSTEM/PILLARS: 5-те стълба на Creator Club™.
+  * SYSTEM/PILLARS: 5-те стълба на Founders Club.
   * Pricing & Guarantee: Free trial, Member/Student/Creator/Business/Elite.
 * **Designer / UX:**
 
@@ -169,7 +169,7 @@
 
 #### **ФАЗА 3 – Core Product Build & AI v1 (Дни 11–18)**
 
-**Основна цел:** работеща версия на Creator Club v1.0.
+**Основна цел:** работеща версия на Founders Club v1.0.
 
 **Ключови задачи (Tech Team):**
 
@@ -213,7 +213,7 @@
 
 **Deliverables (до Ден 58):**
 
-* Работеща Alpha версия на Creator Club.
+* Работеща Alpha версия на Founders Club.
 * Списък с известни багове / backlog.
 
 ---
@@ -253,7 +253,7 @@
 * **Маркетинг:**
 
   * Пускане на 5 Reels по launch window.
-  * Email blast към waitlist „Creator Club is LIVE“.
+  * Email blast към waitlist „Founders Club is LIVE“.
   * (По желание) Live Demo/Уъркшоп.
 * **Ads (ако има бюджет):**
 
@@ -311,7 +311,7 @@
    * Структура: HERO → PAIN → PROMISE → SYSTEM → VALUE BOXES → SOCIAL PROOF → PRICING → GUARANTEE → FINAL CALL.
 2. **Demo VSL**
 
-   * Цел: за 2–3 мин да покаже как Creator Club решава „Platform Chaos“.
+   * Цел: за 2–3 мин да покаже как Founders Club решава „Platform Chaos“.
 3. **Lead Magnet \+ Waitlist**
 
    * Пример: „AI Creator OS Checklist“.

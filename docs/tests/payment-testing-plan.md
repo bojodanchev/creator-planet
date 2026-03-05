@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document outlines all payment flows that need to be tested to validate the Creator Club payment system is fully functional. Tests cover both **Creator** and **Student** payment journeys.
+This document outlines all payment flows that need to be tested to validate the Founders Club payment system is fully functional. Tests cover both **Creator** and **Student** payment journeys.
 
 ### Test Environment Setup
 

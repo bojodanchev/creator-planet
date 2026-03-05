@@ -38,23 +38,23 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
-      <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-        <div className={`flex items-center gap-3 mb-4 ${isDangerous ? 'text-rose-600' : 'text-slate-900'}`}>
+      <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] max-w-md w-full p-6">
+        <div className={`flex items-center gap-3 mb-4 ${isDangerous ? 'text-[#EF4444]' : 'text-[#FAFAFA]'}`}>
           {isDangerous && <AlertTriangle size={24} />}
           <h3 className="text-lg font-semibold">{title}</h3>
         </div>
-        <p className="text-slate-600 mb-4">{message}</p>
+        <p className="text-[#A0A0A0] mb-4">{message}</p>
 
         {requireTypedConfirmation && (
           <div className="mb-4">
-            <label className="block text-sm font-medium text-slate-700 mb-2">
-              Type <span className="font-mono bg-slate-100 px-1 rounded">{confirmText}</span> to confirm:
+            <label className="block text-xs font-medium text-[#A0A0A0] mb-2">
+              Type <span className="font-mono bg-[#1F1F1F] px-1 rounded text-[#FAFAFA]">{confirmText}</span> to confirm:
             </label>
             <input
               type="text"
               value={typedConfirmation}
               onChange={(e) => setTypedConfirmation(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+              className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
               placeholder={confirmText}
             />
           </div>
@@ -66,7 +66,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
               setTypedConfirmation('');
               onCancel();
             }}
-            className="px-4 py-2 text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
+            className="px-4 py-2 text-[#FAFAFA] border border-[#1F1F1F] rounded-lg hover:bg-[#151515] hover:border-[#333333] transition-colors"
           >
             {cancelButtonText}
           </button>
@@ -76,10 +76,10 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
               onConfirm();
             }}
             disabled={!canConfirm}
-            className={`px-4 py-2 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`px-4 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               isDangerous
-                ? 'bg-rose-600 hover:bg-rose-700'
-                : 'bg-indigo-600 hover:bg-indigo-700'
+                ? 'bg-[#EF4444] text-white hover:bg-[#EF4444]/80'
+                : 'bg-white text-black hover:bg-[#E0E0E0]'
             }`}
           >
             {confirmButtonText}
@@ -213,15 +213,15 @@ const AccountSettings: React.FC = () => {
     <div className="space-y-8">
       {/* Change Password Section */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-          <Lock size={20} className="text-indigo-600" />
+        <h3 className="text-lg font-semibold text-[#FAFAFA] mb-4 flex items-center gap-2">
+          <Lock size={20} className="text-[#FAFAFA]" />
           {t('creatorSettings.account.password.title')}
         </h3>
 
         <div className="space-y-4">
           {/* Current Password */}
           <div>
-            <label htmlFor="current_password" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="current_password" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('creatorSettings.account.password.currentLabel')}
             </label>
             <input
@@ -229,14 +229,14 @@ const AccountSettings: React.FC = () => {
               id="current_password"
               value={passwords.currentPassword}
               onChange={(e) => setPasswords({ ...passwords, currentPassword: e.target.value })}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
               placeholder={t('creatorSettings.account.password.currentPlaceholder')}
             />
           </div>
 
           {/* New Password */}
           <div>
-            <label htmlFor="new_password" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="new_password" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('creatorSettings.account.password.newLabel')}
             </label>
             <input
@@ -244,14 +244,14 @@ const AccountSettings: React.FC = () => {
               id="new_password"
               value={passwords.newPassword}
               onChange={(e) => setPasswords({ ...passwords, newPassword: e.target.value })}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
               placeholder={t('creatorSettings.account.password.newPlaceholder')}
             />
           </div>
 
           {/* Confirm Password */}
           <div>
-            <label htmlFor="confirm_password" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="confirm_password" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('creatorSettings.account.password.confirmLabel')}
             </label>
             <input
@@ -259,7 +259,7 @@ const AccountSettings: React.FC = () => {
               id="confirm_password"
               value={passwords.confirmPassword}
               onChange={(e) => setPasswords({ ...passwords, confirmPassword: e.target.value })}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
               placeholder={t('creatorSettings.account.password.confirmPlaceholder')}
             />
           </div>
@@ -269,8 +269,8 @@ const AccountSettings: React.FC = () => {
             <div
               className={`p-4 rounded-lg flex items-start gap-3 ${
                 passwordMessage.type === 'success'
-                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                  : 'bg-rose-50 text-rose-700 border border-rose-200'
+                  ? 'bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20'
+                  : 'bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20'
               }`}
             >
               <AlertCircle size={20} className="shrink-0 mt-0.5" />
@@ -283,7 +283,7 @@ const AccountSettings: React.FC = () => {
             <button
               onClick={handlePasswordChange}
               disabled={changingPassword}
-              className="px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-[#E0E0E0] focus:outline-none focus:ring-1 focus:ring-white/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {changingPassword ? (
                 <>
@@ -302,26 +302,26 @@ const AccountSettings: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-slate-200" />
+      <div className="border-t border-[#1F1F1F]" />
 
       {/* Change Email Section */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-          <Mail size={20} className="text-indigo-600" />
+        <h3 className="text-lg font-semibold text-[#FAFAFA] mb-4 flex items-center gap-2">
+          <Mail size={20} className="text-[#FAFAFA]" />
           {t('creatorSettings.account.email.title')}
         </h3>
 
-        <p className="text-sm text-slate-600 mb-4">
+        <p className="text-sm text-[#A0A0A0] mb-4">
           {t('creatorSettings.account.email.description')}
         </p>
 
-        <p className="text-sm text-slate-500 mb-4">
-          {t('creatorSettings.account.email.current')}: <span className="font-medium text-slate-700">{profile?.email}</span>
+        <p className="text-sm text-[#666666] mb-4">
+          {t('creatorSettings.account.email.current')}: <span className="font-medium text-[#FAFAFA]">{profile?.email}</span>
         </p>
 
         <div className="space-y-4">
           <div>
-            <label htmlFor="new_email" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="new_email" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('creatorSettings.account.email.newLabel')}
             </label>
             <input
@@ -329,7 +329,7 @@ const AccountSettings: React.FC = () => {
               id="new_email"
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
               placeholder={t('creatorSettings.account.email.newPlaceholder')}
             />
           </div>
@@ -339,8 +339,8 @@ const AccountSettings: React.FC = () => {
             <div
               className={`p-4 rounded-lg flex items-start gap-3 ${
                 emailMessage.type === 'success'
-                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                  : 'bg-rose-50 text-rose-700 border border-rose-200'
+                  ? 'bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20'
+                  : 'bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20'
               }`}
             >
               <AlertCircle size={20} className="shrink-0 mt-0.5" />
@@ -352,7 +352,7 @@ const AccountSettings: React.FC = () => {
             <button
               onClick={handleEmailChange}
               disabled={changingEmail}
-              className="px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-[#E0E0E0] focus:outline-none focus:ring-1 focus:ring-white/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {changingEmail ? (
                 <>
@@ -371,22 +371,22 @@ const AccountSettings: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-slate-200" />
+      <div className="border-t border-[#1F1F1F]" />
 
       {/* Sign Out Section */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-          <LogOut size={20} className="text-amber-600" />
+        <h3 className="text-lg font-semibold text-[#FAFAFA] mb-4 flex items-center gap-2">
+          <LogOut size={20} className="text-[#EAB308]" />
           {t('creatorSettings.account.signOut.title')}
         </h3>
 
-        <p className="text-sm text-slate-600 mb-4">
+        <p className="text-sm text-[#A0A0A0] mb-4">
           {t('creatorSettings.account.signOut.description')}
         </p>
 
         <button
           onClick={() => setShowSignOutConfirm(true)}
-          className="px-6 py-2.5 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 flex items-center gap-2"
+          className="px-6 py-2.5 bg-[#EAB308] text-black rounded-lg font-medium hover:bg-[#EAB308]/80 focus:outline-none focus:ring-1 focus:ring-white/10 flex items-center gap-2"
         >
           <LogOut size={18} />
           {t('creatorSettings.account.signOut.button')}
@@ -394,20 +394,20 @@ const AccountSettings: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-slate-200" />
+      <div className="border-t border-[#1F1F1F]" />
 
       {/* Danger Zone */}
-      <div className="bg-rose-50 border border-rose-200 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-rose-900 mb-2 flex items-center gap-2">
+      <div className="bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-[#EF4444] mb-2 flex items-center gap-2">
           <Trash2 size={20} />
           {t('creatorSettings.account.dangerZone.title')}
         </h3>
-        <p className="text-sm text-rose-700 mb-4">
+        <p className="text-sm text-[#EF4444]/80 mb-4">
           {t('creatorSettings.account.dangerZone.description')}
         </p>
 
         {deleteMessage && (
-          <div className="p-4 rounded-lg bg-rose-100 text-rose-800 border border-rose-300 mb-4 flex items-start gap-3">
+          <div className="p-4 rounded-lg bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20 mb-4 flex items-start gap-3">
             <AlertCircle size={20} className="shrink-0 mt-0.5" />
             <span className="text-sm">{deleteMessage.text}</span>
           </div>
@@ -416,7 +416,7 @@ const AccountSettings: React.FC = () => {
         <button
           onClick={() => setShowDeleteConfirm(true)}
           disabled={deleting}
-          className="px-6 py-2.5 bg-rose-600 text-white rounded-lg font-medium hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-6 py-2.5 bg-[#EF4444] text-white rounded-lg font-medium hover:bg-[#EF4444]/80 focus:outline-none focus:ring-1 focus:ring-white/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {deleting ? (
             <>

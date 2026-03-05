@@ -94,16 +94,16 @@ export function CoursePurchaseModal({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl w-full max-w-md shadow-xl">
+      <div className="bg-[#0A0A0A] rounded-2xl w-full max-w-md">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-slate-100">
+        <div className="flex items-center justify-between p-6 border-b border-[#1F1F1F]">
           <div>
-            <h2 className="text-xl font-bold text-slate-900">Purchase Course</h2>
-            <p className="text-sm text-slate-500 mt-1">{course.title}</p>
+            <h2 className="text-xl font-bold text-[#FAFAFA]">Purchase Course</h2>
+            <p className="text-sm text-[#666666] mt-1">{course.title}</p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+            className="p-2 text-[#666666] hover:text-[#A0A0A0] hover:bg-[#1F1F1F] rounded-lg transition-colors"
           >
             <X size={20} />
           </button>
@@ -112,31 +112,31 @@ export function CoursePurchaseModal({
         {/* Content */}
         <div className="p-6">
           {/* Price Summary */}
-          <div className="bg-slate-50 rounded-xl p-4 mb-6">
+          <div className="bg-[#0A0A0A] rounded-xl p-4 mb-6">
             <div className="flex justify-between items-center">
-              <span className="text-slate-600">Course price</span>
-              <span className="text-xl font-bold text-slate-900">{priceDisplay}</span>
+              <span className="text-[#A0A0A0]">Course price</span>
+              <span className="text-xl font-bold text-[#FAFAFA]">{priceDisplay}</span>
             </div>
           </div>
 
           {/* Loading State */}
           {isLoading && (
             <div className="flex flex-col items-center py-8">
-              <Loader2 className="w-8 h-8 animate-spin text-indigo-600 mb-3" />
-              <p className="text-slate-500">Preparing secure checkout...</p>
+              <Loader2 className="w-8 h-8 animate-spin text-[#FAFAFA] mb-3" />
+              <p className="text-[#666666]">Preparing secure checkout...</p>
             </div>
           )}
 
           {/* Error State */}
           {error && !isLoading && (
-            <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl mb-6">
-              <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-4 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-xl mb-6">
+              <AlertCircle className="w-5 h-5 text-[#EF4444] shrink-0 mt-0.5" />
               <div>
-                <p className="font-medium text-red-800">Payment setup failed</p>
-                <p className="text-sm text-red-600 mt-1">{error}</p>
+                <p className="font-medium text-[#EF4444]">Payment setup failed</p>
+                <p className="text-sm text-[#EF4444] mt-1">{error}</p>
                 <button
                   onClick={() => window.location.reload()}
-                  className="text-sm text-red-700 underline mt-2"
+                  className="text-sm text-[#EF4444] underline mt-2"
                 >
                   Try again
                 </button>
@@ -157,7 +157,7 @@ export function CoursePurchaseModal({
           )}
 
           {/* Security Badge */}
-          <div className="flex items-center justify-center gap-2 mt-6 text-xs text-slate-400">
+          <div className="flex items-center justify-center gap-2 mt-6 text-xs text-[#666666]">
             <ShieldCheck size={14} />
             <span>Secure payment powered by Stripe</span>
           </div>
@@ -227,11 +227,11 @@ function CheckoutForm({
   if (paymentSuccess) {
     return (
       <div className="flex flex-col items-center py-8">
-        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
-          <CheckCircle className="w-8 h-8 text-emerald-600" />
+        <div className="w-16 h-16 bg-[#22C55E]/10 rounded-full flex items-center justify-center mb-4">
+          <CheckCircle className="w-8 h-8 text-[#22C55E]" />
         </div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-2">Payment Successful!</h3>
-        <p className="text-slate-500 text-center">
+        <h3 className="text-lg font-semibold text-[#FAFAFA] mb-2">Payment Successful!</h3>
+        <p className="text-[#666666] text-center">
           You now have access to <span className="font-medium">{course.title}</span>
         </p>
       </div>
@@ -247,9 +247,9 @@ function CheckoutForm({
       />
 
       {paymentError && (
-        <div className="flex items-start gap-2 p-3 bg-red-50 border border-red-200 rounded-lg mt-4">
-          <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-          <p className="text-sm text-red-700">{paymentError}</p>
+        <div className="flex items-start gap-2 p-3 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg mt-4">
+          <AlertCircle className="w-4 h-4 text-[#EF4444] shrink-0 mt-0.5" />
+          <p className="text-sm text-[#EF4444]">{paymentError}</p>
         </div>
       )}
 
@@ -258,14 +258,14 @@ function CheckoutForm({
           type="button"
           onClick={onClose}
           disabled={isProcessing}
-          className="flex-1 px-4 py-3 border border-slate-200 rounded-xl font-medium text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50"
+          className="flex-1 px-4 py-3 border border-[#1F1F1F] rounded-xl font-medium text-[#A0A0A0] hover:bg-[#0A0A0A] transition-colors disabled:opacity-50"
         >
           Cancel
         </button>
         <button
           type="submit"
           disabled={!stripe || isProcessing}
-          className="flex-1 bg-indigo-600 text-white px-4 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+          className="flex-1 bg-white text-black px-4 py-3 rounded-xl font-medium hover:bg-[#E0E0E0] transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
         >
           {isProcessing ? (
             <>

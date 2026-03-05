@@ -26,14 +26,14 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
       // If there's a description, render as a card with title and description
       if (description) {
         return (
-          <div key={index} className="bg-white border border-slate-200 rounded-lg p-4 my-3 shadow-sm hover:shadow-md transition-shadow">
+          <div key={index} className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg p-4 my-3 hover:border-[#333333] transition-colors">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center font-bold text-sm shrink-0">
                 {number}
               </div>
               <div className="flex-1">
-                <h4 className="font-semibold text-slate-900 mb-1">{titleOrContent.trim()}</h4>
-                <p className="text-slate-600 text-sm">{description.trim()}</p>
+                <h4 className="font-semibold text-[#FAFAFA] mb-1">{titleOrContent.trim()}</h4>
+                <p className="text-[#A0A0A0] text-sm">{description.trim()}</p>
               </div>
             </div>
           </div>
@@ -42,13 +42,13 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
 
       // Single content without separate description
       return (
-        <div key={index} className="bg-white border border-slate-200 rounded-lg p-4 my-3 shadow-sm hover:shadow-md transition-shadow">
+        <div key={index} className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg p-4 my-3 hover:border-[#333333] transition-colors">
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm shrink-0">
+            <div className="w-8 h-8 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center font-bold text-sm shrink-0">
               {number}
             </div>
             <div className="flex-1">
-              <p className="text-slate-700">{titleOrContent.trim()}</p>
+              <p className="text-[#A0A0A0]">{titleOrContent.trim()}</p>
             </div>
           </div>
         </div>
@@ -61,10 +61,10 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
       const [, number, content] = numberedMatch;
       return (
         <div key={index} className="flex gap-3 my-2">
-          <span className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-semibold text-xs shrink-0">
+          <span className="w-6 h-6 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center font-semibold text-xs shrink-0">
             {number}
           </span>
-          <span className="text-slate-700">{content.trim()}</span>
+          <span className="text-[#A0A0A0]">{content.trim()}</span>
         </div>
       );
     }
@@ -82,19 +82,19 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
             if (lineActionMatch) {
               const [, num, title, desc] = lineActionMatch;
               return (
-                <div key={lineIdx} className="bg-white border border-slate-200 rounded-lg p-3 shadow-sm">
+                <div key={lineIdx} className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg p-3">
                   <div className="flex items-start gap-3">
-                    <div className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs shrink-0">
+                    <div className="w-7 h-7 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center font-bold text-xs shrink-0">
                       {num}
                     </div>
                     <div className="flex-1">
                       {desc ? (
                         <>
-                          <h4 className="font-semibold text-slate-900 text-sm">{title.trim()}</h4>
-                          <p className="text-slate-600 text-sm">{desc.trim()}</p>
+                          <h4 className="font-semibold text-[#FAFAFA] text-sm">{title.trim()}</h4>
+                          <p className="text-[#A0A0A0] text-sm">{desc.trim()}</p>
                         </>
                       ) : (
-                        <p className="text-slate-700 text-sm">{title.trim()}</p>
+                        <p className="text-[#A0A0A0] text-sm">{title.trim()}</p>
                       )}
                     </div>
                   </div>
@@ -107,14 +107,14 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
               const [, num, content] = lineMatch;
               return (
                 <div key={lineIdx} className="flex gap-3">
-                  <span className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-semibold text-xs shrink-0">
+                  <span className="w-6 h-6 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center font-semibold text-xs shrink-0">
                     {num}
                   </span>
-                  <span className="text-slate-700">{content.trim()}</span>
+                  <span className="text-[#A0A0A0]">{content.trim()}</span>
                 </div>
               );
             }
-            return <p key={lineIdx} className="text-slate-700">{line.trim()}</p>;
+            return <p key={lineIdx} className="text-[#A0A0A0]">{line.trim()}</p>;
           })}
         </div>
       );
@@ -123,7 +123,7 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
     // Check if this looks like a section header (short text ending with colon)
     if (paragraph.trim().endsWith(':') && paragraph.length < 100) {
       return (
-        <h3 key={index} className="font-semibold text-slate-900 mt-4 mb-2 first:mt-0">
+        <h3 key={index} className="font-semibold text-[#FAFAFA] mt-4 mb-2 first:mt-0">
           {paragraph.trim()}
         </h3>
       );
@@ -137,7 +137,7 @@ const AiResponseText: React.FC<AiResponseTextProps> = ({ text, className = '' })
       .trim();
 
     return (
-      <p key={index} className="my-2 text-slate-700 first:mt-0 last:mb-0">
+      <p key={index} className="my-2 text-[#A0A0A0] first:mt-0 last:mb-0">
         {cleanedParagraph}
       </p>
     );

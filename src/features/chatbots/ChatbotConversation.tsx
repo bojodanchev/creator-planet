@@ -221,8 +221,8 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center h-full py-12">
-        <Loader2 size={32} className="animate-spin text-indigo-600 mb-3" />
-        <p className="text-slate-500">{t('chatbots.conversation.loading')}</p>
+        <Loader2 size={32} className="animate-spin text-[#FAFAFA] mb-3" />
+        <p className="text-[#666666]">{t('chatbots.conversation.loading')}</p>
       </div>
     );
   }
@@ -232,7 +232,7 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4">
         {messages.length === 0 ? (
-          <div className="text-center text-slate-500 py-6 sm:py-8">
+          <div className="text-center text-[#666666] py-6 sm:py-8">
             {/* Empty state avatar */}
             {chatbot.show_avatar !== false && chatbot.avatar_url ? (
               <img
@@ -241,7 +241,7 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
                 className="w-12 h-12 mx-auto mb-3 rounded-full object-cover"
               />
             ) : (
-              <Bot size={48} className="mx-auto mb-3 text-slate-300" />
+              <Bot size={48} className="mx-auto mb-3 text-[#666666]" />
             )}
             <p>{t('chatbots.conversation.emptyState', { botName: chatbot.name })}</p>
           </div>
@@ -258,8 +258,8 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
               >
                 {/* Avatar */}
                 {message.role === 'user' ? (
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center">
-                    <User size={16} className="text-white" />
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FAFAFA] flex items-center justify-center">
+                    <User size={16} className="text-black" />
                   </div>
                 ) : chatbot.show_avatar !== false && chatbot.avatar_url ? (
                   <img
@@ -268,8 +268,8 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
                     className="flex-shrink-0 w-8 h-8 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
-                    <Bot size={16} className="text-slate-600" />
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#1F1F1F] flex items-center justify-center">
+                    <Bot size={16} className="text-[#A0A0A0]" />
                   </div>
                 )}
 
@@ -277,8 +277,8 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
                 <div
                   className={`px-4 py-2 rounded-2xl ${
                     message.role === 'user'
-                      ? 'bg-indigo-600 text-white rounded-br-md'
-                      : 'bg-slate-100 text-slate-900 rounded-bl-md'
+                      ? 'bg-[#FAFAFA] text-black rounded-br-md'
+                      : 'bg-[#151515] border border-[#1F1F1F] text-[#A0A0A0] rounded-bl-md'
                   }`}
                 >
                   <p className="whitespace-pre-wrap text-sm">{message.content}</p>
@@ -299,12 +299,12 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
                   className="flex-shrink-0 w-8 h-8 rounded-full object-cover"
                 />
               ) : (
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
-                  <Bot size={16} className="text-slate-600" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#1F1F1F] flex items-center justify-center">
+                  <Bot size={16} className="text-[#A0A0A0]" />
                 </div>
               )}
-              <div className="px-4 py-3 bg-slate-100 rounded-2xl rounded-bl-md">
-                <Loader2 size={18} className="animate-spin text-slate-500" />
+              <div className="px-4 py-3 bg-[#151515] border border-[#1F1F1F] rounded-2xl rounded-bl-md">
+                <Loader2 size={18} className="animate-spin text-[#A0A0A0]" />
               </div>
             </div>
           </div>
@@ -315,7 +315,7 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-slate-200 p-3 sm:p-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-4 bg-white">
+      <div className="border-t border-[#1F1F1F] p-3 sm:p-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-4 bg-[#0A0A0A]">
         <div className="flex items-center gap-3">
           <input
             type="text"
@@ -324,12 +324,12 @@ const ChatbotConversation: React.FC<ChatbotConversationProps> = ({
             onKeyDown={handleKeyDown}
             placeholder={t('chatbots.conversation.inputPlaceholder', { botName: chatbot.name })}
             disabled={isSending}
-            className="flex-1 px-4 py-3 sm:py-2.5 border border-slate-200 rounded-full focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed"
+            className="flex-1 px-4 py-3 sm:py-2.5 bg-[#0A0A0A] border border-[#1F1F1F] rounded-full text-[#FAFAFA] placeholder:text-[#666666] focus:border-[#555555] focus:ring-1 focus:ring-white/10 disabled:bg-[#0A0A0A] disabled:cursor-not-allowed"
           />
           <button
             onClick={handleSend}
             disabled={!inputValue.trim() || isSending}
-            className="p-3 sm:p-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="p-3 sm:p-2.5 bg-white text-black rounded-full hover:bg-[#E0E0E0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {isSending ? (
               <Loader2 size={20} className="animate-spin" />

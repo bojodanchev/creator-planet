@@ -301,7 +301,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <Loader2 className="w-8 h-8 animate-spin text-indigo-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#FAFAFA]" />
       </div>
     );
   }
@@ -311,18 +311,18 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <HelpCircle className="w-5 h-5 text-indigo-600" />
-          <h3 className="text-lg font-semibold text-slate-900">Quiz Questions</h3>
-          <span className="text-sm text-slate-500">
+          <HelpCircle className="w-5 h-5 text-[#FAFAFA]" />
+          <h3 className="text-lg font-semibold text-[#FAFAFA]">Quiz Questions</h3>
+          <span className="text-sm text-[#666666]">
             ({questions.length}/{MAX_QUESTIONS})
           </span>
         </div>
-        <div className="text-xs text-slate-500">70% required to pass</div>
+        <div className="text-xs text-[#666666]">70% required to pass</div>
       </div>
 
       {/* Error */}
       {error && (
-        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div className="flex items-center gap-2 p-3 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg text-[#EF4444] text-sm">
           <AlertCircle size={16} />
           {error}
         </div>
@@ -333,13 +333,13 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
         {questions.map((question, qIndex) => (
           <div
             key={qIndex}
-            className="bg-slate-50 rounded-xl p-4 border border-slate-200"
+            className="bg-[#0A0A0A] rounded-xl p-4 border border-[#1F1F1F]"
           >
             {/* Question Header */}
             <div className="flex items-start gap-3 mb-4">
-              <div className="flex items-center gap-2 text-slate-400 pt-2">
+              <div className="flex items-center gap-2 text-[#666666] pt-2">
                 <GripVertical size={16} />
-                <span className="text-sm font-medium text-slate-600">
+                <span className="text-sm font-medium text-[#A0A0A0]">
                   Q{qIndex + 1}
                 </span>
               </div>
@@ -348,10 +348,10 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                   value={question.question_text}
                   onChange={(e) => updateQuestion(qIndex, e.target.value)}
                   placeholder="Enter your question..."
-                  className="w-full px-3 py-2 border border-slate-200 rounded-lg resize-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-slate-900"
+                  className="w-full px-3 py-2 border border-[#1F1F1F] rounded-lg resize-none focus:ring-1 focus:ring-white/10 focus:border-transparent text-[#FAFAFA]"
                   rows={2}
                 />
-                <div className="text-xs text-slate-400 mt-1 text-right">
+                <div className="text-xs text-[#666666] mt-1 text-right">
                   {question.question_text.length}/{MAX_QUESTION_LENGTH}
                 </div>
                 <div className="flex items-center gap-2 mt-3">
@@ -360,8 +360,8 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                     onClick={() => updateQuestionType(qIndex, 'multiple_choice')}
                     className={`px-2.5 py-1 text-xs rounded-full border transition-colors ${
                       question.question_type === 'multiple_choice'
-                        ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                        : 'border-slate-200 text-slate-500 hover:border-slate-300'
+                        ? 'border-[#555555] bg-[#1F1F1F] text-[#FAFAFA]'
+                        : 'border-[#1F1F1F] text-[#666666] hover:border-[#333333]'
                     }`}
                   >
                     Multiple choice
@@ -371,8 +371,8 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                     onClick={() => updateQuestionType(qIndex, 'free_answer')}
                     className={`px-2.5 py-1 text-xs rounded-full border transition-colors ${
                       question.question_type === 'free_answer'
-                        ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                        : 'border-slate-200 text-slate-500 hover:border-slate-300'
+                        ? 'border-[#555555] bg-[#1F1F1F] text-[#FAFAFA]'
+                        : 'border-[#1F1F1F] text-[#666666] hover:border-[#333333]'
                     }`}
                   >
                     Free answer
@@ -382,7 +382,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
               <button
                 onClick={() => removeQuestion(qIndex)}
                 disabled={questions.length <= 1}
-                className="p-2 text-slate-400 hover:text-red-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-2 text-[#666666] hover:text-[#EF4444] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 title="Remove question"
               >
                 <Trash2 size={18} />
@@ -397,8 +397,8 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                       onClick={() => setCorrectOption(qIndex, oIndex)}
                       className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
                         option.is_correct
-                          ? 'border-green-500 bg-green-500 text-white'
-                          : 'border-slate-300 hover:border-green-400'
+                          ? 'border-[#22C55E] bg-[#22C55E] text-white'
+                          : 'border-[#333333] hover:border-[#22C55E]/40'
                       }`}
                       title={option.is_correct ? 'Correct answer' : 'Mark as correct'}
                     >
@@ -409,16 +409,16 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                       value={option.option_text}
                       onChange={(e) => updateOption(qIndex, oIndex, e.target.value)}
                       placeholder={`Option ${oIndex + 1}`}
-                      className={`flex-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-slate-900 ${
+                      className={`flex-1 px-3 py-2 border rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent text-[#FAFAFA] ${
                         option.is_correct
-                          ? 'border-green-300 bg-green-50'
-                          : 'border-slate-200 bg-white'
+                          ? 'border-[#22C55E]/30 bg-[#22C55E]/10'
+                          : 'border-[#1F1F1F] bg-[#0A0A0A]'
                       }`}
                     />
                     <button
                       onClick={() => removeOption(qIndex, oIndex)}
                       disabled={question.options.length <= MIN_OPTIONS}
-                      className="p-1 text-slate-400 hover:text-red-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                      className="p-1 text-[#666666] hover:text-[#EF4444] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                       title="Remove option"
                     >
                       <Trash2 size={16} />
@@ -429,7 +429,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                 {question.options.length < MAX_OPTIONS && (
                   <button
                     onClick={() => addOption(qIndex)}
-                    className="flex items-center gap-1 text-sm text-indigo-600 hover:text-indigo-700 ml-8"
+                    className="flex items-center gap-1 text-sm text-[#FAFAFA] hover:text-[#FAFAFA] ml-8"
                   >
                     <Plus size={14} />
                     Add Option
@@ -438,7 +438,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
               </div>
             ) : (
               <div className="ml-10">
-                <label className="block text-xs font-medium text-slate-600 mb-1">
+                <label className="block text-xs font-medium text-[#A0A0A0] mb-1">
                   Correct answer
                 </label>
                 <input
@@ -446,7 +446,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
                   value={question.correct_answer || ''}
                   onChange={(e) => updateCorrectAnswer(qIndex, e.target.value)}
                   placeholder="Enter the expected answer..."
-                  className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-slate-900 bg-white"
+                  className="w-full px-3 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent text-[#FAFAFA] bg-[#0A0A0A]"
                 />
               </div>
             )}
@@ -458,7 +458,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
       {questions.length < MAX_QUESTIONS && (
         <button
           onClick={addQuestion}
-          className="w-full py-3 border-2 border-dashed border-slate-300 rounded-xl text-slate-500 hover:border-indigo-400 hover:text-indigo-600 transition-colors flex items-center justify-center gap-2"
+          className="w-full py-3 border-2 border-dashed border-[#333333] rounded-xl text-[#666666] hover:border-[#555555] hover:text-[#FAFAFA] transition-colors flex items-center justify-center gap-2"
         >
           <Plus size={20} />
           Add Question
@@ -466,10 +466,10 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
       )}
 
       {/* Save Button */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-        <div className="text-sm text-slate-500">
+      <div className="flex items-center justify-between pt-4 border-t border-[#1F1F1F]">
+        <div className="text-sm text-[#666666]">
           {hasChanges ? (
-            <span className="text-amber-600">Unsaved changes</span>
+            <span className="text-[#EAB308]">Unsaved changes</span>
           ) : (
             'All changes saved'
           )}
@@ -477,7 +477,7 @@ const QuizBuilder: React.FC<QuizBuilderProps> = ({ lessonId, onSave }) => {
         <button
           onClick={handleSave}
           disabled={isSaving || !hasChanges}
-          className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-6 py-2 bg-white text-black rounded-lg font-medium hover:bg-[#E0E0E0] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {isSaving ? (
             <>

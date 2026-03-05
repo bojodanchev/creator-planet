@@ -139,7 +139,7 @@ const CreatorSettings: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <Loader2 className="w-8 h-8 animate-spin text-indigo-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#A0A0A0]" />
       </div>
     );
   }
@@ -148,7 +148,7 @@ const CreatorSettings: React.FC = () => {
     <div className="space-y-6">
       {/* Brand Name */}
       <div>
-        <label htmlFor="brand_name" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="brand_name" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.creator.brandName.label')}
         </label>
         <input
@@ -156,17 +156,17 @@ const CreatorSettings: React.FC = () => {
           id="brand_name"
           value={formData.brand_name}
           onChange={(e) => setFormData({ ...formData, brand_name: e.target.value })}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
           placeholder={t('creatorSettings.creator.brandName.placeholder')}
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.creator.brandName.hint')}
         </p>
       </div>
 
       {/* Biography */}
       <div>
-        <label htmlFor="bio" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="bio" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.creator.biography.label')}
         </label>
         <textarea
@@ -174,15 +174,15 @@ const CreatorSettings: React.FC = () => {
           value={formData.bio}
           onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
           rows={4}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 resize-none"
           placeholder={t('creatorSettings.creator.biography.placeholder')}
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.creator.biography.hint')}
         </p>
-        <div className="mt-2 flex items-start gap-2 p-2 bg-blue-50 rounded-lg border border-blue-100">
-          <Info size={14} className="text-blue-500 mt-0.5 shrink-0" />
-          <p className="text-xs text-blue-700">
+        <div className="mt-2 flex items-start gap-2 p-2 bg-[#151515] rounded-lg border border-[#1F1F1F]">
+          <Info size={14} className="text-[#A0A0A0] mt-0.5 shrink-0" />
+          <p className="text-xs text-[#A0A0A0]">
             {t('creatorSettings.creator.biography.visibilityHint')}
           </p>
         </div>
@@ -190,14 +190,14 @@ const CreatorSettings: React.FC = () => {
 
       {/* Timezone */}
       <div>
-        <label htmlFor="timezone" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="timezone" className="block text-xs font-medium text-[#A0A0A0] mb-2">
           {t('creatorSettings.creator.timezone.label')}
         </label>
         <select
           id="timezone"
           value={formData.timezone}
           onChange={(e) => setFormData({ ...formData, timezone: e.target.value })}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10"
         >
           {TIMEZONES.map((tz) => (
             <option key={tz.value} value={tz.value}>
@@ -205,34 +205,34 @@ const CreatorSettings: React.FC = () => {
             </option>
           ))}
         </select>
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.creator.timezone.hint')}
         </p>
       </div>
 
       {/* Payout Status Section */}
-      <div className="pt-6 border-t border-slate-200">
+      <div className="pt-6 border-t border-[#1F1F1F]">
         <div className="flex items-center gap-2 mb-4">
-          <Wallet size={20} className="text-indigo-600" />
-          <h3 className="text-lg font-semibold text-slate-900">{t('creatorSettings.creator.payouts.section')}</h3>
+          <Wallet size={20} className="text-[#FAFAFA]" />
+          <h3 className="text-lg font-semibold text-[#FAFAFA]">{t('creatorSettings.creator.payouts.section')}</h3>
         </div>
 
         {!connectStatus ? (
           // No Connect account
-          <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
+          <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[#1F1F1F]">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
-                <Clock size={20} className="text-amber-600" />
+              <div className="w-10 h-10 bg-[#EAB308]/10 rounded-full flex items-center justify-center shrink-0">
+                <Clock size={20} className="text-[#EAB308]" />
               </div>
               <div className="flex-1">
-                <h4 className="font-medium text-slate-900">{t('creatorSettings.creator.payouts.notSetup.title')}</h4>
-                <p className="text-sm text-slate-600 mt-1">
+                <h4 className="font-medium text-[#FAFAFA]">{t('creatorSettings.creator.payouts.notSetup.title')}</h4>
+                <p className="text-sm text-[#A0A0A0] mt-1">
                   {t('creatorSettings.creator.payouts.notSetup.description')}
                 </p>
                 <button
                   onClick={handleSetupPayouts}
                   disabled={connectLoading}
-                  className="mt-3 inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors disabled:opacity-50"
+                  className="mt-3 inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#E0E0E0] transition-colors disabled:opacity-50"
                 >
                   {connectLoading ? (
                     <>
@@ -251,19 +251,19 @@ const CreatorSettings: React.FC = () => {
           </div>
         ) : connectStatus.status === 'active' ? (
           // Active Connect account
-          <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+          <div className="p-4 bg-[#22C55E]/10 rounded-lg border border-[#22C55E]/20">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
-                <CheckCircle size={20} className="text-green-600" />
+              <div className="w-10 h-10 bg-[#22C55E]/10 rounded-full flex items-center justify-center shrink-0">
+                <CheckCircle size={20} className="text-[#22C55E]" />
               </div>
               <div className="flex-1">
-                <h4 className="font-medium text-green-900">{t('creatorSettings.creator.payouts.active.title')}</h4>
-                <p className="text-sm text-green-700 mt-1">
+                <h4 className="font-medium text-[#FAFAFA]">{t('creatorSettings.creator.payouts.active.title')}</h4>
+                <p className="text-sm text-[#22C55E] mt-1">
                   {t('creatorSettings.creator.payouts.active.description')}
                 </p>
                 <button
                   onClick={() => navigate('/settings/billing')}
-                  className="mt-3 text-sm font-medium text-green-700 hover:text-green-800"
+                  className="mt-3 text-sm font-medium text-[#A0A0A0] hover:text-[#FAFAFA]"
                 >
                   {t('creatorSettings.creator.payouts.active.manageLink')}
                 </button>
@@ -272,20 +272,20 @@ const CreatorSettings: React.FC = () => {
           </div>
         ) : connectStatus.status === 'pending' ? (
           // Pending Connect account
-          <div className="p-4 bg-amber-50 rounded-lg border border-amber-200">
+          <div className="p-4 bg-[#EAB308]/10 rounded-lg border border-[#EAB308]/20">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
-                <Clock size={20} className="text-amber-600" />
+              <div className="w-10 h-10 bg-[#EAB308]/10 rounded-full flex items-center justify-center shrink-0">
+                <Clock size={20} className="text-[#EAB308]" />
               </div>
               <div className="flex-1">
-                <h4 className="font-medium text-amber-900">{t('creatorSettings.creator.payouts.pending.title')}</h4>
-                <p className="text-sm text-amber-700 mt-1">
+                <h4 className="font-medium text-[#FAFAFA]">{t('creatorSettings.creator.payouts.pending.title')}</h4>
+                <p className="text-sm text-[#EAB308] mt-1">
                   {t('creatorSettings.creator.payouts.pending.description')}
                 </p>
                 <button
                   onClick={handleSetupPayouts}
                   disabled={connectLoading}
-                  className="mt-3 inline-flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-amber-700 transition-colors disabled:opacity-50"
+                  className="mt-3 inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#E0E0E0] transition-colors disabled:opacity-50"
                 >
                   {connectLoading ? (
                     <>
@@ -304,20 +304,20 @@ const CreatorSettings: React.FC = () => {
           </div>
         ) : (
           // Restricted Connect account
-          <div className="p-4 bg-red-50 rounded-lg border border-red-200">
+          <div className="p-4 bg-[#EF4444]/10 rounded-lg border border-[#EF4444]/20">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center shrink-0">
-                <AlertTriangle size={20} className="text-red-600" />
+              <div className="w-10 h-10 bg-[#EF4444]/10 rounded-full flex items-center justify-center shrink-0">
+                <AlertTriangle size={20} className="text-[#EF4444]" />
               </div>
               <div className="flex-1">
-                <h4 className="font-medium text-red-900">{t('creatorSettings.creator.payouts.restricted.title')}</h4>
-                <p className="text-sm text-red-700 mt-1">
+                <h4 className="font-medium text-[#FAFAFA]">{t('creatorSettings.creator.payouts.restricted.title')}</h4>
+                <p className="text-sm text-[#EF4444] mt-1">
                   {t('creatorSettings.creator.payouts.restricted.description')}
                 </p>
                 <button
                   onClick={handleSetupPayouts}
                   disabled={connectLoading}
-                  className="mt-3 inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition-colors disabled:opacity-50"
+                  className="mt-3 inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#EF4444]/80 transition-colors disabled:opacity-50"
                 >
                   {connectLoading ? (
                     <>
@@ -339,8 +339,8 @@ const CreatorSettings: React.FC = () => {
 
       {/* AI Prompt */}
       <div>
-        <label htmlFor="ai_prompt" className="flex items-center gap-2 text-sm font-medium text-slate-700 mb-2">
-          <Sparkles size={16} className="text-indigo-600" />
+        <label htmlFor="ai_prompt" className="flex items-center gap-2 text-xs font-medium text-[#A0A0A0] mb-2">
+          <Sparkles size={16} className="text-[#FAFAFA]" />
           {t('creatorSettings.creator.aiInstructions.label')}
         </label>
         <textarea
@@ -348,10 +348,10 @@ const CreatorSettings: React.FC = () => {
           value={formData.ai_prompt}
           onChange={(e) => setFormData({ ...formData, ai_prompt: e.target.value })}
           rows={6}
-          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none font-mono text-sm"
+          className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 resize-none font-mono text-sm"
           placeholder={t('creatorSettings.creator.aiInstructions.placeholder')}
         />
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-[#666666]">
           {t('creatorSettings.creator.aiInstructions.hint')}
         </p>
       </div>
@@ -361,8 +361,8 @@ const CreatorSettings: React.FC = () => {
         <div
           className={`p-4 rounded-lg ${
             message.type === 'success'
-              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-              : 'bg-rose-50 text-rose-700 border border-rose-200'
+              ? 'bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20'
+              : 'bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20'
           }`}
         >
           {message.text}
@@ -370,11 +370,11 @@ const CreatorSettings: React.FC = () => {
       )}
 
       {/* Save Button */}
-      <div className="flex justify-end pt-4 border-t border-slate-200">
+      <div className="flex justify-end pt-4 border-t border-[#1F1F1F]">
         <button
           onClick={handleSave}
           disabled={saving}
-          className="px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-[#E0E0E0] focus:outline-none focus:ring-1 focus:ring-white/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {saving ? (
             <>

@@ -1,4 +1,4 @@
-# Creator Club v1.0 MVP - Progress Tracker
+# Founders Club v1.0 MVP - Progress Tracker
 
 Last Updated: 2025-12-30 (Stripe Infrastructure Fully Deployed - Edge Functions, Webhook, Secrets)
 

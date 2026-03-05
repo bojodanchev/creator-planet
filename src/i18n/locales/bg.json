@@ -55,7 +55,7 @@
     "badge": "Платформата всичко-в-едно за създатели на курсове",
     "title": "Заменете 5+ инструмента с една",
     "titleHighlight": "Мощна платформа",
-    "subtitle": "Спрете да жонглирате между Discord, Kajabi, Calendly, Skool и Zapier. Creator Club обединява общност, курсове, планиране и AI-базирано проследяване на успеха на студентите на едно място.",
+    "subtitle": "Спрете да жонглирате между Discord, Kajabi, Calendly, Skool и Zapier. Founders Club обединява общност, курсове, планиране и AI-базирано проследяване на успеха на студентите на едно място.",
     "noCreditCard": "Не се изисква кредитна карта",
     "freeTrial": "14 дни безплатен пробен период",
     "cancelAnytime": "Отказ по всяко време"
@@ -80,7 +80,7 @@
 
   "solution": {
     "title": "Една платформа. Всичко, от което имате нужда.",
-    "subtitle": "Creator Club замества целия ви технологичен стек с унифицирано, AI-задвижвано решение",
+    "subtitle": "Founders Club замества целия ви технологичен стек с унифицирано, AI-задвижвано решение",
     "communityHub": {
       "title": "Център за общност",
       "description": "Вградени форуми, канали и чат в реално време. Замества Discord и Skool."
@@ -130,9 +130,9 @@
 
   "testimonials": {
     "title": "Обичани от създатели по целия свят",
-    "subtitle": "Вижте какво казват създателите на курсове за Creator Club",
+    "subtitle": "Вижте какво казват създателите на курсове за Founders Club",
     "testimonial1": {
-      "quote": "Creator Club ми спестява повече от 15 часа седмично. Вече няма превключване между инструменти. Всичко, от което имам нужда, е тук, а AI Success Manager променя играта.",
+      "quote": "Founders Club ми спестява повече от 15 часа седмично. Вече няма превключване между инструменти. Всичко, от което имам нужда, е тук, а AI Success Manager променя играта.",
       "name": "Сара Мичъл",
       "role": "Фитнес треньор"
     },
@@ -203,7 +203,7 @@
 
   "cta": {
     "title": "Готови ли сте да опростите бизнеса си?",
-    "subtitle": "Присъединете се към хиляди създатели, които се отказаха от хаоса с инструментите и изградиха процъфтяващи общности с Creator Club.",
+    "subtitle": "Присъединете се към хиляди създатели, които се отказаха от хаоса с инструментите и изградиха процъфтяващи общности с Founders Club.",
     "trialInfo": "14-дневен безплатен пробен период • Не се изисква кредитна карта • Отказ по всяко време"
   },
 
@@ -214,16 +214,16 @@
     "company": "Компания",
     "roadmap": "Пътна карта",
     "changelog": "Промени",
-    "copyright": "© 2025 Creator Club. Всички права запазени."
+    "copyright": "© 2026 Founders Club. Всички права запазени."
   },
 
   "auth": {
     "loginTitle": "Вход",
-    "loginSubtitle": "Влезте в Creator Club",
+    "loginSubtitle": "Влезте в Founders Club",
     "email": "Имейл",
     "welcomeBack": "Добре дошли отново",
-    "signInTo": "Влезте в Creator Club",
-    "joinCreatorClub": "Присъединете се към Creator Club",
+    "signInTo": "Влезте в Founders Club",
+    "joinFoundersClub": "Присъединете се към Founders Club",
     "createAccountToStart": "Създайте акаунт, за да започнете",
     "emailAddress": "Имейл адрес",
     "emailPlaceholder": "вие@example.com",
@@ -266,7 +266,7 @@
     "google": "Google",
     "rememberMe": "Запомни ме",
     "signupTitle": "Създай акаунт",
-    "signupSubtitle": "Присъединете се към Creator Club и започнете пътя си",
+    "signupSubtitle": "Присъединете се към Founders Club и започнете пътя си",
     "hasAccount": "Вече имате акаунт?",
     "creatorDescShort": "Създавай и преподавай",
     "marketingOptIn": "Изпращайте ми специални оферти, персонализирани препоръки и съвети за обучение.",
@@ -410,7 +410,7 @@
   },
 
   "loading": {
-    "creatorClub": "Зареждане на Creator Club..."
+    "foundersClub": "Зареждане на Founders Club..."
   },
 
   "errors": {
@@ -570,10 +570,10 @@
       "youreA": "Вие сте",
       "lookingTo": "който иска да",
       "butStruggling": "но се затруднява с",
-      "creatorClubOffers": "Creator Club ви предлага:",
+      "foundersClubOffers": "Founders Club ви предлага:",
       "yourCreatorProfile": "Вашият профил на създател",
       "personalizedForYou": "Персонализирано специално за вас въз основа на отговорите ви",
-      "creatorClubReplaces": "Creator Club замества",
+      "foundersClubReplaces": "Founders Club замества",
       "withOnePlatform": "с една платформа - плюс AI, който проследява напредъка на студентите, за да",
       "neverLoseStudent": "никога не загубите друг студент",
       "benefits": {
@@ -823,7 +823,7 @@
       "youWantToLearn": "Искаш да научиш",
       "toAchieve": "за да постигнеш",
       "butFacing": "но си се сблъсквал с",
-      "creatorClubOffers": "Creator Club ти предлага:",
+      "foundersClubOffers": "Founders Club ти предлага:",
       "yourProfile": "Твоят учебен профил",
       "personalizedMessage": "Персонализирано специално за теб въз основа на отговорите ти",
       "connectsYouWith": "те свързва с експерт",
@@ -952,7 +952,7 @@
     },
     "startBuildingFree": "Започни безплатно",
     "browseCommunities": "Разгледай общности",
-    "copyright": "© 2025 Creator Club™",
+    "copyright": "© 2026 Founders Club",
     "madeIn": "Направено с",
     "inBulgaria": "в България",
     "explore": "Разгледай",
@@ -971,7 +971,7 @@
     "heroBadge": "Операционната система за ментори и създатели",
     "heroTitle": "Един инструмент.",
     "heroTitleHighlight": "Всичко необходимо.",
-    "heroSubtitle1": "Creator Club™ замества",
+    "heroSubtitle1": "Founders Club замества",
     "heroSubtitle2": "4-5 отделни инструмента",
     "heroSubtitle3": "и добавя",
     "heroSubtitle4": "AI Success Manager",
@@ -995,7 +995,7 @@
     },
     "fivePillars": "5-те Стълба",
     "fivePillarsTitle": "Всичко, от което имаш нужда",
-    "fivePillarsSubtitle": "Creator Club™ е изграден върху 5 стълба, които заедно създават перфектния екосистем.",
+    "fivePillarsSubtitle": "Founders Club е изграден върху 5 стълба, които заедно създават перфектния екосистем.",
     "allIntegrated": "Всичко интегрирано. Без Zapier. Без хаос.",
     "pillars": {
       "communityHub": {
@@ -1080,7 +1080,7 @@
         "maria": {
           "name": "Мария Иванова",
           "role": "Фитнес Коуч",
-          "quote": "Creator Club ми спести 15+ часа седмично. Вече не превключвам между 5 различни инструмента. AI Success Manager е game-changer за retention."
+          "quote": "Founders Club ми спести 15+ часа седмично. Вече не превключвам между 5 различни инструмента. AI Success Manager е game-changer за retention."
         },
         "georgi": {
           "name": "Георги Петров",
@@ -1102,7 +1102,7 @@
       "paragraph2": "Студенти отпадаха в тишина. Нямахме начин да видим кой има нужда от помощ, докато не беше твърде късно.",
       "paragraph3prefix": "Затова създадохме",
       "paragraph3suffix": "— единствената платформа с вграден AI Success Manager.",
-      "teamName": "Екипът на Creator Club™",
+      "teamName": "Екипът на Founders Club",
       "teamDesc": "Ментори • Създатели • Предприемачи"
     },
     "pricing": {
@@ -1153,7 +1153,7 @@
       "activationNote": "* Еднократна активационна такса от €9.90 при регистрация",
       "guarantee": {
         "title": "100% Гаранция за Удовлетвореност",
-        "description": "Опитай Creator Club™ без риск. Ако не си доволен през първите 14 дни, връщаме ти парите — без въпроси."
+        "description": "Опитай Founders Club без риск. Ако не си доволен през първите 14 дни, връщаме ти парите — без въпроси."
       },
       "features": {
         "students": "студенти",
@@ -1172,7 +1172,7 @@
       "titlePrefix": "Готов ли си да",
       "titleHighlight": "промениш",
       "titleSuffix": "бизнеса си?",
-      "subtitle": "Присъедини се към създателите, които вече използват Creator Club™ и постигат по-добри резултати с по-малко усилия.",
+      "subtitle": "Присъедини се към създателите, които вече използват Founders Club и постигат по-добри резултати с по-малко усилия.",
       "startNow": "Започни Сега — Безплатно",
       "benefits": {
         "activation": "€9.90 еднократна активация",
@@ -1218,7 +1218,7 @@
       "about": "За нас",
       "privacy": "Поверителност",
       "terms": "Условия",
-      "copyright": "© 2025 Creator Club. Всички права запазени.",
+      "copyright": "© 2026 Founders Club. Всички права запазени.",
       "madeIn": "Направено с",
       "inBulgaria": "в България"
     }
@@ -1273,7 +1273,7 @@
       "support": "Поддръжка",
       "helpCenter": "Помощен център",
       "contactUs": "Свържете се с нас",
-      "copyright": "Creator Club. Всички права запазени."
+      "copyright": "Founders Club. Всички права запазени."
     },
     "courseCard": {
       "free": "Безплатно"
@@ -1586,7 +1586,7 @@
       "allActive": "Всички активни"
     },
     "onboarding": {
-      "title": "Добре дошли в Creator Club!",
+      "title": "Добре дошли в Founders Club!",
       "description": "Започнете като създадете вашата общност. Тук вашите ученици ще се свързват, споделят успехи и взаимодействат с вашето съдържание.",
       "createCommunityButton": "Създайте вашата общност",
       "communityHub": "Център на общността",
@@ -2520,7 +2520,7 @@
       "getStarted": "Започни",
       "signIn": "Вход",
       "connect": "Свържи се",
-      "copyright": "Creator Club. Всички права запазени."
+      "copyright": "Founders Club. Всички права запазени."
     }
   },
 
@@ -2963,7 +2963,7 @@
       },
       "signOut": {
         "title": "Изход",
-        "description": "Излезте от акаунта си на това устройство. Ще трябва да влезете отново, за да получите достъп до Creator Club.",
+        "description": "Излезте от акаунта си на това устройство. Ще трябва да влезете отново, за да получите достъп до Founders Club.",
         "button": "Изход",
         "confirmTitle": "Изход?",
         "confirmMessage": "Сигурни ли сте, че искате да излезете? Ще трябва да влезете отново, за да получите достъп до акаунта си.",

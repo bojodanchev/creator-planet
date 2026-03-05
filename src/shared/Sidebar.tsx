@@ -123,17 +123,17 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
     <>
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-slate-900/50 z-20 transition-opacity lg:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 z-20 transition-opacity lg:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Sidebar */}
       <div className={`
-        fixed lg:static inset-y-0 left-0 z-30 w-64 bg-slate-900 text-white transform transition-transform duration-200 ease-in-out flex flex-col
+        fixed lg:static inset-y-0 left-0 z-30 w-64 bg-[#0A0A0A] border-r border-[#1F1F1F] text-white transform transition-transform duration-200 ease-in-out flex flex-col
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Header */}
-        <div className="h-16 flex items-center px-6 border-b border-slate-800">
+        <div className="h-16 flex items-center px-6 border-b border-[#1F1F1F]">
           <Logo variant="light" size="lg" showText={false} />
         </div>
 
@@ -158,21 +158,18 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
           </div>
         ) : (
           <div className="px-4 pt-4 pb-2">
-            <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800/50">
-              <div className="w-7 h-7 rounded-md bg-indigo-600 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#151515]">
+              <div className="w-7 h-7 rounded-md bg-[#333333] flex items-center justify-center shrink-0">
                 <span className="text-xs font-bold text-white">
                   {(selectedCommunity?.name || teamMemberships?.[0]?.communityName || 'C').charAt(0).toUpperCase()}
                 </span>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-white truncate">
+                <p className="text-sm font-medium text-[#FAFAFA] truncate">
                   {selectedCommunity?.name || teamMemberships?.[0]?.communityName || 'Community'}
                 </p>
                 {teamRole && (
-                  <p className={`text-xs font-medium ${
-                    teamRole === 'lecturer' ? 'text-indigo-300' :
-                    teamRole === 'assistant' ? 'text-emerald-300' : 'text-amber-300'
-                  }`}>
+                  <p className="text-xs font-medium text-[#A0A0A0]">
                     {getTeamRoleDisplay()}
                   </p>
                 )}
@@ -194,8 +191,8 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
               className={`
                 w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors
                 ${currentView === item.id
-                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
-                  : 'text-slate-400 hover:bg-slate-800 hover:text-white'}
+                  ? 'bg-[#151515] text-[#FAFAFA] border-l-2 border-white'
+                  : 'text-[#A0A0A0] hover:bg-[#151515] hover:text-[#FAFAFA]'}
               `}
             >
               {iconMap[item.icon]}
@@ -205,7 +202,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
         </nav>
 
         {/* Footer */}
-        <div className="p-4 border-t border-slate-800 space-y-2">
+        <div className="p-4 border-t border-[#1F1F1F] space-y-2">
           <button
             onClick={() => {
               navigate('/settings');
@@ -215,8 +212,8 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
             className={`
               w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors
               ${currentView === View.SETTINGS
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800'}
+                ? 'bg-[#151515] text-[#FAFAFA] border-l-2 border-white'
+                : 'text-[#A0A0A0] hover:text-[#FAFAFA] hover:bg-[#151515]'}
             `}
           >
             <Settings size={20} />
@@ -224,7 +221,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
           </button>
           <button
             onClick={handleSignOut}
-            className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-slate-800 rounded-lg text-sm font-medium transition-colors"
+            className="w-full flex items-center gap-3 px-4 py-3 text-[#A0A0A0] hover:text-[#EF4444] hover:bg-[#151515] rounded-lg text-sm font-medium transition-colors"
           >
             <LogOut size={20} />
             {t('common.logout')}
@@ -234,11 +231,11 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
               src={profile?.avatar_url}
               name={profile?.full_name}
               size="sm"
-              className="border border-slate-600"
+              className="border border-[#333333]"
             />
             <div className="flex-1 overflow-hidden">
               <p className="text-sm font-medium truncate">{profile?.full_name || 'User'}</p>
-              <p className="text-xs text-slate-500 truncate">
+              <p className="text-xs text-[#666666] truncate">
                 {isCreator ? (profile?.role || 'creator') : (isTeamMemberOnly ? (teamTitle || getTeamRoleDisplay()) : (profile?.role || 'Member'))}
               </p>
             </div>

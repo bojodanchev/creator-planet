@@ -30,30 +30,26 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   const config = sizeConfig[size];
 
-  // For light variant (used on dark backgrounds), invert the logo
-  const filterStyle = variant === 'light'
-    ? { filter: 'brightness(0) invert(1)' }
-    : {};
+  const logoSrc = variant === 'light' ? '/logo-light.png' : '/logo-dark.png';
 
   return (
     <div className={`flex items-center ${config.gap} ${className}`}>
       <img
-        src="/logo.png"
-        alt="Creator Club"
+        src={logoSrc}
+        alt="Founders Club"
         style={{
           height: config.height,
           width: 'auto',
-          ...filterStyle
         }}
         className="object-contain"
       />
       {showText && (
         <div className="flex flex-col">
-          <span className={`font-bold ${config.textSize} ${variant === 'light' ? 'text-white' : 'text-slate-900'}`}>
-            Creator Club
+          <span className={`font-bold ${config.textSize} ${variant === 'light' ? 'text-[#FAFAFA]' : 'text-[#0A0A0A]'}`}>
+            Founders Club
           </span>
           {showTagline && (
-            <span className={`text-xs tracking-wider ${variant === 'light' ? 'text-slate-400' : 'text-slate-500'}`}>
+            <span className={`text-xs tracking-wider ${variant === 'light' ? 'text-[#A0A0A0]' : 'text-[#666666]'}`}>
               COURSES & COMMUNITIES
             </span>
           )}
@@ -71,18 +67,15 @@ export const LogoIcon: React.FC<Omit<LogoProps, 'showText' | 'showTagline'>> = (
 }) => {
   const config = sizeConfig[size];
 
-  const filterStyle = variant === 'light'
-    ? { filter: 'brightness(0) invert(1)' }
-    : {};
+  const logoSrc = variant === 'light' ? '/logo-light.png' : '/logo-dark.png';
 
   return (
     <img
-      src="/logo.png"
-      alt="Creator Club"
+      src={logoSrc}
+      alt="Founders Club"
       style={{
         height: config.height,
         width: 'auto',
-        ...filterStyle
       }}
       className={`object-contain ${className}`}
     />

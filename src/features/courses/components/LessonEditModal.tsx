@@ -335,37 +335,37 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl w-full max-w-lg mx-4 overflow-hidden max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-4 border-b border-slate-100 sticky top-0 bg-white">
-          <h3 className="text-lg font-semibold text-slate-900">
+      <div className="bg-[#0A0A0A] rounded-xl w-full max-w-lg mx-4 overflow-hidden max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between p-4 border-b border-[#1F1F1F] sticky top-0 bg-[#0A0A0A]">
+          <h3 className="text-lg font-semibold text-[#FAFAFA]">
             {isEditMode ? 'Edit Lesson' : 'Add Lesson'}
           </h3>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-slate-100 rounded-lg transition-colors"
+            className="p-1 hover:bg-[#1F1F1F] rounded-lg transition-colors"
           >
-            <X size={20} className="text-slate-500" />
+            <X size={20} className="text-[#666666]" />
           </button>
         </div>
 
         <div className="p-4 space-y-4">
           {/* Error Message */}
           {errorMessage && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-lg text-sm">
+            <div className="bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] px-4 py-2 rounded-lg text-sm">
               {errorMessage}
             </div>
           )}
 
           {/* Title */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Title <span className="text-red-500">*</span>
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
+              Title <span className="text-[#EF4444]">*</span>
             </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
               placeholder="Lesson title"
               autoFocus
             />
@@ -373,7 +373,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
           {/* Type Selection */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-2">
               Lesson Type
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -384,8 +384,8 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                   onClick={() => setType(item.type)}
                   className={`flex flex-col items-center gap-1 px-3 py-3 rounded-lg border transition-colors ${
                     type === item.type
-                      ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
-                      : 'border-slate-200 text-slate-600 hover:bg-slate-50'
+                      ? 'bg-[#1F1F1F] border-[#555555] text-[#FAFAFA]'
+                      : 'border-[#1F1F1F] text-[#A0A0A0] hover:bg-[#0A0A0A]'
                   }`}
                 >
                   {item.icon}
@@ -400,7 +400,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
             <>
               {/* Video Source Toggle */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label className="block text-sm font-medium text-[#A0A0A0] mb-2">
                   Video Source
                 </label>
                 <div className="flex gap-2">
@@ -412,8 +412,8 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                     }}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors ${
                       videoInputMode === 'url'
-                        ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
-                        : 'border-slate-200 text-slate-600 hover:bg-slate-50'
+                        ? 'bg-[#1F1F1F] border-[#555555] text-[#FAFAFA]'
+                        : 'border-[#1F1F1F] text-[#A0A0A0] hover:bg-[#0A0A0A]'
                     }`}
                   >
                     <Link size={16} />
@@ -427,8 +427,8 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                     }}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors ${
                       videoInputMode === 'upload'
-                        ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
-                        : 'border-slate-200 text-slate-600 hover:bg-slate-50'
+                        ? 'bg-[#1F1F1F] border-[#555555] text-[#FAFAFA]'
+                        : 'border-[#1F1F1F] text-[#A0A0A0] hover:bg-[#0A0A0A]'
                     }`}
                   >
                     <Upload size={16} />
@@ -440,17 +440,17 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
               {/* URL Input Mode */}
               {videoInputMode === 'url' && (
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
                     Video URL
                   </label>
                   <input
                     type="url"
                     value={contentUrl}
                     onChange={(e) => setContentUrl(e.target.value)}
-                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
                     placeholder="https://youtube.com/watch?v=... or direct video URL"
                   />
-                  <p className="text-xs text-slate-500 mt-1">
+                  <p className="text-xs text-[#666666] mt-1">
                     Supports YouTube, Vimeo, Loom, or direct video file URLs
                   </p>
                 </div>
@@ -459,7 +459,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
               {/* File Upload Mode */}
               {videoInputMode === 'upload' && (
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
                     Upload Video File
                   </label>
                   <input
@@ -474,8 +474,8 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                     <div>
                       {/* Reminder if user had previously selected a file */}
                       {hadPreviousFile && (
-                        <div className="mb-2 px-3 py-2 bg-amber-50 border border-amber-200 rounded-lg">
-                          <p className="text-xs text-amber-700">
+                        <div className="mb-2 px-3 py-2 bg-[#EAB308]/10 border border-[#EAB308]/20 rounded-lg">
+                          <p className="text-xs text-[#EAB308]">
                             <strong>Note:</strong> You previously selected a video file. Please re-select it below.
                           </p>
                         </div>
@@ -485,36 +485,36 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                         onClick={() => fileInputRef.current?.click()}
                         className={`w-full border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
                           hadPreviousFile
-                            ? 'border-amber-400 bg-amber-50/50 hover:border-amber-500 hover:bg-amber-50'
-                            : 'border-slate-300 hover:border-indigo-400 hover:bg-indigo-50/50'
+                            ? 'border-[#EAB308]/40 bg-[#EAB308]/10/50 hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10'
+                            : 'border-[#333333] hover:border-[#555555] hover:bg-[#1F1F1F]/50'
                         }`}
                       >
-                        <Video size={32} className={`mx-auto mb-2 ${hadPreviousFile ? 'text-amber-500' : 'text-slate-400'}`} />
-                        <p className="text-sm font-medium text-slate-700">
+                        <Video size={32} className={`mx-auto mb-2 ${hadPreviousFile ? 'text-amber-500' : 'text-[#666666]'}`} />
+                        <p className="text-sm font-medium text-[#A0A0A0]">
                           {hadPreviousFile ? 'Re-select your video file' : 'Click to select video file'}
                         </p>
-                        <p className="text-xs text-slate-500 mt-1">
+                        <p className="text-xs text-[#666666] mt-1">
                           MP4, WebM, OGG, or MOV (max 500MB)
                         </p>
                       </button>
                     </div>
                   ) : (
-                    <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                    <div className="border border-[#1F1F1F] rounded-lg p-4 bg-[#0A0A0A]">
                       <div className="flex items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                          <Video size={20} className="text-indigo-600" />
+                        <div className="flex-shrink-0 w-10 h-10 bg-[#1F1F1F] rounded-lg flex items-center justify-center">
+                          <Video size={20} className="text-[#FAFAFA]" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-slate-800 truncate">
+                          <p className="text-sm font-medium text-[#FAFAFA] truncate">
                             {selectedVideoFile?.name || 'Previously uploaded video'}
                           </p>
                           {selectedVideoFile && (
-                            <p className="text-xs text-slate-500">
+                            <p className="text-xs text-[#666666]">
                               {formatFileSize(selectedVideoFile.size)}
                             </p>
                           )}
                           {!selectedVideoFile && contentUrl?.includes('lesson-videos') && (
-                            <p className="text-xs text-slate-500">
+                            <p className="text-xs text-[#666666]">
                               Video already uploaded
                             </p>
                           )}
@@ -528,7 +528,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                               fileInputRef.current.value = '';
                             }
                           }}
-                          className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors"
+                          className="p-1.5 text-[#666666] hover:text-[#EF4444] hover:bg-[#EF4444]/10 rounded transition-colors"
                         >
                           <X size={16} />
                         </button>
@@ -537,7 +537,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                         <button
                           type="button"
                           onClick={() => fileInputRef.current?.click()}
-                          className="mt-3 text-xs text-indigo-600 hover:text-indigo-700 font-medium"
+                          className="mt-3 text-xs text-[#FAFAFA] hover:text-[#FAFAFA] font-medium"
                         >
                           Change video
                         </button>
@@ -545,17 +545,17 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                       {/* Progress bar during upload */}
                       {isUploading && (
                         <div className="mt-3">
-                          <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
+                          <div className="flex items-center justify-between text-xs text-[#A0A0A0] mb-1">
                             <span>Uploading...</span>
                             <span>{uploadProgress}%</span>
                           </div>
-                          <div className="w-full bg-slate-200 rounded-full h-2">
+                          <div className="w-full bg-[#1F1F1F] rounded-full h-2">
                             <div
-                              className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                              className="bg-white h-2 rounded-full transition-all duration-300"
                               style={{ width: `${uploadProgress}%` }}
                             />
                           </div>
-                          <p className="text-xs text-slate-500 mt-2">
+                          <p className="text-xs text-[#666666] mt-2">
                             Large files are uploaded in chunks. Do not close this window.
                           </p>
                         </div>
@@ -567,7 +567,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
               {/* Duration input (for both modes) */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
                   Duration (minutes)
                 </label>
                 <input
@@ -575,7 +575,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                   min="0"
                   value={durationMinutes}
                   onChange={(e) => setDurationMinutes(e.target.value)}
-                  className="w-32 px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-32 px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
                   placeholder="15"
                 />
               </div>
@@ -584,17 +584,17 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
           {type === 'text' && (
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
+              <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
                 Content URL or Embed
               </label>
               <input
                 type="url"
                 value={contentUrl}
                 onChange={(e) => setContentUrl(e.target.value)}
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
                 placeholder="URL to text content or Google Doc"
               />
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-[#666666] mt-1">
                 Link to a document, Google Doc, or Notion page
               </p>
             </div>
@@ -602,17 +602,17 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
           {type === 'file' && (
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
+              <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
                 File URL
               </label>
               <input
                 type="url"
                 value={contentUrl}
                 onChange={(e) => setContentUrl(e.target.value)}
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
                 placeholder="https://example.com/file.pdf"
               />
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-[#666666] mt-1">
                 Link to a downloadable file (PDF, ZIP, etc.)
               </p>
             </div>
@@ -620,12 +620,12 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
           {type === 'quiz' && (
             isEditMode && lesson ? (
-              <div className="border border-slate-200 rounded-lg p-4">
+              <div className="border border-[#1F1F1F] rounded-lg p-4">
                 <QuizBuilder lessonId={lesson.id} />
               </div>
             ) : (
-              <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
-                <p className="text-sm text-indigo-700">
+              <div className="bg-[#1F1F1F] border border-[#333333] rounded-lg p-3">
+                <p className="text-sm text-[#FAFAFA]">
                   Save this lesson first, then you can add quiz questions.
                 </p>
               </div>
@@ -634,13 +634,13 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
               Description / Notes
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent h-24 resize-none"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent h-24 resize-none"
               placeholder="Brief description or notes for this lesson (shown to students)"
             />
           </div>
@@ -648,17 +648,17 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
 
         {/* Delete Section (edit mode only) */}
         {isEditMode && onDelete && (
-          <div className="p-4 border-t border-slate-100 bg-slate-50">
+          <div className="p-4 border-t border-[#1F1F1F] bg-[#0A0A0A]">
             {showDeleteConfirm ? (
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-red-600">
+                <div className="flex items-center gap-2 text-[#EF4444]">
                   <AlertTriangle size={18} />
                   <span className="text-sm font-medium">Delete this lesson?</span>
                 </div>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowDeleteConfirm(false)}
-                    className="px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-200 rounded-lg"
+                    className="px-3 py-1.5 text-sm text-[#A0A0A0] hover:bg-[#1F1F1F] rounded-lg"
                     disabled={isDeleting}
                   >
                     Cancel
@@ -666,7 +666,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
                   <button
                     onClick={handleDelete}
                     disabled={isDeleting}
-                    className="px-3 py-1.5 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-1"
+                    className="px-3 py-1.5 text-sm bg-[#EF4444] text-white rounded-lg hover:bg-[#DC2626] disabled:opacity-50 flex items-center gap-1"
                   >
                     {isDeleting ? (
                       <>
@@ -682,7 +682,7 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
             ) : (
               <button
                 onClick={() => setShowDeleteConfirm(true)}
-                className="text-sm text-red-600 hover:text-red-700 flex items-center gap-1"
+                className="text-sm text-[#EF4444] hover:text-[#EF4444] flex items-center gap-1"
               >
                 <Trash2 size={14} />
                 Delete Lesson
@@ -692,18 +692,18 @@ const LessonEditModal: React.FC<LessonEditModalProps> = ({
         )}
 
         {/* Actions */}
-        <div className="flex gap-3 p-4 border-t border-slate-100 sticky bottom-0 bg-white">
+        <div className="flex gap-3 p-4 border-t border-[#1F1F1F] sticky bottom-0 bg-[#0A0A0A]">
           <button
             onClick={onClose}
             disabled={isSaving || isUploading}
-            className="flex-1 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 font-medium text-slate-700 disabled:opacity-50"
+            className="flex-1 px-4 py-2 border border-[#1F1F1F] rounded-lg hover:bg-[#0A0A0A] font-medium text-[#A0A0A0] disabled:opacity-50"
           >
             Cancel
           </button>
           <button
             onClick={handleSave}
             disabled={!title.trim() || isSaving || isUploading}
-            className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 font-medium flex items-center justify-center gap-2"
+            className="flex-1 bg-white text-black px-4 py-2 rounded-lg hover:bg-[#E0E0E0] disabled:opacity-50 font-medium flex items-center justify-center gap-2"
           >
             {isUploading ? (
               <>

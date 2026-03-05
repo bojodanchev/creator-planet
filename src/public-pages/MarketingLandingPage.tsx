@@ -882,7 +882,7 @@ const MarketingLandingPage: React.FC = () => {
                   <span className="font-semibold text-slate-900">{t('marketingLanding.originStory.paragraph2prefix')}</span> {t('marketingLanding.originStory.paragraph2')}
                 </p>
                 <p className="text-xl leading-relaxed">
-                  {t('marketingLanding.originStory.paragraph3prefix')} <span className="font-bold text-gradient">Creator Club™</span> {t('marketingLanding.originStory.paragraph3suffix')}
+                  {t('marketingLanding.originStory.paragraph3prefix')} <span className="font-bold text-gradient">Founders Club</span> {t('marketingLanding.originStory.paragraph3suffix')}
                 </p>
               </div>
 

@@ -141,7 +141,7 @@ async function handleActivationCheckout(
       name: profile.full_name || undefined,
       metadata: {
         creator_id: creatorId,
-        platform: 'creator_club',
+        platform: 'founders_club',
       },
     });
     customerId = customer.id;

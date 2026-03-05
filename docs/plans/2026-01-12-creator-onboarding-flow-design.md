@@ -86,7 +86,7 @@ After question 7, show a personalized mockup of their future dashboard:
 ### Summary Screen
 Personalized message based on their answers:
 - Reflects their niche, goal, and pain point
-- Highlights how Creator Club solves their specific problem
+- Highlights how Founders Club solves their specific problem
 - Clear CTA: "Create your free account"
 - Trust signals: "No credit card required"
 

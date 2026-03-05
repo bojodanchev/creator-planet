@@ -5,7 +5,7 @@
 -- Created: 2025-12-29
 -- Author: Implementer-DB Agent
 --
--- This migration creates all billing tables for the Creator Club platform:
+-- This migration creates all billing tables for the Founders Club platform:
 -- - billing_plans: Master plan configuration (Starter/Pro/Scale)
 -- - creator_billing: Per-creator billing state with Stripe IDs
 -- - billing_transactions: Immutable transaction ledger

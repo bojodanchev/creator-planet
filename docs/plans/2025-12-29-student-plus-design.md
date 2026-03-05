@@ -1785,7 +1785,7 @@ async function hasPrioritySupport(userId: string): Promise<boolean> {
 
 ## 10. Summary
 
-The Student Plus system extends the Creator Club platform with a student-focused subscription that:
+The Student Plus system extends the Founders Club platform with a student-focused subscription that:
 
 - **Monetizes the student segment** at €9.9/month
 - **Builds loyalty** through milestone rewards at 3/6/9/12 months

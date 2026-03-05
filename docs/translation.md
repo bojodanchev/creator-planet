@@ -1,4 +1,4 @@
-# Creator Club™ Translation Checklist
+# Founders Club Translation Checklist
 
 This document tracks all screens, components, and UI elements that need internationalization (i18n) support for English and Bulgarian.
 

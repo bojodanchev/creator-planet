@@ -17,7 +17,7 @@ interface CommunityContextType {
   teamCommunityId: string | null;  // The community ID for team-only users
 }
 
-const STORAGE_KEY = 'creator-club-selected-community';
+const STORAGE_KEY = 'founders-club-selected-community';
 
 const CommunityContext = createContext<CommunityContextType | undefined>(undefined);
 

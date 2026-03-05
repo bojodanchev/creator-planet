@@ -1,6 +1,6 @@
 # Udemy Login/Signup Flow Reference Guide
 
-This document captures Udemy's login and signup user journey for reference when implementing Creator Club's authentication flow.
+This document captures Udemy's login and signup user journey for reference when implementing Founders Club's authentication flow.
 
 ## Screenshots
 
@@ -154,7 +154,7 @@ All screenshots are saved in `.playwright-mcp/` directory:
 
 ---
 
-## Creator Club Implementation Notes
+## Founders Club Implementation Notes
 
 ### User Types (from .env.local):
 
@@ -166,7 +166,7 @@ All screenshots are saved in `.playwright-mcp/` directory:
 - Email: danchev.business@gmail.com
 - Password: asdqwe123
 
-### Recommended Auth Flow for Creator Club:
+### Recommended Auth Flow for Founders Club:
 
 1. **Homepage** shows course catalog (like Udemy)
 2. **Login/Signup** triggers when:

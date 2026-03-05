@@ -62,10 +62,10 @@ const TeamMembersPage = React.lazy(() => import('./features/team/TeamMembersPage
 const LoadingScreen: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-50">
+    <div className="flex items-center justify-center min-h-screen bg-[#0A0A0A]">
       <div className="text-center">
-        <div className="w-16 h-16 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-slate-600">{t('loading.creatorClub')}</p>
+        <div className="w-16 h-16 border-4 border-[#FAFAFA] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-[#A0A0A0]">{t('loading.foundersClub')}</p>
       </div>
     </div>
   );
@@ -216,7 +216,7 @@ const AppLayout: React.FC = () => {
       case View.HOMEWORK:
         // Creators and team members see homework management, students see homework page
         if (!selectedCommunity) {
-          return <div className="p-8 text-center text-slate-500">Please select a community first.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Please select a community first.</div>;
         }
         return canManageHomework ? (
           <HomeworkManagement
@@ -229,7 +229,7 @@ const AppLayout: React.FC = () => {
       case View.AI_CHAT:
         // AI Chatbots page - available to all users
         if (!selectedCommunity) {
-          return <div className="p-8 text-center text-slate-500">Please select a community first.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Please select a community first.</div>;
         }
         return <ChatbotsPage communityId={selectedCommunity.id} onManageChatbots={handleManageChatbots} />;
       case View.CALENDAR:
@@ -239,25 +239,25 @@ const AppLayout: React.FC = () => {
       case View.STUDENT_MANAGER:
         // Student Manager - creators only (shows all students across all communities)
         if (role !== 'creator' && role !== 'superadmin') {
-          return <div className="p-8 text-center text-slate-500">Access restricted to creators.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         if (!profile?.id) {
-          return <div className="p-8 text-center text-slate-500">Profile not found.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Profile not found.</div>;
         }
         return <StudentManagerPage creatorId={profile.id} />;
       case View.DISCOUNTS:
         // Discounts page - creators only
         if (role !== 'creator' && role !== 'superadmin') {
-          return <div className="p-8 text-center text-slate-500">Access restricted to creators.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         return <DiscountsPage />;
       case View.SURVEYS:
         // Surveys page - creators only
         if (role !== 'creator' && role !== 'superadmin') {
-          return <div className="p-8 text-center text-slate-500">Access restricted to creators.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         if (!profile?.id) {
-          return <div className="p-8 text-center text-slate-500">Profile not found.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Profile not found.</div>;
         }
         return <SurveyList creatorId={profile.id} />;
       case View.SETTINGS:
@@ -268,16 +268,16 @@ const AppLayout: React.FC = () => {
       case View.MEMBERS:
         // Team member view of community members
         if (!selectedCommunity) {
-          return <div className="p-8 text-center text-slate-500">Please select a community first.</div>;
+          return <div className="p-8 text-center text-[#A0A0A0]">Please select a community first.</div>;
         }
         return <TeamMembersPage communityId={selectedCommunity.id} />;
       default:
-        return <div className="p-8 text-center text-slate-500">Section under construction for MVP.</div>;
+        return <div className="p-8 text-center text-[#A0A0A0]">Section under construction for MVP.</div>;
     }
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 font-sans text-slate-900">
+    <div className="flex h-screen bg-[#0A0A0A] font-sans text-[#FAFAFA]">
       <Sidebar
         currentView={currentView}
         setCurrentView={setCurrentView}
@@ -289,9 +289,9 @@ const AppLayout: React.FC = () => {
 
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Mobile Header */}
-        <header className="lg:hidden h-16 bg-white border-b border-slate-200 flex items-center px-4 justify-between shrink-0">
-          <Logo variant="dark" size="lg" showText={false} />
-          <button onClick={() => setIsSidebarOpen(true)} className="p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+        <header className="lg:hidden h-16 bg-[#0A0A0A] border-b border-[#1F1F1F] flex items-center px-4 justify-between shrink-0">
+          <Logo variant="light" size="lg" showText={false} />
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 text-[#FAFAFA] hover:bg-[#151515] rounded-lg">
             <Menu size={24} />
           </button>
         </header>

@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-This QA report covers testing of three major AI chat enhancement features for Creator Club:
+This QA report covers testing of three major AI chat enhancement features for Founders Club:
 1. Dashboard - Inactive Students KPI
 2. AI Success Manager - Student Status Filter
 3. AI Success Manager - Chat Features (New Chat, History)
@@ -39,7 +39,7 @@ This QA report covers testing of three major AI chat enhancement features for Cr
 **Status:** ✅ PASS (Code Review)
 
 **Evidence from Code Analysis:**
-- **File:** `/Users/bojodanchev/creator-club™/src/features/dashboard/Dashboard.tsx`
+- **File:** `/Users/bojodanchev/founders-club/src/features/dashboard/Dashboard.tsx`
 - **Lines:** 205-243
 
 **Implementation Details:**
@@ -512,12 +512,12 @@ const handleSend = async () => {
 ## Test Artifacts
 
 ### Created Files
-1. `/Users/bojodanchev/creator-club™/tests/ai-chat-enhancements.spec.ts`
+1. `/Users/bojodanchev/founders-club/tests/ai-chat-enhancements.spec.ts`
    - Comprehensive Playwright test suite
    - 14 test cases covering all requirements
    - Ready to run with authentication setup
 
-2. `/Users/bojodanchev/creator-club™/playwright.config.ts`
+2. `/Users/bojodanchev/founders-club/playwright.config.ts`
    - Playwright configuration
    - HTML reporter
    - Screenshot and video on failure

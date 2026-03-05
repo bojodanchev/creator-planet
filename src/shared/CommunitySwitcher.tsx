@@ -37,7 +37,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
   }, [isOpen]);
 
   if (isLoading) {
-    return <div className="h-10 bg-slate-800 rounded-lg animate-pulse" />;
+    return <div className="h-10 bg-[#151515] rounded-lg animate-pulse" />;
   }
 
   // Empty state: show create or browse action
@@ -45,7 +45,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
     return isCreator && onCreateCommunity ? (
       <button
         onClick={onCreateCommunity}
-        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors text-sm text-indigo-400"
+        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#151515] hover:bg-[#1A1A1A] transition-colors text-sm text-[#FAFAFA]"
       >
         <Plus size={18} />
         <span>New Community</span>
@@ -53,7 +53,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
     ) : (
       <button
         onClick={onBrowseMore}
-        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors text-sm text-slate-400"
+        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#151515] hover:bg-[#1A1A1A] transition-colors text-sm text-[#A0A0A0]"
       >
         <Search size={18} />
         <span>Browse Communities</span>
@@ -73,7 +73,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
         onClick={() => setIsOpen(!isOpen)}
         className={`
           w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-left
-          ${isOpen ? 'bg-slate-800' : 'bg-slate-800/50 hover:bg-slate-800'}
+          ${isOpen ? 'bg-[#1A1A1A]' : 'bg-[#151515] hover:bg-[#1A1A1A]'}
         `}
       >
         {selectedCommunity?.thumbnail_url ? (
@@ -83,24 +83,24 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
             className="w-7 h-7 rounded-md object-cover shrink-0"
           />
         ) : (
-          <div className="w-7 h-7 rounded-md bg-indigo-600 flex items-center justify-center shrink-0">
+          <div className="w-7 h-7 rounded-md bg-[#333333] flex items-center justify-center shrink-0">
             <span className="text-xs font-bold text-white">
               {selectedCommunity?.name?.charAt(0)?.toUpperCase() || 'C'}
             </span>
           </div>
         )}
-        <span className="flex-1 text-sm font-medium text-white truncate">
+        <span className="flex-1 text-sm font-medium text-[#FAFAFA] truncate">
           {selectedCommunity?.name || 'Select Community'}
         </span>
         <ChevronDown
           size={16}
-          className={`text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`text-[#A0A0A0] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full mt-1 z-50 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden">
+        <div className="absolute left-0 right-0 top-full mt-1 z-50 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg overflow-hidden">
           {/* Community list */}
           <div className="max-h-52 overflow-y-auto py-1">
             {communities.map((community) => {
@@ -112,8 +112,8 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
                   className={`
                     w-full flex items-center gap-3 px-3 py-2 text-sm transition-colors
                     ${isSelected
-                      ? 'bg-indigo-600/15 text-white'
-                      : 'text-slate-300 hover:bg-slate-700/50 hover:text-white'}
+                      ? 'bg-[#151515] text-[#FAFAFA]'
+                      : 'text-[#A0A0A0] hover:bg-[#151515] hover:text-[#FAFAFA]'}
                   `}
                 >
                   {community.thumbnail_url ? (
@@ -124,7 +124,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
                     />
                   ) : (
                     <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${
-                      isSelected ? 'bg-indigo-600' : 'bg-slate-700'
+                      isSelected ? 'bg-[#333333]' : 'bg-[#1F1F1F]'
                     }`}>
                       <span className="text-[10px] font-bold">
                         {community.name.charAt(0).toUpperCase()}
@@ -132,18 +132,18 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
                     </div>
                   )}
                   <span className="flex-1 text-left truncate">{community.name}</span>
-                  {isSelected && <Check size={14} className="text-indigo-400 shrink-0" />}
+                  {isSelected && <Check size={14} className="text-[#FAFAFA] shrink-0" />}
                 </button>
               );
             })}
           </div>
 
           {/* Actions */}
-          <div className="border-t border-slate-700 py-1">
+          <div className="border-t border-[#1F1F1F] py-1">
             {isCreator && onCreateCommunity && (
               <button
                 onClick={() => { onCreateCommunity(); setIsOpen(false); }}
-                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-indigo-400 hover:bg-slate-700/50 transition-colors"
+                className="w-full flex items-center gap-3 px-3 py-2 text-sm text-[#FAFAFA] hover:bg-[#151515] transition-colors"
               >
                 <Plus size={16} />
                 <span>New Community</span>
@@ -151,7 +151,7 @@ const CommunitySwitcher: React.FC<CommunitySwitcherProps> = ({ onBrowseMore, onC
             )}
             <button
               onClick={() => { onBrowseMore(); setIsOpen(false); }}
-              className="w-full flex items-center gap-3 px-3 py-2 text-sm text-slate-400 hover:bg-slate-700/50 transition-colors"
+              className="w-full flex items-center gap-3 px-3 py-2 text-sm text-[#A0A0A0] hover:bg-[#151515] transition-colors"
             >
               <Search size={16} />
               <span>Browse More</span>

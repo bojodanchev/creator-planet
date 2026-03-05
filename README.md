@@ -1,8 +1,8 @@
 <div align="center">
-<img width="1200" height="475" alt="Creator Club Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img width="1200" height="475" alt="Founders Club Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Creator Club™
+# Founders Club
 
 An all-in-one platform for mentors, coaches, and course creators. Replaces Discord, Kajabi, Calendly, Skool, Zapier, and Whop with a unified experience plus an AI Success Manager.
 

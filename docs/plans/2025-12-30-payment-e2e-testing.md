@@ -1124,7 +1124,7 @@ Create `scripts/run-payment-tests.sh`:
 ```bash
 #!/bin/bash
 
-echo "🧪 Creator Club Payment E2E Tests"
+echo "🧪 Founders Club Payment E2E Tests"
 echo "================================="
 
 # Check if .env.test exists

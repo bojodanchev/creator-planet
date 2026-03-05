@@ -1,4 +1,4 @@
-# Creator Club Architecture - Option D
+# Founders Club Architecture - Option D
 
 ## Overview
 Full foundation implementation: Auth → Database → Payments

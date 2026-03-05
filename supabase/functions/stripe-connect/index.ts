@@ -138,7 +138,7 @@ async function handleCreateAccount(
     // Bulgaria (BG) is fully supported for Express accounts
     const account = await stripe.accounts.create({
       type: 'express',
-      country: 'BG', // Bulgaria - primary market for Creator Club
+      country: 'BG', // Bulgaria - primary market for Founders Club
       email: profile.email,
       capabilities: {
         card_payments: { requested: true },
@@ -147,7 +147,7 @@ async function handleCreateAccount(
       business_type: 'individual',
       metadata: {
         creator_id: profileId,
-        platform: 'creator_club',
+        platform: 'founders_club',
       },
     });
 

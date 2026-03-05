@@ -30,3 +30,4 @@ dist-ssr
 tests/.auth/*.json
 test-results/
 playwright-report/
+.env*.local

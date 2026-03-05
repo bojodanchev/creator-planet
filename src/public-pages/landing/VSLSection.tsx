@@ -41,7 +41,7 @@ const VSLSection: React.FC<VSLSectionProps> = ({
   videoUrl,
   videoId,
   thumbnailUrl,
-  headline = "See Creator Club in Action"
+  headline = "See Founders Club in Action"
 }) => {
   // Initialize from sessionStorage to restore state after tab switch
   const [showVideo, setShowVideo] = useState(() => getVSLPlayingState(videoId, videoUrl));
@@ -123,7 +123,7 @@ const VSLSection: React.FC<VSLSectionProps> = ({
         {/* Optional Caption */}
         {!showVideo && (
           <p className="text-center text-slate-600 mt-6 text-sm">
-            Watch the full demo to see how Creator Club replaces 5+ tools
+            Watch the full demo to see how Founders Club replaces 5+ tools
           </p>
         )}
       </div>

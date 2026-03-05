@@ -265,7 +265,7 @@ const StudentSummaryScreen: React.FC<StudentSummaryScreenProps> = ({
             }`}
             style={{ transitionDelay: '300ms' }}
           >
-            Creator Club offers you:
+            Founders Club offers you:
           </p>
           {checkmarkItems.map((item, index) => (
             <AnimatedCheck
@@ -344,7 +344,7 @@ const StudentSummaryScreen: React.FC<StudentSummaryScreenProps> = ({
           style={{ transitionDelay: '700ms' }}
         >
           <p className="text-sm text-slate-300 leading-relaxed">
-            <span className="font-semibold text-white">Creator Club</span>{' '}
+            <span className="font-semibold text-white">Founders Club</span>{' '}
             {t('studentOnboarding.summary.connectsYouWith')}{' '}
             <span className="text-emerald-400">{interestTitle.toLowerCase()}</span>{' '}
             {t('studentOnboarding.summary.expertCreators')}{' '}

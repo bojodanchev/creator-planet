@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '.env.test') });
 
 /**
- * Playwright configuration for Creator Club™ Payment E2E Testing
+ * Playwright configuration for Founders Club Payment E2E Testing
  */
 export default defineConfig({
   testDir: './tests',

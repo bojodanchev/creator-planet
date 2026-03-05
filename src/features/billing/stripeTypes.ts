@@ -297,7 +297,7 @@ export interface ConnectAccountConfig {
   business_type: 'individual' | 'company';
   metadata: {
     creator_id: string;
-    platform: 'creator_club';
+    platform: 'founders_club';
   };
 }
 
@@ -426,7 +426,7 @@ export const UPGRADE_MESSAGES: Record<UpgradeReason, { title: string; descriptio
   },
   custom_branding: {
     title: 'Custom Branding',
-    description: 'Remove Creator Club branding and add your own logo. Available on Pro and Scale plans.',
+    description: 'Remove Founders Club branding and add your own logo. Available on Pro and Scale plans.',
   },
   white_label: {
     title: 'White Label',

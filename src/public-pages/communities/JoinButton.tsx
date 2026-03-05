@@ -358,38 +358,38 @@ export const JoinButton: React.FC<JoinButtonProps> = ({
   const getVariantClass = () => {
     if (isMember) {
       return variant === 'primary'
-        ? 'bg-green-600 text-white hover:bg-green-700'
-        : 'border border-green-300 text-green-700 hover:bg-green-50';
+        ? 'bg-[#22C55E] text-white hover:bg-[#22C55E]/90'
+        : 'border border-[#22C55E]/30 text-[#22C55E] hover:bg-[#22C55E]/10';
     }
     if (isPendingPayment) {
       // Pending payment - clickable to retry, not cursor-wait
       return variant === 'primary'
-        ? 'bg-amber-500 text-white hover:bg-amber-600'
-        : 'border-2 border-amber-400 text-amber-700 hover:bg-amber-50';
+        ? 'bg-[#EAB308] text-black hover:bg-[#EAB308]/90'
+        : 'border-2 border-[#EAB308]/40 text-[#EAB308] hover:bg-[#EAB308]/10';
     }
     if (isPendingApplication) {
       return variant === 'primary'
-        ? 'bg-amber-500 text-white cursor-wait'
-        : 'border-2 border-amber-400 text-amber-700 cursor-wait';
+        ? 'bg-[#EAB308] text-black cursor-wait'
+        : 'border-2 border-[#EAB308]/40 text-[#EAB308] cursor-wait';
     }
     if (isRejectedApplication) {
       return variant === 'primary'
-        ? 'bg-slate-400 text-white cursor-not-allowed'
-        : 'border-2 border-slate-300 text-slate-500 cursor-not-allowed';
+        ? 'bg-[#333333] text-[#666666] cursor-not-allowed'
+        : 'border-2 border-[#333333] text-[#666666] cursor-not-allowed';
     }
     if (isPaidCommunity) {
       return variant === 'primary'
-        ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 shadow-lg shadow-emerald-200'
-        : 'border-2 border-emerald-400 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-500';
+        ? 'bg-white text-black hover:bg-[#E0E0E0]'
+        : 'border-2 border-[#1F1F1F] text-[#FAFAFA] hover:bg-[#151515] hover:border-[#333333]';
     }
     if (isGatedCommunity) {
       return variant === 'primary'
-        ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-        : 'border-2 border-indigo-300 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-500';
+        ? 'bg-white text-black hover:bg-[#E0E0E0]'
+        : 'border-2 border-[#1F1F1F] text-[#FAFAFA] hover:bg-[#151515] hover:border-[#333333]';
     }
     return variant === 'primary'
-      ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-      : 'border border-indigo-300 text-indigo-700 hover:bg-indigo-50';
+      ? 'bg-white text-black hover:bg-[#E0E0E0]'
+      : 'border border-[#1F1F1F] text-[#FAFAFA] hover:bg-[#151515]';
   };
 
   // Icon based on state

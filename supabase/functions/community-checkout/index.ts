@@ -265,7 +265,7 @@ serve(async (req: Request): Promise<Response> => {
             duration,
             duration_in_months,
             metadata: {
-              creator_club_code_id: discountData.id,
+              founders_club_code_id: discountData.id,
               creator_id: discountData.creator_id,
               code: discountData.code,
             },
@@ -409,7 +409,7 @@ serve(async (req: Request): Promise<Response> => {
         metadata: {
           community_id: communityId,
           creator_id: community.creator_id,
-          platform: 'creator_club',
+          platform: 'founders_club',
         },
       });
       stripeProductId = product.id;

@@ -1,4 +1,4 @@
-# Chatroom: Creator Club™
+# Chatroom: Founders Club
 
 ## Mission
 Survey Builder Complete Review & Fix - ✅ COMPLETED
@@ -11,7 +11,7 @@ Survey Builder Complete Review & Fix - ✅ COMPLETED
 | Fixer | completed | 2026-01-18 | ✅ Fixed 4 critical/high issues |
 
 ## Active Context
-**Project**: Creator Club™ - All-in-one platform for mentors, coaches, and course creators
+**Project**: Founders Club - All-in-one platform for mentors, coaches, and course creators
 **Stack**: React + TypeScript + Vite, Tailwind CSS, Supabase, Stripe (KINGDOM LTD)
 
 ## Task Queue

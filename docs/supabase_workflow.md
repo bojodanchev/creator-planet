@@ -4,7 +4,7 @@
 
 ### Project Details
 - **Project ID:** `ilntxxutxbygjuixrzng`
-- **Project Name:** Creator Club
+- **Project Name:** Founders Club
 - **Region:** (check dashboard)
 
 ### MCP Setup (Recommended)

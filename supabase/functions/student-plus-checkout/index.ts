@@ -104,7 +104,7 @@ serve(async (req: Request): Promise<Response> => {
           name: profile.full_name || undefined,
           metadata: {
             user_id: user.userId,
-            platform: 'creator_club',
+            platform: 'founders_club',
             subscription_type: 'student_plus',
           },
         });

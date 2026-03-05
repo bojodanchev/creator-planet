@@ -1,11 +1,11 @@
 # Waitlist Implementation Summary
 
 ## Overview
-Successfully implemented a complete waitlist capture system for Creator Club™ with email validation, duplicate checking, and proper error handling.
+Successfully implemented a complete waitlist capture system for Founders Club with email validation, duplicate checking, and proper error handling.
 
 ## Files Created
 
-### 1. `/Users/bojodanchev/creator-club™/services/waitlistService.ts`
+### 1. `/Users/bojodanchev/founders-club/services/waitlistService.ts`
 **Purpose:** Backend service layer for waitlist operations
 
 **Exports:**
@@ -23,7 +23,7 @@ Successfully implemented a complete waitlist capture system for Creator Club™ 
 - Automatic email normalization (lowercase)
 - Source tracking for analytics
 
-### 2. `/Users/bojodanchev/creator-club™/components/landing/WaitlistSection.tsx`
+### 2. `/Users/bojodanchev/founders-club/components/landing/WaitlistSection.tsx`
 **Purpose:** React component for waitlist signup form
 
 **Props:**
@@ -51,10 +51,10 @@ Successfully implemented a complete waitlist capture system for Creator Club™ 
 - Disabled states during submission
 - Responsive design
 
-### 3. `/Users/bojodanchev/creator-club™/components/landing/index.ts`
+### 3. `/Users/bojodanchev/founders-club/components/landing/index.ts`
 **Updated:** Added WaitlistSection export
 
-### 4. `/Users/bojodanchev/creator-club™/components/landing/WAITLIST_USAGE.md`
+### 4. `/Users/bojodanchev/founders-club/components/landing/WAITLIST_USAGE.md`
 **Purpose:** Documentation and integration guide
 
 **Contents:**
@@ -67,7 +67,7 @@ Successfully implemented a complete waitlist capture system for Creator Club™ 
 - Service function examples
 - Customization guide
 
-### 5. `/Users/bojodanchev/creator-club™/supabase/migrations/001_create_waitlist_table.sql`
+### 5. `/Users/bojodanchev/founders-club/supabase/migrations/001_create_waitlist_table.sql`
 **Purpose:** Database migration script
 
 **Creates:**

@@ -504,7 +504,7 @@ serve(async (req: Request): Promise<Response> => {
           name: buyerProfile.full_name || undefined,
           metadata: {
             profile_id: buyerProfile.id,
-            platform: 'creator_club',
+            platform: 'founders_club',
           },
         });
         customerId = customer.id;

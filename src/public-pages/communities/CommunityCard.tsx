@@ -10,7 +10,7 @@ interface CommunityCardProps {
 
 export const CommunityCard: React.FC<CommunityCardProps> = ({ community, onClick }) => {
   const { t } = useTranslation();
-  const placeholderImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(community.name)}&background=6366f1&color=fff&size=400`;
+  const placeholderImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(community.name)}&background=1F1F1F&color=FAFAFA&size=400`;
 
   const isFree = community.pricing_type === 'free' || community.price_cents === 0;
   const isMonthly = community.pricing_type === 'monthly';
@@ -21,7 +21,7 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({ community, onClick
   return (
     <button
       onClick={onClick}
-      className="group block w-full text-left bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-indigo-200 transition-all duration-200"
+      className="group block w-full text-left bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] overflow-hidden hover:border-[#333333] hover:bg-[#151515] transition-all duration-150"
     >
       {/* Thumbnail */}
       <div className="aspect-video relative overflow-hidden">
@@ -41,8 +41,8 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({ community, onClick
         {/* Pricing Badge */}
         <div className={`absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold ${
           isFree
-            ? 'bg-green-500 text-white'
-            : 'bg-white text-slate-900 shadow-sm'
+            ? 'bg-[#22C55E] text-white'
+            : 'bg-white text-black'
         }`}>
           {isFree ? (
             <Gift className="w-3 h-3" />
@@ -57,12 +57,12 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({ community, onClick
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1">
+        <h3 className="font-semibold text-[#FAFAFA] group-hover:text-white transition-colors duration-150 line-clamp-1">
           {community.name}
         </h3>
 
         {community.description && (
-          <p className="mt-1 text-sm text-slate-600 line-clamp-2">
+          <p className="mt-1 text-sm text-[#A0A0A0] line-clamp-2">
             {community.description}
           </p>
         )}
@@ -71,16 +71,16 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({ community, onClick
         <div className="mt-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img
-              src={community.creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(community.creator.full_name)}&background=e2e8f0&color=475569&size=32`}
+              src={community.creator.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(community.creator.full_name)}&background=1F1F1F&color=FAFAFA&size=32`}
               alt={community.creator.full_name}
               className="w-6 h-6 rounded-full object-cover"
             />
-            <span className="text-xs text-slate-500">
-              {t('publicCommunities.card.creator.by')} <span className="font-medium text-slate-700">{community.creator.full_name}</span>
+            <span className="text-xs text-[#666666]">
+              {t('publicCommunities.card.creator.by')} <span className="font-medium text-[#A0A0A0]">{community.creator.full_name}</span>
             </span>
           </div>
 
-          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 text-[#666666] group-hover:text-[#FAFAFA] group-hover:translate-x-1 transition-all duration-150" />
         </div>
       </div>
     </button>

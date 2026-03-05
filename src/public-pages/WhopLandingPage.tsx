@@ -379,7 +379,7 @@ const WhopLandingPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <Logo variant="light" size="lg" showText={false} />
                 <div>
-                  <h1 className="text-2xl md:text-3xl font-bold">Creator Club</h1>
+                  <h1 className="text-2xl md:text-3xl font-bold">Founders Club</h1>
                   <p className="text-slate-400 text-sm">{t('whopLanding.tagline')}</p>
                 </div>
               </div>

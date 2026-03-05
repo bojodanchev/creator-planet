@@ -55,7 +55,7 @@
     "badge": "The All-in-One Platform for Course Creators",
     "title": "Replace 5+ Tools with One",
     "titleHighlight": "Powerful Platform",
-    "subtitle": "Stop juggling Discord, Kajabi, Calendly, Skool, and Zapier. Creator Club combines community, courses, scheduling, and AI-powered student success tracking in one place.",
+    "subtitle": "Stop juggling Discord, Kajabi, Calendly, Skool, and Zapier. Founders Club combines community, courses, scheduling, and AI-powered student success tracking in one place.",
     "noCreditCard": "No credit card required",
     "freeTrial": "14-day free trial",
     "cancelAnytime": "Cancel anytime"
@@ -80,7 +80,7 @@
 
   "solution": {
     "title": "One Platform. Everything You Need.",
-    "subtitle": "Creator Club replaces your entire tech stack with a unified, AI-powered solution",
+    "subtitle": "Founders Club replaces your entire tech stack with a unified, AI-powered solution",
     "communityHub": {
       "title": "Community Hub",
       "description": "Built-in forums, channels, and real-time chat. Replace Discord and Skool."
@@ -130,9 +130,9 @@
 
   "testimonials": {
     "title": "Loved by Creators Worldwide",
-    "subtitle": "See what course creators are saying about Creator Club",
+    "subtitle": "See what course creators are saying about Founders Club",
     "testimonial1": {
-      "quote": "Creator Club saved me 15+ hours a week. No more switching between tools. Everything I need is right here, and the AI Success Manager is a game-changer.",
+      "quote": "Founders Club saved me 15+ hours a week. No more switching between tools. Everything I need is right here, and the AI Success Manager is a game-changer.",
       "name": "Sarah Mitchell",
       "role": "Fitness Coach"
     },
@@ -203,7 +203,7 @@
 
   "cta": {
     "title": "Ready to Simplify Your Creator Business?",
-    "subtitle": "Join thousands of creators who've ditched the tool chaos and built thriving communities with Creator Club.",
+    "subtitle": "Join thousands of creators who've ditched the tool chaos and built thriving communities with Founders Club.",
     "trialInfo": "14-day free trial • No credit card required • Cancel anytime"
   },
 
@@ -214,16 +214,16 @@
     "company": "Company",
     "roadmap": "Roadmap",
     "changelog": "Changelog",
-    "copyright": "© 2025 Creator Club. All rights reserved."
+    "copyright": "© 2026 Founders Club. All rights reserved."
   },
 
   "auth": {
     "loginTitle": "Log In",
-    "loginSubtitle": "Sign in to Creator Club",
+    "loginSubtitle": "Sign in to Founders Club",
     "email": "Email",
     "welcomeBack": "Welcome Back",
-    "signInTo": "Sign in to Creator Club",
-    "joinCreatorClub": "Join Creator Club",
+    "signInTo": "Sign in to Founders Club",
+    "joinFoundersClub": "Join Founders Club",
     "createAccountToStart": "Create your account to get started",
     "emailAddress": "Email Address",
     "emailPlaceholder": "you@example.com",
@@ -266,7 +266,7 @@
     "google": "Google",
     "rememberMe": "Remember me",
     "signupTitle": "Create Account",
-    "signupSubtitle": "Join Creator Club and start your journey",
+    "signupSubtitle": "Join Founders Club and start your journey",
     "hasAccount": "Already have an account?",
     "creatorDescShort": "Build & teach",
     "marketingOptIn": "Send me special offers, personalized recommendations, and learning tips.",
@@ -441,7 +441,7 @@
   },
 
   "loading": {
-    "creatorClub": "Loading Creator Club..."
+    "foundersClub": "Loading Founders Club..."
   },
 
   "errors": {
@@ -601,10 +601,10 @@
       "youreA": "You're a",
       "lookingTo": "looking to",
       "butStruggling": "but struggling with",
-      "creatorClubOffers": "Creator Club offers you:",
+      "foundersClubOffers": "Founders Club offers you:",
       "yourCreatorProfile": "Your Creator Profile",
       "personalizedForYou": "Personalized just for you based on your answers",
-      "creatorClubReplaces": "Creator Club replaces",
+      "foundersClubReplaces": "Founders Club replaces",
       "withOnePlatform": "with one platform - plus an AI that tracks student progress so you",
       "neverLoseStudent": "never lose another student",
       "benefits": {
@@ -854,7 +854,7 @@
       "youWantToLearn": "You want to learn",
       "toAchieve": "to achieve",
       "butFacing": "but you've been facing",
-      "creatorClubOffers": "Creator Club offers you:",
+      "foundersClubOffers": "Founders Club offers you:",
       "yourProfile": "Your Learning Profile",
       "personalizedMessage": "Personalized just for you based on your answers",
       "connectsYouWith": "connects you with expert",
@@ -983,7 +983,7 @@
     },
     "startBuildingFree": "Start building for free",
     "browseCommunities": "Browse communities",
-    "copyright": "© 2025 Creator Club™",
+    "copyright": "© 2026 Founders Club",
     "madeIn": "Made with",
     "inBulgaria": "in Bulgaria",
     "explore": "Explore",
@@ -1002,7 +1002,7 @@
     "heroBadge": "The All-in-One OS for Mentors and Creators",
     "heroTitle": "One tool.",
     "heroTitleHighlight": "Everything you need.",
-    "heroSubtitle1": "Creator Club™ replaces",
+    "heroSubtitle1": "Founders Club replaces",
     "heroSubtitle2": "4-5 separate tools",
     "heroSubtitle3": "and adds an",
     "heroSubtitle4": "AI Success Manager",
@@ -1026,7 +1026,7 @@
     },
     "fivePillars": "The 5 Pillars",
     "fivePillarsTitle": "Everything you need",
-    "fivePillarsSubtitle": "Creator Club™ is built on 5 pillars that together create the perfect ecosystem.",
+    "fivePillarsSubtitle": "Founders Club is built on 5 pillars that together create the perfect ecosystem.",
     "allIntegrated": "All integrated. No Zapier. No chaos.",
     "pillars": {
       "communityHub": {
@@ -1111,7 +1111,7 @@
         "maria": {
           "name": "Maria Ivanova",
           "role": "Fitness Coach",
-          "quote": "Creator Club saved me 15+ hours weekly. No more switching between 5 different tools. AI Success Manager is a game-changer for retention."
+          "quote": "Founders Club saved me 15+ hours weekly. No more switching between 5 different tools. AI Success Manager is a game-changer for retention."
         },
         "georgi": {
           "name": "Georgi Petrov",
@@ -1133,7 +1133,7 @@
       "paragraph2": "Students dropped out in silence. We had no way to see who needed help until it was too late.",
       "paragraph3prefix": "That's why we created",
       "paragraph3suffix": "— the only platform with a built-in AI Success Manager.",
-      "teamName": "The Creator Club™ Team",
+      "teamName": "The Founders Club Team",
       "teamDesc": "Mentors • Creators • Entrepreneurs"
     },
     "pricing": {
@@ -1184,7 +1184,7 @@
       "activationNote": "* One-time activation fee of €9.90 on registration",
       "guarantee": {
         "title": "100% Satisfaction Guarantee",
-        "description": "Try Creator Club™ risk-free. If you're not satisfied in the first 14 days, we'll refund your money — no questions asked."
+        "description": "Try Founders Club risk-free. If you're not satisfied in the first 14 days, we'll refund your money — no questions asked."
       },
       "features": {
         "students": "students",
@@ -1203,7 +1203,7 @@
       "titlePrefix": "Ready to",
       "titleHighlight": "transform",
       "titleSuffix": "your business?",
-      "subtitle": "Join creators who are already using Creator Club™ and achieving better results with less effort.",
+      "subtitle": "Join creators who are already using Founders Club and achieving better results with less effort.",
       "startNow": "Start Now - It's Free",
       "benefits": {
         "activation": "€9.90 one-time activation",
@@ -1249,7 +1249,7 @@
       "about": "About",
       "privacy": "Privacy",
       "terms": "Terms",
-      "copyright": "© 2025 Creator Club. All rights reserved.",
+      "copyright": "© 2026 Founders Club. All rights reserved.",
       "madeIn": "Made with",
       "inBulgaria": "in Bulgaria"
     }
@@ -1304,7 +1304,7 @@
       "support": "Support",
       "helpCenter": "Help Center",
       "contactUs": "Contact Us",
-      "copyright": "Creator Club. All rights reserved."
+      "copyright": "Founders Club. All rights reserved."
     },
     "courseCard": {
       "free": "Free"
@@ -1617,7 +1617,7 @@
       "allActive": "All active"
     },
     "onboarding": {
-      "title": "Welcome to Creator Club!",
+      "title": "Welcome to Founders Club!",
       "description": "Get started by creating your community. This is where your students will connect, share wins, and engage with your content.",
       "createCommunityButton": "Create Your Community",
       "communityHub": "Community Hub",
@@ -2550,7 +2550,7 @@
       "getStarted": "Get Started",
       "signIn": "Sign In",
       "connect": "Connect",
-      "copyright": "Creator Club. All rights reserved."
+      "copyright": "Founders Club. All rights reserved."
     }
   },
 
@@ -2993,7 +2993,7 @@
       },
       "signOut": {
         "title": "Sign Out",
-        "description": "Sign out of your account on this device. You'll need to sign in again to access Creator Club.",
+        "description": "Sign out of your account on this device. You'll need to sign in again to access Founders Club.",
         "button": "Sign Out",
         "confirmTitle": "Sign Out?",
         "confirmMessage": "Are you sure you want to sign out? You'll need to sign in again to access your account.",

@@ -73,14 +73,14 @@ SELECT
 
 Run this command:
 ```bash
-cd "/Users/bojodanchev/creator-club™" && cat supabase/migrations/003_complete_reset.sql | pbcopy
+cd "/Users/bojodanchev/founders-club" && cat supabase/migrations/003_complete_reset.sql | pbcopy
 ```
 
 ### Need to see the SQL first?
 
 Open this file:
 ```
-/Users/bojodanchev/creator-club™/MIGRATION_TO_RUN.sql
+/Users/bojodanchev/founders-club/MIGRATION_TO_RUN.sql
 ```
 
 ### See errors in Supabase?

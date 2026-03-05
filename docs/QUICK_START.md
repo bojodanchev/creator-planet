@@ -1,4 +1,4 @@
-# Creator Club - Quick Start Guide
+# Founders Club - Quick Start Guide
 
 ## Get Running in 5 Minutes
 

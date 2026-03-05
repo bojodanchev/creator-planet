@@ -1,6 +1,6 @@
 // ============================================================================
 // STRIPE SERVICE
-// Complete Stripe integration for Creator Club billing
+// Complete Stripe integration for Founders Club billing
 // ============================================================================
 //
 // SECURITY NOTE:

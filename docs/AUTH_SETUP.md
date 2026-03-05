@@ -1,7 +1,7 @@
 # Supabase Authentication Setup Guide
 
 ## Overview
-Phase 1 - Supabase Auth Integration has been successfully implemented for Creator Club. This guide will help you set up and configure authentication.
+Phase 1 - Supabase Auth Integration has been successfully implemented for Founders Club. This guide will help you set up and configure authentication.
 
 ## What's Been Implemented
 
@@ -37,7 +37,7 @@ Phase 1 - Supabase Auth Integration has been successfully implemented for Creato
 2. Click "Start your project"
 3. Create a new organization (if you don't have one)
 4. Create a new project:
-   - Enter a project name (e.g., "creator-club")
+   - Enter a project name (e.g., "founders-club")
    - Enter a secure database password (save this!)
    - Select a region closest to your users
    - Click "Create new project"
@@ -128,7 +128,7 @@ The `ProtectedRoute` component supports role-based access:
 ## Project Structure
 
 ```
-/Users/bojodanchev/creator-club™/
+/Users/bojodanchev/founders-club/
 ├── components/
 │   └── auth/
 │       ├── LoginForm.tsx           # Login component

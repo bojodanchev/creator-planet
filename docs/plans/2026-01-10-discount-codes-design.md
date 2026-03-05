@@ -147,7 +147,7 @@ async function getOrCreateStripeCoupon(
     duration,
     duration_in_months,
     metadata: {
-      creator_club_code_id: discountCode.id,
+      founders_club_code_id: discountCode.id,
       creator_id: discountCode.creator_id,
       code: discountCode.code
     }

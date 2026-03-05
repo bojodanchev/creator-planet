@@ -89,29 +89,29 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center p-4">
       {/* Language Switcher - Fixed top right */}
       <div className="fixed top-4 right-4 z-50">
-        <LanguageSwitcher variant="minimal" className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg" />
+        <LanguageSwitcher variant="minimal" className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg" />
       </div>
-      
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+
+      <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl w-full max-w-md p-8">
         {/* Logo and Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <Logo variant="dark" size="lg" showText={false} />
+            <Logo variant="light" size="lg" showText={false} />
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">{t('auth.joinCreatorClub')}</h1>
-          <p className="text-slate-500 mt-2">{t('auth.createAccountToStart')}</p>
+          <h1 className="text-2xl font-bold text-[#FAFAFA]">{t('auth.joinFoundersClub')}</h1>
+          <p className="text-[#666666] mt-2">{t('auth.createAccountToStart')}</p>
         </div>
 
         {/* Success Message */}
         {success && (
-          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-            <CheckCircle className="text-green-500 mt-0.5 flex-shrink-0" size={20} />
+          <div className="mb-6 p-4 bg-[#22C55E]/10 border border-[#22C55E]/30 rounded-lg flex items-start gap-3">
+            <CheckCircle className="text-[#22C55E] mt-0.5 flex-shrink-0" size={20} />
             <div>
-              <p className="text-green-700 text-sm font-medium">{t('auth.accountCreated')}</p>
-              <p className="text-green-600 text-xs mt-1">
+              <p className="text-[#22C55E] text-sm font-medium">{t('auth.accountCreated')}</p>
+              <p className="text-[#22C55E]/80 text-xs mt-1">
                 {t('auth.checkEmail')}
               </p>
             </div>
@@ -120,9 +120,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
         {/* Error Message */}
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-            <AlertCircle className="text-red-500 mt-0.5 flex-shrink-0" size={20} />
-            <p className="text-red-700 text-sm">{error}</p>
+          <div className="mb-6 p-4 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-lg flex items-start gap-3">
+            <AlertCircle className="text-[#EF4444] mt-0.5 flex-shrink-0" size={20} />
+            <p className="text-[#EF4444] text-sm">{error}</p>
           </div>
         )}
 
@@ -130,18 +130,18 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Full Name Field */}
           <div>
-            <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="fullName" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('auth.fullName')}
             </label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666]" size={20} />
               <input
                 id="fullName"
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 transition-colors duration-150"
                 placeholder={t('auth.fullNamePlaceholder')}
                 disabled={isLoading}
               />
@@ -150,18 +150,18 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="email" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('auth.emailAddress')}
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666]" size={20} />
               <input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 transition-colors duration-150"
                 placeholder={t('auth.emailPlaceholder')}
                 disabled={isLoading}
               />
@@ -170,18 +170,18 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
           {/* Password Field */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="password" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('auth.password')}
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666]" size={20} />
               <input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 transition-colors duration-150"
                 placeholder="••••••••"
                 disabled={isLoading}
               />
@@ -190,18 +190,18 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
           {/* Confirm Password Field */}
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="confirmPassword" className="block text-xs font-medium text-[#A0A0A0] mb-2">
               {t('auth.confirmPassword')}
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666]" size={20} />
               <input
                 id="confirmPassword"
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-[#FAFAFA] placeholder-[#666666] focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10 transition-colors duration-150"
                 placeholder="••••••••"
                 disabled={isLoading}
               />
@@ -210,35 +210,35 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
           {/* Role Selection */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-3">
+            <label className="block text-xs font-medium text-[#A0A0A0] mb-3">
               {t('auth.iAmA')}
             </label>
             <div className="grid grid-cols-2 gap-3">
               <button
                 type="button"
                 onClick={() => setRole('creator')}
-                className={`p-4 border-2 rounded-lg transition-all ${
+                className={`p-4 border-2 rounded-lg transition-all duration-150 ${
                   role === 'creator'
-                    ? 'border-indigo-500 bg-indigo-50'
-                    : 'border-slate-200 hover:border-slate-300'
+                    ? 'border-white bg-white/5'
+                    : 'border-[#1F1F1F] hover:border-[#333333]'
                 }`}
                 disabled={isLoading}
               >
-                <div className="font-semibold text-slate-900">{t('auth.creator')}</div>
-                <div className="text-xs text-slate-500 mt-1">{t('auth.creatorDesc')}</div>
+                <div className="font-semibold text-[#FAFAFA]">{t('auth.creator')}</div>
+                <div className="text-xs text-[#666666] mt-1">{t('auth.creatorDesc')}</div>
               </button>
               <button
                 type="button"
                 onClick={() => setRole('student')}
-                className={`p-4 border-2 rounded-lg transition-all ${
+                className={`p-4 border-2 rounded-lg transition-all duration-150 ${
                   role === 'student'
-                    ? 'border-indigo-500 bg-indigo-50'
-                    : 'border-slate-200 hover:border-slate-300'
+                    ? 'border-white bg-white/5'
+                    : 'border-[#1F1F1F] hover:border-[#333333]'
                 }`}
                 disabled={isLoading}
               >
-                <div className="font-semibold text-slate-900">{t('auth.student')}</div>
-                <div className="text-xs text-slate-500 mt-1">{t('auth.studentDesc')}</div>
+                <div className="font-semibold text-[#FAFAFA]">{t('auth.student')}</div>
+                <div className="text-xs text-[#666666] mt-1">{t('auth.studentDesc')}</div>
               </button>
             </div>
           </div>
@@ -247,11 +247,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-white hover:bg-[#E0E0E0] text-black font-semibold py-3 rounded-lg transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isLoading ? (
               <>
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
                 {t('auth.creatingAccount')}
               </>
             ) : (
@@ -265,11 +265,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
 
         {/* Toggle to Login */}
         <div className="mt-6 text-center">
-          <p className="text-slate-600">
+          <p className="text-[#A0A0A0]">
             {t('auth.alreadyHaveAccount')}{' '}
             <button
               onClick={handleToggleForm}
-              className="text-indigo-500 hover:text-indigo-600 font-semibold"
+              className="text-[#FAFAFA] hover:text-white font-semibold transition-colors duration-150"
             >
               {t('auth.signIn')}
             </button>

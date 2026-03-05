@@ -40,7 +40,7 @@
 
 ## Migration SQL Details
 
-**File:** `/Users/bojodanchev/creator-club™/supabase/migrations/003_complete_reset.sql`
+**File:** `/Users/bojodanchev/founders-club/supabase/migrations/003_complete_reset.sql`
 
 **Size:** 10,085 characters
 
@@ -67,8 +67,8 @@
    - URL: https://supabase.com/dashboard/project/ilntxxutxbygjuixrzng/sql/new
 
 2. **Copy Migration SQL:**
-   - Source file: `/Users/bojodanchev/creator-club™/supabase/migrations/003_complete_reset.sql`
-   - OR from: `/Users/bojodanchev/creator-club™/MIGRATION_TO_RUN.sql` (identical copy)
+   - Source file: `/Users/bojodanchev/founders-club/supabase/migrations/003_complete_reset.sql`
+   - OR from: `/Users/bojodanchev/founders-club/MIGRATION_TO_RUN.sql` (identical copy)
 
 3. **Execute in Dashboard:**
    - Paste the entire SQL into the editor
@@ -154,27 +154,27 @@
 
 ## Files Created
 
-1. `/Users/bojodanchev/creator-club™/execute-migration.js`
+1. `/Users/bojodanchev/founders-club/execute-migration.js`
    - Node.js script using native HTTPS module
    - Attempted REST API and PgMeta API methods
 
-2. `/Users/bojodanchev/creator-club™/execute-migration-supabase.js`
+2. `/Users/bojodanchev/founders-club/execute-migration-supabase.js`
    - Node.js script using @supabase/supabase-js
    - Provides manual execution instructions
 
-3. `/Users/bojodanchev/creator-club™/execute-migration-fetch.js`
+3. `/Users/bojodanchev/founders-club/execute-migration-fetch.js`
    - Node.js script using fetch API
    - Attempted multiple API endpoints
    - Provides detailed preview of migration
 
-4. `/Users/bojodanchev/creator-club™/execute-via-curl.sh`
+4. `/Users/bojodanchev/founders-club/execute-via-curl.sh`
    - Bash script for psql connection
    - Requires database password
 
-5. `/Users/bojodanchev/creator-club™/MIGRATION_TO_RUN.sql`
+5. `/Users/bojodanchev/founders-club/MIGRATION_TO_RUN.sql`
    - Copy of migration SQL for easy access
 
-6. `/Users/bojodanchev/creator-club™/MIGRATION_EXECUTION_REPORT.md`
+6. `/Users/bojodanchev/founders-club/MIGRATION_EXECUTION_REPORT.md`
    - This file
 
 ---

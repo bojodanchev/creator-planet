@@ -22,7 +22,7 @@
 
 ## Overview
 
-This document defines the complete billing system architecture for Creator Club. The system implements a hybrid pricing model with:
+This document defines the complete billing system architecture for Founders Club. The system implements a hybrid pricing model with:
 
 - **Fixed monthly fee** (only after first sale for Pro/Scale)
 - **Percentage-based platform fee** on all sales
@@ -499,7 +499,7 @@ interface ConnectAccountConfig {
   business_type: 'individual' | 'company';
   metadata: {
     creator_id: string;
-    platform: 'creator_club';
+    platform: 'founders_club';
   };
 }
 ```
@@ -1271,7 +1271,7 @@ const UPGRADE_MESSAGES: Record<string, { title: string; description: string }> =
   },
   custom_branding: {
     title: 'Custom Branding',
-    description: 'Remove Creator Club branding and add your own logo. Available on Pro and Scale plans.'
+    description: 'Remove Founders Club branding and add your own logo. Available on Pro and Scale plans.'
   },
   // ...
 };

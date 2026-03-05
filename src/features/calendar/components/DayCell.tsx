@@ -61,9 +61,9 @@ const DayCell: React.FC<DayCellProps> = ({
     <div
       onClick={handleCellClick}
       className={`
-        min-h-[100px] p-2 border-b border-r border-slate-200 transition-colors
-        ${isCurrentMonth ? 'bg-white cursor-pointer hover:bg-slate-50' : 'bg-slate-50'}
-        ${isSelected && isCurrentMonth ? 'bg-indigo-50 hover:bg-indigo-50' : ''}
+        min-h-[100px] p-2 border-b border-r border-[#1F1F1F] transition-colors
+        ${isCurrentMonth ? 'bg-[#0A0A0A] cursor-pointer hover:bg-[#151515]' : 'bg-[#0A0A0A]'}
+        ${isSelected && isCurrentMonth ? 'bg-[#1F1F1F] hover:bg-[#1F1F1F]' : ''}
       `}
     >
       {/* Day number */}
@@ -71,8 +71,8 @@ const DayCell: React.FC<DayCellProps> = ({
         <span
           className={`
             inline-flex items-center justify-center w-7 h-7 text-sm font-medium rounded-full
-            ${!isCurrentMonth ? 'text-slate-400' : 'text-slate-700'}
-            ${isToday ? 'bg-indigo-600 text-white' : ''}
+            ${!isCurrentMonth ? 'text-[#666666]' : 'text-[#A0A0A0]'}
+            ${isToday ? 'bg-white text-black' : ''}
           `}
         >
           {day}
@@ -85,7 +85,7 @@ const DayCell: React.FC<DayCellProps> = ({
           <div
             key={event.id}
             onClick={(e) => handleEventClick(e, event)}
-            className="event-item text-xs text-blue-600 hover:text-blue-800 cursor-pointer truncate"
+            className="event-item text-xs text-[#FAFAFA] hover:text-[#FAFAFA] cursor-pointer truncate"
           >
             <span className="font-medium">{formatEventTime(event.start_time)}</span>
             <span className="mx-1">-</span>
@@ -93,7 +93,7 @@ const DayCell: React.FC<DayCellProps> = ({
           </div>
         ))}
         {hiddenCount > 0 && (
-          <div className="text-xs text-slate-500 font-medium">
+          <div className="text-xs text-[#666666] font-medium">
             +{hiddenCount} more
           </div>
         )}

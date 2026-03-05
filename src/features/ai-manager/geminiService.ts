@@ -5,7 +5,7 @@ import { getDashboardStats, getCommunityStats } from "../dashboard/dashboardServ
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 
-const MENTOR_SYSTEM_INSTRUCTION = `You are the "AI Success Manager" for Creator Club™.
+const MENTOR_SYSTEM_INSTRUCTION = `You are the "AI Success Manager" for Founders Club.
 
 Your role:
 - Help creators manage their community and improve student retention

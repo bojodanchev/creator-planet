@@ -32,15 +32,15 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-md bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-200">
-          <h2 className="text-lg font-semibold text-slate-900">
+        <div className="flex items-center justify-between p-4 border-b border-[#1F1F1F]">
+          <h2 className="text-lg font-semibold text-[#FAFAFA]">
             {t('publicCommunities.apply.title', { communityName })}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+            className="p-2 text-[#666666] hover:text-[#FAFAFA] hover:bg-[#151515] rounded-full transition-colors duration-150"
           >
             <X className="w-5 h-5" />
           </button>
@@ -48,17 +48,17 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({
 
         {/* Content */}
         <form onSubmit={handleSubmit} className="p-4 space-y-4">
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-[#A0A0A0]">
             {t('publicCommunities.apply.description', { communityName })}
           </p>
 
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-slate-700 mb-1"
+              className="block text-xs font-medium text-[#A0A0A0] mb-1"
             >
               {t('publicCommunities.apply.messageLabel')}
-              <span className="text-slate-400 font-normal ml-1">
+              <span className="text-[#666666] font-normal ml-1">
                 ({t('common.optional')})
               </span>
             </label>
@@ -67,14 +67,14 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder={t('publicCommunities.apply.messagePlaceholder')}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm
-                focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-                resize-none"
+              className="w-full px-3 py-2 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-sm text-[#FAFAFA] placeholder-[#666666]
+                focus:outline-none focus:border-[#555555] focus:ring-1 focus:ring-white/10
+                resize-none transition-colors duration-150"
               rows={4}
               maxLength={500}
               disabled={isSubmitting}
             />
-            <p className="text-xs text-slate-400 mt-1 text-right">
+            <p className="text-xs text-[#666666] mt-1 text-right">
               {message.length}/500
             </p>
           </div>
@@ -85,16 +85,16 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({
               type="button"
               onClick={onClose}
               disabled={isSubmitting}
-              className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100
-                hover:bg-slate-200 rounded-lg transition-colors disabled:opacity-50"
+              className="flex-1 px-4 py-2 text-sm font-medium text-[#FAFAFA] bg-transparent
+                border border-[#1F1F1F] hover:bg-[#151515] hover:border-[#333333] rounded-lg transition-all duration-150 disabled:opacity-50"
             >
               {t('common.cancel')}
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 px-4 py-2 text-sm font-medium text-white bg-indigo-600
-                hover:bg-indigo-700 rounded-lg transition-colors disabled:opacity-50
+              className="flex-1 px-4 py-2 text-sm font-medium text-black bg-white
+                hover:bg-[#E0E0E0] rounded-lg transition-colors duration-150 disabled:opacity-50
                 flex items-center justify-center gap-2"
             >
               {isSubmitting ? (

@@ -192,20 +192,20 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl w-full max-w-lg mx-4 max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="bg-[#0A0A0A] rounded-xl w-full max-w-lg mx-4 max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-100">
+        <div className="flex items-center justify-between p-4 border-b border-[#1F1F1F]">
           <div className="flex items-center gap-2">
-            <Bot size={20} className="text-indigo-600" />
-            <h3 className="text-lg font-semibold text-slate-900">
+            <Bot size={20} className="text-[#FAFAFA]" />
+            <h3 className="text-lg font-semibold text-[#FAFAFA]">
               {isEditMode ? t('chatbots.editModal.titleEdit') : t('chatbots.editModal.titleCreate')}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-slate-100 rounded-lg transition-colors"
+            className="p-1 hover:bg-[#1F1F1F] rounded-lg transition-colors"
           >
-            <X size={20} className="text-slate-500" />
+            <X size={20} className="text-[#666666]" />
           </button>
         </div>
 
@@ -213,28 +213,28 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
         <div className="p-4 space-y-4 overflow-y-auto flex-1">
           {/* Error Message */}
           {errorMessage && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-lg text-sm">
+            <div className="bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] px-4 py-2 rounded-lg text-sm">
               {errorMessage}
             </div>
           )}
 
           {/* Bot Name */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              {t('chatbots.editModal.fields.name.label')} <span className="text-red-500">*</span>
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
+              {t('chatbots.editModal.fields.name.label')} <span className="text-[#EF4444]">*</span>
             </label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
               placeholder={t('chatbots.editModal.fields.name.placeholder')}
             />
           </div>
 
           {/* Role Selection */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-2">
               {t('chatbots.editModal.fields.role.label')}
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -245,8 +245,8 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
                   onClick={() => handleRoleChange(option.value)}
                   className={`flex flex-col items-center gap-1 p-3 rounded-lg border-2 transition-all ${
                     role === option.value
-                      ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                      : 'border-slate-200 hover:border-slate-300 text-slate-600'
+                      ? 'border-[#555555] bg-[#1F1F1F] text-[#FAFAFA]'
+                      : 'border-[#1F1F1F] hover:border-[#333333] text-[#A0A0A0]'
                   }`}
                 >
                   <span className="text-2xl">{option.emoji}</span>
@@ -258,56 +258,56 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
 
           {/* Personality */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
               {t('chatbots.editModal.fields.personality')}
             </label>
             <input
               type="text"
               value={personality}
               onChange={(e) => setPersonality(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
               placeholder={t('chatbots.editModal.fields.personalityPlaceholder')}
             />
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-[#666666] mt-1">
               {t('chatbots.editModal.fields.personalityHint')}
             </p>
           </div>
 
           {/* System Prompt */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              {t('chatbots.editModal.fields.systemPrompt')} <span className="text-red-500">*</span>
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
+              {t('chatbots.editModal.fields.systemPrompt')} <span className="text-[#EF4444]">*</span>
             </label>
             <textarea
               value={systemPrompt}
               onChange={(e) => setSystemPrompt(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent h-28 resize-none"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent h-28 resize-none"
               placeholder={t('chatbots.editModal.fields.systemPromptPlaceholder')}
             />
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-[#666666] mt-1">
               {t('chatbots.editModal.fields.systemPromptHint')}
             </p>
           </div>
 
           {/* Greeting Message */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-1">
               {t('chatbots.editModal.fields.greetingMessage')}
             </label>
             <textarea
               value={greetingMessage}
               onChange={(e) => setGreetingMessage(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent h-20 resize-none"
+              className="w-full px-4 py-2 border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent h-20 resize-none"
               placeholder={t('chatbots.editModal.fields.greetingPlaceholder')}
             />
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-[#666666] mt-1">
               {t('chatbots.editModal.fields.greetingHint')}
             </p>
           </div>
 
           {/* Avatar Settings */}
-          <div className="border-t border-slate-100 pt-4">
-            <label className="block text-sm font-medium text-slate-700 mb-3">
+          <div className="border-t border-[#1F1F1F] pt-4">
+            <label className="block text-sm font-medium text-[#A0A0A0] mb-3">
               {t('chatbots.editModal.fields.avatar.label')}
             </label>
 
@@ -315,11 +315,11 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 {showAvatar ? (
-                  <Image size={16} className="text-slate-500" />
+                  <Image size={16} className="text-[#666666]" />
                 ) : (
-                  <EyeOff size={16} className="text-slate-400" />
+                  <EyeOff size={16} className="text-[#666666]" />
                 )}
-                <span className="text-sm text-slate-600">
+                <span className="text-sm text-[#A0A0A0]">
                   {t('chatbots.editModal.fields.avatar.showAvatar')}
                 </span>
               </div>
@@ -327,11 +327,11 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
                 type="button"
                 onClick={() => setShowAvatar(!showAvatar)}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  showAvatar ? 'bg-indigo-600' : 'bg-slate-200'
+                  showAvatar ? 'bg-white' : 'bg-[#1F1F1F]'
                 }`}
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  className={`inline-block h-4 w-4 transform rounded-full bg-[#0A0A0A] transition-transform ${
                     showAvatar ? 'translate-x-6' : 'translate-x-1'
                   }`}
                 />
@@ -345,7 +345,7 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
                 <div className="flex items-center gap-4">
                   {/* Avatar Preview */}
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-slate-200 flex items-center justify-center overflow-hidden">
+                    <div className="w-16 h-16 rounded-full bg-[#1F1F1F] border-2 border-[#1F1F1F] flex items-center justify-center overflow-hidden">
                       {avatarUrl ? (
                         <img
                           src={avatarUrl}
@@ -384,18 +384,18 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
                           type="button"
                           onClick={() => fileInputRef.current?.click()}
                           disabled={isUploading}
-                          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors disabled:opacity-50"
+                          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[#FAFAFA] bg-[#1F1F1F] hover:bg-[#1F1F1F] rounded-lg transition-colors disabled:opacity-50"
                         >
                           <Upload size={16} />
                           {t('chatbots.editModal.fields.avatar.uploadButton')}
                         </button>
-                        <p className="text-xs text-slate-400">
+                        <p className="text-xs text-[#666666]">
                           {t('chatbots.editModal.fields.avatar.uploadFormats')}
                         </p>
                       </>
                     )}
                     {!isEditMode && (
-                      <p className="text-xs text-slate-500 italic">
+                      <p className="text-xs text-[#666666] italic">
                         {t('chatbots.editModal.fields.avatar.uploadAfterCreate')}
                       </p>
                     )}
@@ -404,14 +404,14 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
 
                 {/* URL Input */}
                 <div>
-                  <label className="block text-xs text-slate-500 mb-1">
+                  <label className="block text-xs text-[#666666] mb-1">
                     {t('chatbots.editModal.fields.avatar.orEnterUrl')}
                   </label>
                   <input
                     type="url"
                     value={avatarUrl}
                     onChange={(e) => setAvatarUrl(e.target.value)}
-                    className="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-3 py-2 text-sm border border-[#1F1F1F] rounded-lg focus:ring-1 focus:ring-white/10 focus:border-transparent"
                     placeholder={t('chatbots.editModal.fields.avatar.urlPlaceholder')}
                   />
                 </div>
@@ -422,17 +422,17 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
 
         {/* Delete Section (only in edit mode) */}
         {isEditMode && onDelete && (
-          <div className="p-4 border-t border-slate-100 bg-slate-50">
+          <div className="p-4 border-t border-[#1F1F1F] bg-[#0A0A0A]">
             {showDeleteConfirm ? (
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-red-600">
+                <div className="flex items-center gap-2 text-[#EF4444]">
                   <AlertTriangle size={18} />
                   <span className="text-sm font-medium">{t('chatbots.editModal.delete.confirm')}</span>
                 </div>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowDeleteConfirm(false)}
-                    className="px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-200 rounded-lg"
+                    className="px-3 py-1.5 text-sm text-[#A0A0A0] hover:bg-[#1F1F1F] rounded-lg"
                     disabled={isDeleting}
                   >
                     {t('chatbots.editModal.buttons.cancel')}
@@ -440,7 +440,7 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
                   <button
                     onClick={handleDelete}
                     disabled={isDeleting}
-                    className="px-3 py-1.5 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-1"
+                    className="px-3 py-1.5 text-sm bg-[#EF4444] text-white rounded-lg hover:bg-[#DC2626] disabled:opacity-50 flex items-center gap-1"
                   >
                     {isDeleting ? (
                       <>
@@ -456,7 +456,7 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
             ) : (
               <button
                 onClick={() => setShowDeleteConfirm(true)}
-                className="text-sm text-red-600 hover:text-red-700 flex items-center gap-1"
+                className="text-sm text-[#EF4444] hover:text-[#EF4444] flex items-center gap-1"
               >
                 <Trash2 size={14} />
                 {t('chatbots.editModal.delete.button')}
@@ -466,17 +466,17 @@ const ChatbotEditModal: React.FC<ChatbotEditModalProps> = ({
         )}
 
         {/* Actions */}
-        <div className="flex gap-3 p-4 border-t border-slate-100">
+        <div className="flex gap-3 p-4 border-t border-[#1F1F1F]">
           <button
             onClick={onClose}
-            className="flex-1 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 font-medium text-slate-700"
+            className="flex-1 px-4 py-2 border border-[#1F1F1F] rounded-lg hover:bg-[#0A0A0A] font-medium text-[#A0A0A0]"
           >
             {t('chatbots.editModal.buttons.cancel')}
           </button>
           <button
             onClick={handleSave}
             disabled={!name.trim() || !systemPrompt.trim() || isSaving}
-            className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 font-medium flex items-center justify-center gap-2"
+            className="flex-1 bg-white text-black px-4 py-2 rounded-lg hover:bg-[#E0E0E0] disabled:opacity-50 font-medium flex items-center justify-center gap-2"
           >
             {isSaving ? (
               <>

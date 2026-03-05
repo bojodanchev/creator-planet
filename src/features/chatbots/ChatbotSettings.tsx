@@ -152,26 +152,26 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
   // Loading state
   if (isLoading) {
     return (
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
+      <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] p-6">
         <div className="flex items-center justify-center py-8">
-          <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
+          <Loader2 className="w-8 h-8 text-[#FAFAFA] animate-spin" />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200">
+    <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F]">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-slate-100">
+      <div className="flex items-center justify-between p-4 border-b border-[#1F1F1F]">
         <div className="flex items-center gap-2">
-          <Bot className="w-5 h-5 text-indigo-600" />
-          <h3 className="text-lg font-semibold text-slate-900">{t('chatbots.settings.title')}</h3>
+          <Bot className="w-5 h-5 text-[#FAFAFA]" />
+          <h3 className="text-lg font-semibold text-[#FAFAFA]">{t('chatbots.settings.title')}</h3>
         </div>
         {canAddMore && (
           <button
             onClick={handleCreate}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-white text-black text-sm font-medium rounded-lg hover:bg-[#E0E0E0] transition-colors"
           >
             <Plus size={16} />
             {t('chatbots.settings.addBot')}
@@ -184,14 +184,14 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
         {chatbots.length === 0 ? (
           // Empty State
           <div className="py-12 text-center">
-            <Bot className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-            <h4 className="text-base font-medium text-slate-900 mb-1">{t('chatbots.settings.emptyState.title')}</h4>
-            <p className="text-sm text-slate-500 mb-4">
+            <Bot className="w-12 h-12 text-[#666666] mx-auto mb-3" />
+            <h4 className="text-base font-medium text-[#FAFAFA] mb-1">{t('chatbots.settings.emptyState.title')}</h4>
+            <p className="text-sm text-[#666666] mb-4">
               {t('chatbots.settings.emptyState.description', { count: MAX_CHATBOTS })}
             </p>
             <button
               onClick={handleCreate}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-[#E0E0E0] transition-colors"
             >
               <Plus size={16} />
               {t('chatbots.settings.emptyState.addFirst')}
@@ -207,14 +207,14 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
               return (
                 <div
                   key={chatbot.id}
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg border border-slate-100"
+                  className="flex items-center justify-between p-4 bg-[#0A0A0A] rounded-lg border border-[#1F1F1F]"
                 >
                   {/* Chatbot Info */}
                   <div className="flex items-center gap-3">
                     {/* Avatar - show custom image or emoji fallback */}
                     {chatbot.show_avatar !== false ? (
                       chatbot.avatar_url ? (
-                        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+                        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#1F1F1F]">
                           <img
                             src={chatbot.avatar_url}
                             alt={chatbot.name}
@@ -233,13 +233,13 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
                         <span className="text-2xl">{roleConfig.emoji}</span>
                       )
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
-                        <Bot size={20} className="text-slate-400" />
+                      <div className="w-10 h-10 rounded-full bg-[#1F1F1F] flex items-center justify-center flex-shrink-0">
+                        <Bot size={20} className="text-[#666666]" />
                       </div>
                     )}
                     <div>
-                      <h4 className="font-medium text-slate-900">{chatbot.name}</h4>
-                      <p className="text-sm text-slate-500">{roleConfig.label}</p>
+                      <h4 className="font-medium text-[#FAFAFA]">{chatbot.name}</h4>
+                      <p className="text-sm text-[#666666]">{roleConfig.label}</p>
                     </div>
                   </div>
 
@@ -252,7 +252,7 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
                       className={`flex items-center gap-1.5 px-2 py-1 rounded-md text-sm font-medium transition-colors ${
                         chatbot.is_active
                           ? 'text-green-700 bg-green-50 hover:bg-green-100'
-                          : 'text-slate-500 bg-slate-100 hover:bg-slate-200'
+                          : 'text-[#666666] bg-[#1F1F1F] hover:bg-[#1F1F1F]'
                       } ${isToggling ? 'opacity-50 cursor-not-allowed' : ''}`}
                       title={chatbot.is_active ? t('chatbots.settings.tooltips.deactivate') : t('chatbots.settings.tooltips.activate')}
                     >
@@ -269,7 +269,7 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
                     {/* Edit Button */}
                     <button
                       onClick={() => handleEdit(chatbot)}
-                      className="p-2 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                      className="p-2 text-[#666666] hover:text-[#FAFAFA] hover:bg-[#1F1F1F] rounded-lg transition-colors"
                       title={t('chatbots.settings.tooltips.edit')}
                     >
                       <Pencil size={16} />
@@ -281,7 +281,7 @@ const ChatbotSettings: React.FC<ChatbotSettingsProps> = ({ communityId }) => {
 
             {/* Add more hint */}
             {canAddMore && (
-              <p className="text-xs text-slate-400 text-center pt-2">
+              <p className="text-xs text-[#666666] text-center pt-2">
                 {t('chatbots.settings.moreAvailable', { count: MAX_CHATBOTS - chatbots.length })}
               </p>
             )}

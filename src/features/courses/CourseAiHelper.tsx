@@ -78,7 +78,7 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all hover:scale-110 flex items-center gap-2"
+          className="fixed bottom-6 right-6 z-50 bg-white text-black p-4 rounded-full hover:bg-[#E0E0E0] transition-all hover:scale-110 flex items-center gap-2"
           aria-label="Open AI Helper"
         >
           <MessageCircle size={24} />
@@ -87,16 +87,16 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
 
       {/* Chat Panel */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[500px] z-50 bg-white rounded-xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 w-96 h-[500px] z-50 bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="bg-indigo-600 text-white p-4 flex items-center justify-between">
+          <div className="bg-[#151515] border-b border-[#1F1F1F] text-[#FAFAFA] p-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Bot size={20} />
               <h3 className="font-semibold">Course AI Helper</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-indigo-700 p-1 rounded transition-colors"
+              className="hover:bg-[#1F1F1F] p-1 rounded transition-colors"
               aria-label="Close chat"
             >
               <X size={20} />
@@ -104,7 +104,7 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#0A0A0A]">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
@@ -113,8 +113,8 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                     msg.role === 'model'
-                      ? 'bg-indigo-100 text-indigo-600'
-                      : 'bg-slate-200 text-slate-600'
+                      ? 'bg-[#1F1F1F] text-[#FAFAFA]'
+                      : 'bg-[#FAFAFA] text-black'
                   }`}
                 >
                   {msg.role === 'model' ? <Bot size={18} /> : <User size={18} />}
@@ -122,8 +122,8 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl ${
                     msg.role === 'model'
-                      ? 'bg-white text-slate-800 rounded-tl-none border border-slate-200 shadow-sm'
-                      : 'bg-indigo-600 text-white rounded-tr-none'
+                      ? 'bg-[#151515] border border-[#1F1F1F] text-[#A0A0A0] rounded-tl-none'
+                      : 'bg-[#FAFAFA] text-black rounded-tr-none'
                   }`}
                 >
                   {msg.role === 'model' ? (
@@ -136,20 +136,20 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
             ))}
             {isTyping && (
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#1F1F1F] text-[#FAFAFA] flex items-center justify-center shrink-0">
                   <Bot size={18} />
                 </div>
-                <div className="bg-slate-50 p-3 rounded-2xl rounded-tl-none border border-slate-200 flex gap-1">
+                <div className="bg-[#151515] border border-[#1F1F1F] p-3 rounded-2xl rounded-tl-none flex gap-1">
                   <span
-                    className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-white rounded-full animate-bounce"
                     style={{ animationDelay: '0ms' }}
                   ></span>
                   <span
-                    className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-white rounded-full animate-bounce"
                     style={{ animationDelay: '150ms' }}
                   ></span>
                   <span
-                    className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-white rounded-full animate-bounce"
                     style={{ animationDelay: '300ms' }}
                   ></span>
                 </div>
@@ -159,7 +159,7 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
           </div>
 
           {/* Input Area */}
-          <div className="p-4 bg-white border-t border-slate-200">
+          <div className="p-4 bg-[#0A0A0A] border-t border-[#1F1F1F]">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -167,12 +167,12 @@ const CourseAiHelper: React.FC<CourseAiHelperProps> = ({
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
                 placeholder="Ask me anything about this course..."
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="flex-1 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg px-3 py-2 text-sm text-[#FAFAFA] placeholder:text-[#666666] focus:border-[#555555] focus:ring-1 focus:ring-white/10 focus:outline-none"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isTyping}
-                className="bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="bg-white text-black p-2 rounded-lg hover:bg-[#E0E0E0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Send message"
               >
                 {isTyping ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />}

@@ -217,7 +217,7 @@ Personalized response about at-risk students with actionable advice:
 ## Test Suite Evidence
 
 ### Playwright Test Suite Created
-**File:** `/Users/bojodanchev/creator-club™/tests/ai-chat-enhancements.spec.ts`
+**File:** `/Users/bojodanchev/founders-club/tests/ai-chat-enhancements.spec.ts`
 **Total Tests:** 14
 **Categories:** 4 test suites
 
@@ -275,13 +275,13 @@ Recommendation: READY FOR PRODUCTION
 ## Files Modified/Created
 
 ### Test Files
-- ✅ `/Users/bojodanchev/creator-club™/tests/ai-chat-enhancements.spec.ts` (NEW)
-- ✅ `/Users/bojodanchev/creator-club™/playwright.config.ts` (NEW)
+- ✅ `/Users/bojodanchev/founders-club/tests/ai-chat-enhancements.spec.ts` (NEW)
+- ✅ `/Users/bojodanchev/founders-club/playwright.config.ts` (NEW)
 
 ### Documentation
-- ✅ `/Users/bojodanchev/creator-club™/QA-TEST-REPORT.md` (NEW)
-- ✅ `/Users/bojodanchev/creator-club™/QA-SUMMARY.md` (NEW)
-- ✅ `/Users/bojodanchev/creator-club™/TEST-EVIDENCE.md` (NEW)
+- ✅ `/Users/bojodanchev/founders-club/QA-TEST-REPORT.md` (NEW)
+- ✅ `/Users/bojodanchev/founders-club/QA-SUMMARY.md` (NEW)
+- ✅ `/Users/bojodanchev/founders-club/TEST-EVIDENCE.md` (NEW)
 
 ### Dependencies
 - ✅ @playwright/test installed
