@@ -34,7 +34,7 @@ const TrackingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
-              <Link to="/landing" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150">
+              <Link to="/" className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150">
                 <ArrowLeft size={20} />
               </Link>
               <Logo variant="light" size="sm" showText={false} />
@@ -42,7 +42,7 @@ const TrackingPage: React.FC = () => {
             <div className="flex items-center gap-4">
               <LanguageSwitcher variant="minimal" />
               <Link
-                to="/landing"
+                to="/"
                 className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150 text-sm font-medium"
               >
                 {t('common.back')}
