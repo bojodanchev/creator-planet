@@ -45,7 +45,7 @@ const TrackingPage: React.FC = () => {
                 to="/landing"
                 className="text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors duration-150 text-sm font-medium"
               >
-                {t('common.backToHome') || 'Back'}
+                {t('common.back')}
               </Link>
             </div>
           </div>

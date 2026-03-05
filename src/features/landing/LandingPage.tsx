@@ -132,6 +132,13 @@ const LandingPage: React.FC = () => {
 
             {/* Navigation & Auth Buttons */}
             <div className="flex items-center gap-3 shrink-0">
+              <Link to="/analytics" className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#22C55E]" />
+                </span>
+                {t('nav.analytics')}
+              </Link>
               <Link
                 to="/creators"
                 className="hidden md:inline-flex px-3 py-2 text-sm font-medium text-[#A0A0A0] hover:text-[#FAFAFA] transition-colors"
