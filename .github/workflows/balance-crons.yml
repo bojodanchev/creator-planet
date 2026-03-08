@@ -1,11 +1,11 @@
 name: Balance System Cron Jobs
 
 on:
-  schedule:
-    # Daily at 6:00 AM UTC - Release pending balances (7-day hold)
-    - cron: '0 6 * * *'
-    # Every Friday at 9:00 AM UTC - Process automatic payouts
-    - cron: '0 9 * * 5'
+  # schedule disabled — Stripe billing not yet configured on FC, CRON_SECRET not set
+  # Uncomment when billing goes live:
+  # schedule:
+  #   - cron: '0 6 * * *'   # Daily 6AM UTC — release pending balances
+  #   - cron: '0 9 * * 5'   # Friday 9AM UTC — process payouts
   workflow_dispatch:
     inputs:
       job:
