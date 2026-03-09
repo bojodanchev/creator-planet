@@ -28,15 +28,21 @@ const feePercent = plan?.platform_fee_percent ?? 6.9;
 - **Live mode webhook**: Must configure separately from test mode in Stripe Dashboard
 - **Webhook sale recording**: TWO idempotency layers — `webhook_events` table + `creator_sales` duplicate check
 
-## Billing Data Flow (Community Purchases)
-Community purchases use **Stripe Connect destination charges**:
+## Billing Data Flow (Destination Charges)
+All student payments use **Stripe Connect destination charges** — platform never holds funds:
 | Table | What it stores | Who writes |
 |-------|---------------|------------|
 | `community_purchases` | Purchase records | community-checkout + stripe-webhook |
-| `creator_sales` | Revenue for creator reporting | stripe-webhook |
-| `billing_transactions` | Platform wallet operations (NOT community sales) | stripe-webhook |
-| `creator_billing` | Balance summary | stripe-webhook |
-| `balance_transactions` | Audit trail | stripe-webhook |
+| `creator_sales` | Revenue for analytics (read-only mirror) | stripe-webhook |
+| `billing_transactions` | Activation fee and subscription events | stripe-webhook |
+| `creator_billing` | Plan, Stripe IDs, Connect account | stripe-webhook |
+
+**Deprecated tables** (wallet model remnants, no longer written to):
+`pending_balances`, `balance_transactions`, `payouts`, `reserve_releases`
+
+## Stripe Environment Variable Name
+- Frontend code expects `VITE_STRIPE_PUBLIC_KEY` (NOT `VITE_STRIPE_PUBLISHABLE_KEY`)
+- Mismatch causes Stripe.js to silently fail to load
 
 ## Supabase Edge Functions
 - **Shared code**: Import from `../_shared/`
@@ -73,4 +79,7 @@ Community purchases use **Stripe Connect destination charges**:
 - **Supabase pooler** (`aws-0-eu-central-1`) does NOT work — use CLI pooler (`aws-1-eu-west-1`) from `supabase db dump --dry-run`
 - **Schema differences**: CC has extra columns FC doesn't (bio, vsl_url, group_id, display_order, stripe_customer_id, is_pinned)
 - **auth.identities**: `email` column is `GENERATED ALWAYS` in FC — cannot insert non-DEFAULT values
-- **Missing data**: modules, lessons, events, event_attendees, lesson_progress, quiz_attempts were blocked by RLS on CC anon key — need MCP on CC to extract
+- **RLS `TO PUBLIC` silent failure**: 61 policies had no role specified → defaults to `PUBLIC` pseudo-role which authenticated users can't use. Always verify with `SELECT policyname, roles FROM pg_policies`
+- **CC MCP dual-project setup**: Configure `.mcp.json` with both `supabase` (FC) and `supabase-cc` (CC) for read-only access to CC data
+- **Storage files**: ~11.2GB on CC storage remain accessible via public URLs; new uploads go to FC buckets
+- **Migration status (2026-03-09)**: FC is superset of CC — 72 tables, 76 functions, 257 policies. Still missing from CC: modules, lessons, events, event_attendees, lesson_progress, quiz_attempts (need MCP on CC to extract)

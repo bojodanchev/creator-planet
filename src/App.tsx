@@ -34,8 +34,6 @@ const PricingPage = React.lazy(() => import('./features/billing').then(m => ({ d
 const OnboardingPage = React.lazy(() => import('./features/billing').then(m => ({ default: m.OnboardingPage })));
 
 // Other public pages (lazy-loaded)
-const StudentPlusPage = React.lazy(() => import('./features/studentPlus').then(m => ({ default: m.StudentPlusPage })));
-const RewardsPage = React.lazy(() => import('./features/studentPlus').then(m => ({ default: m.RewardsPage })));
 const DwyPackagesPage = React.lazy(() => import('./features/dwyPackages').then(m => ({ default: m.DwyPackagesPage })));
 const CreatorOnboardingPage = React.lazy(() => import('./features/creator-onboarding').then(m => ({ default: m.CreatorOnboardingPage })));
 const StudentOnboardingPage = React.lazy(() => import('./features/student-onboarding').then(m => ({ default: m.StudentOnboardingPage })));
@@ -550,24 +548,6 @@ const AppRoutes: React.FC = () => {
             <CommunityProvider>
               <AppLayout />
             </CommunityProvider>
-          </ProtectedRouteWrapper>
-        }
-      />
-
-      {/* Student Plus routes - for students */}
-      <Route
-        path="/student-plus"
-        element={
-          <ProtectedRouteWrapper>
-            <StudentPlusPage />
-          </ProtectedRouteWrapper>
-        }
-      />
-      <Route
-        path="/student-plus/rewards"
-        element={
-          <ProtectedRouteWrapper>
-            <RewardsPage />
           </ProtectedRouteWrapper>
         }
       />

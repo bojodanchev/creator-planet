@@ -4,6 +4,65 @@ Implementation history and lessons learned. Referenced by CLAUDE.md. Most recent
 
 ---
 
+## [2026-03-09] Stripe Wired — Destination Charges Model
+
+**Context**: Setting up Stripe for FC on the European Fashion Institute account, simplifying from wallet model to Stripe-managed destination charges.
+
+**Work completed**:
+1. Connected Stripe MCP (OAuth) to European Fashion Institute account (`acct_1Sra05HH4asvT4B6`)
+2. Created 3 products + prices: Activation (€9.90), Pro (€30/mo), Scale (€99/mo)
+3. Updated `_shared/stripe.ts` with new product/price IDs (was KINGDOM LTD account)
+4. Created webhook endpoint (`we_1T9A2QHH4asvT4B6mXzA1hum`) with 8 events
+5. Set `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Supabase secrets
+6. Set `VITE_STRIPE_PUBLIC_KEY` in Vercel production env
+7. Simplified webhook: removed payout/balance/reserve/chargeback handlers (-769 lines)
+8. Simplified frontend stripeService: removed withdrawal/balance/first-sale code (-317 lines)
+9. Removed first-sale gate from subscription flow — monthly fees start immediately
+10. Deployed all 4 edge functions (stripe-checkout, webhook, subscription, connect)
+
+**Architecture decision**: Wallet model → Destination charges. See `docs/decisions/2026-03-09-stripe-destination-charges.md`
+
+**Gotchas discovered**:
+- Stripe MCP uses OAuth (not API key) — run `/mcp` to authenticate
+- Frontend uses `VITE_STRIPE_PUBLIC_KEY` not `VITE_STRIPE_PUBLISHABLE_KEY` — mismatch silently breaks Stripe.js
+- Old product IDs from KINGDOM LTD account in `_shared/stripe.ts` needed replacement
+- `vercel env rm` with `yes |` pipe loops infinitely — use `--yes` flag
+
+**Files touched**: `_shared/stripe.ts`, `stripe-webhook/index.ts`, `stripe-subscription/index.ts`, `stripeService.ts`, `BillingSettingsPage.tsx`, `billing/index.ts`
+
+---
+
+## [2026-03-09] Full CC → FC Schema & Data Sync
+
+**Context**: Completing the database migration by syncing all remaining schema objects (functions, triggers, policies, tables, enums, storage) and data from CC to FC.
+
+**Work completed**:
+1. **Functions**: 24 missing CC functions added to FC (8 more added later for new tables) → FC now has 76 functions (CC: 61)
+2. **Triggers**: 6 CC triggers added + 13 triggers for new tables → FC now has 47 triggers (CC: 38)
+3. **RLS Policies**: 15 missing policies added + 61 existing policies fixed (`TO PUBLIC` → `TO authenticated`) → FC now has 257 policies (CC: 212)
+4. **Enum types**: 9 custom enums created (`point_transaction_type`, `reward_type`, `redemption_status`, `student_subscription_status`, `dwy_application_status`, `dwy_engagement_status`, `dwy_package_tier`, `survey_attachment_type`, `survey_question_type`)
+5. **Tables**: 21 new tables created (payment_plans, loyalty_milestones, rewards, discount_codes, student_subscriptions, subscriptions, loyalty_points, student_milestone_achievements, reward_redemptions, dwy_packages, dwy_applications, dwy_engagements, ai_conversations, surveys, survey_sections, survey_questions, survey_responses, survey_answers, channel_read_status + more) → FC now has 72 tables (CC: 68)
+6. **Storage buckets**: 5 new buckets created + 2 existing bucket configs fixed → 7 total (matches CC)
+7. **Data migrated** for new tables: payment_plans, loyalty_milestones, rewards, discount_codes, dwy_packages, ai_conversations, surveys (2), survey_sections (6), survey_questions (44), survey_responses (50), survey_answers (260)
+
+**Learnings**:
+- FC is now a **superset** of CC — has all CC schema objects plus FC-specific helper functions
+- 61 RLS policies had `TO PUBLIC` (no role specified) which silently fails for authenticated users — this was the biggest hidden bug
+- CC used inline subqueries in RLS policies; FC replaces them with helper functions (`get_my_profile_id()`, etc.)
+- Storage files (~11.2GB, 167 files) remain on CC storage with public URLs — works while CC is alive
+- All 10 migrations applied via Supabase MCP `apply_migration` tool
+
+**Final state**:
+| Metric | CC | FC |
+|--------|---:|---:|
+| Tables | 68 | 72 |
+| Functions | 61 | 76 |
+| Triggers | 38 | 47 |
+| Policies | 212 | 257 |
+| Buckets | 7 | 7 |
+
+---
+
 ## [2026-03-05] CC → FC Database Migration
 
 **Context**: Copying full database from Creator Club Supabase (`znqesarsluytxhuiwfkt`) to Founders Club Supabase (`ilntxxutxbygjuixrzng`) after rebrand.

@@ -6,6 +6,7 @@
 // ============================================================================
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   DollarSign,
@@ -33,6 +34,7 @@ import {
   getConnectAccountStatus,
   createConnectAccount,
   getConnectOnboardingLink,
+  getCreatorBilling,
 } from '../../billing/stripeService';
 import type { ConnectAccountStatus } from '../../billing/stripeTypes';
 import { useAuth } from '../../../core/contexts/AuthContext';
@@ -103,6 +105,7 @@ const CommunityPricingSettings: React.FC<CommunityPricingSettingsProps> = ({
   onDeleted,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { profile } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -138,6 +141,10 @@ const CommunityPricingSettings: React.FC<CommunityPricingSettingsProps> = ({
   const [connectStatus, setConnectStatus] = useState<ConnectAccountStatus | null>(null);
   const [isConnectLoading, setIsConnectLoading] = useState(false);
   const [isSettingUpConnect, setIsSettingUpConnect] = useState(false);
+
+  // Billing setup gate state
+  const [billingSetupComplete, setBillingSetupComplete] = useState(false);
+  const [billingLoading, setBillingLoading] = useState(true);
 
   // Fetch community data and Connect status on mount
   useEffect(() => {
@@ -196,9 +203,19 @@ const CommunityPricingSettings: React.FC<CommunityPricingSettingsProps> = ({
 
         // Set Connect status
         setConnectStatus(connectResult);
+
+        // Check billing setup completeness
+        const billing = await getCreatorBilling(profile.id);
+        const setupComplete =
+          billing?.activation_fee_paid === true &&
+          billing?.plan_id != null &&
+          connectResult?.status === 'active';
+        setBillingSetupComplete(setupComplete);
+        setBillingLoading(false);
       } catch (err) {
         console.error('Exception fetching data:', err);
         setError(t('communityHub.pricing.errors.unexpected'));
+        setBillingLoading(false);
       } finally {
         setIsLoading(false);
       }
@@ -753,17 +770,40 @@ const CommunityPricingSettings: React.FC<CommunityPricingSettingsProps> = ({
         </p>
       </div>
 
+      {/* Billing Setup Gate Warning */}
+      {!billingLoading && !billingSetupComplete && (
+        <div className="p-4 bg-[#EAB308]/10 border border-[#EAB308]/20 rounded-lg">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="text-[#EAB308] shrink-0 mt-0.5" size={20} />
+            <div>
+              <p className="font-medium text-[#FAFAFA]">{t('communityHub.pricing.billingGate.title')}</p>
+              <p className="text-sm text-[#A0A0A0] mt-1">
+                {t('communityHub.pricing.billingGate.description')}
+              </p>
+              <button
+                onClick={() => navigate('/settings?tab=billing')}
+                className="mt-2 text-sm font-medium text-[#EAB308] hover:underline"
+              >
+                {t('communityHub.pricing.billingGate.goToBilling')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Pricing Type Selection */}
       <div className="space-y-3">
         {PRICING_OPTIONS.map((option) => {
           const Icon = option.icon;
           const isSelected = selectedType === option.type;
+          const isPaidAndGated = option.type !== 'free' && !billingSetupComplete && !billingLoading;
 
           return (
             <label
               key={option.type}
               className={`
-                flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all
+                flex items-center gap-4 p-4 rounded-lg border-2 transition-all
+                ${isPaidAndGated ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
                 ${
                   isSelected
                     ? 'border-white bg-[#151515]'
@@ -776,7 +816,8 @@ const CommunityPricingSettings: React.FC<CommunityPricingSettingsProps> = ({
                 name="pricing_type"
                 value={option.type}
                 checked={isSelected}
-                onChange={() => setSelectedType(option.type)}
+                onChange={() => !isPaidAndGated && setSelectedType(option.type)}
+                disabled={isPaidAndGated}
                 className="sr-only"
               />
               <div

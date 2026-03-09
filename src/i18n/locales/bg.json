@@ -36,7 +36,6 @@
     "optional": "по избор",
     "confirm": "Потвърди"
   },
-
   "nav": {
     "features": "Функции",
     "pricing": "Цени",
@@ -51,7 +50,6 @@
     "contact": "Контакт",
     "analytics": "Аналитика"
   },
-
   "hero": {
     "badge": "Платформата всичко-в-едно за създатели на курсове",
     "title": "Заменете 5+ инструмента с една",
@@ -61,7 +59,6 @@
     "freeTrial": "14 дни безплатен пробен период",
     "cancelAnytime": "Отказ по всяко време"
   },
-
   "painPoints": {
     "title": "Уморени ли сте от хаоса с инструментите?",
     "subtitle": "Създателите на курсове се сблъскват с реални предизвикателства всеки ден",
@@ -78,7 +75,6 @@
       "description": "Ръчното проследяване на напредъка, ангажираността и здравето на студентите изяжда времето ви. Трябва да създавате, а не да правите административна работа."
     }
   },
-
   "solution": {
     "title": "Една платформа. Всичко, от което имате нужда.",
     "subtitle": "Founders Club замества целия ви технологичен стек с унифицирано, AI-задвижвано решение",
@@ -99,7 +95,6 @@
       "description": "AI проследява всеки студент, идентифицира рискови ученици и предлага интервенции."
     }
   },
-
   "features": {
     "title": "Функции, които растат с вас",
     "subtitle": "Всичко необходимо за успешен бизнес като създател",
@@ -128,7 +123,6 @@
       "description": "Оставете AI да идентифицира затруднени студенти и да предложи персонализирани интервенции."
     }
   },
-
   "testimonials": {
     "title": "Обичани от създатели по целия свят",
     "subtitle": "Вижте какво казват създателите на курсове за Founders Club",
@@ -148,7 +142,6 @@
       "role": "Създател на курсове по дизайн"
     }
   },
-
   "pricing": {
     "title": "Ясни цени. Без изненади.",
     "subtitle": "Започни безплатно. Плащай за растеж само когато имаш резултати.",
@@ -201,13 +194,11 @@
       }
     }
   },
-
   "cta": {
     "title": "Готови ли сте да опростите бизнеса си?",
     "subtitle": "Присъединете се към хиляди създатели, които се отказаха от хаоса с инструментите и изградиха процъфтяващи общности с Founders Club.",
     "trialInfo": "14-дневен безплатен пробен период • Не се изисква кредитна карта • Отказ по всяко време"
   },
-
   "footer": {
     "tagline": "Платформата всичко-в-едно за създатели на курсове, треньори и ментори.",
     "product": "Продукт",
@@ -217,7 +208,6 @@
     "changelog": "Промени",
     "copyright": "© 2026 Founders Club. Всички права запазени."
   },
-
   "auth": {
     "loginTitle": "Вход",
     "loginSubtitle": "Влезте в Founders Club",
@@ -229,7 +219,7 @@
     "emailAddress": "Имейл адрес",
     "emailPlaceholder": "вие@example.com",
     "password": "Парола",
-    "confirmPassword": "Потвърдете паролата",
+    "confirmPassword": "Потвърди парола",
     "fullName": "Пълно име",
     "fullNamePlaceholder": "Иван Иванов",
     "signIn": "Вход",
@@ -256,7 +246,6 @@
     "resetPasswordTitle": "Създай нова парола",
     "resetPasswordSubtitle": "Въведете новата си парола по-долу.",
     "newPassword": "Нова парола",
-    "confirmPassword": "Потвърди парола",
     "resetPassword": "Нулирай парола",
     "passwordResetSuccess": "Паролата ви беше нулирана успешно. Вече можете да влезете с новата си парола.",
     "passwordsDoNotMatch": "Паролите не съвпадат.",
@@ -273,7 +262,6 @@
     "marketingOptIn": "Изпращайте ми специални оферти, персонализирани препоръки и съвети за обучение.",
     "termsAgreement": "С регистрацията се съгласявате с нашите"
   },
-
   "sidebar": {
     "dashboard": "Табло",
     "community": "Общност",
@@ -292,7 +280,6 @@
     "createCommunity": "Създай общност",
     "yourCommunity": "Вашата общност"
   },
-
   "dashboard": {
     "title": "Табло",
     "welcome": "Добре дошли отново",
@@ -305,7 +292,6 @@
     "upcomingEvents": "Предстоящи събития",
     "quickActions": "Бързи действия"
   },
-
   "courses": {
     "title": "Курсове",
     "myCourses": "Моите курсове",
@@ -326,7 +312,6 @@
     "continueLearning": "Продължи обучението",
     "viewCourse": "Виж курса"
   },
-
   "community": {
     "title": "Общност",
     "channels": "Канали",
@@ -366,26 +351,128 @@
       "errorPortal": "Неуспешно отваряне на портала за фактуриране"
     }
   },
-
   "calendar": {
-    "title": "Календар",
-    "today": "Днес",
-    "week": "Седмица",
-    "month": "Месец",
-    "createEvent": "Създай събитие",
-    "editEvent": "Редактирай събитие",
-    "eventTitle": "Заглавие на събитие",
-    "eventDescription": "Описание на събитие",
-    "startTime": "Начален час",
-    "endTime": "Краен час",
-    "allDay": "Цял ден",
-    "recurring": "Повтарящо се",
-    "attendees": "Участници",
-    "location": "Местоположение",
-    "reminder": "Напомняне",
-    "noEvents": "Няма планирани събития"
+    "title": "Календар на общността",
+    "subtitleCreator": "Управлявайте вашите сесии и уъркшопи.",
+    "subtitleStudent": "Предстоящи сесии и уъркшопи.",
+    "listViewTooltip": "Списъчен изглед",
+    "calendarViewTooltip": "Календарен изглед",
+    "newEventButton": "Ново събитие",
+    "upcomingEventsHeading": "Предстоящи събития",
+    "noUpcomingEventsHeading": "Няма предстоящи събития",
+    "pastEventsHeading": "Минали събития",
+    "noPastEventsHeading": "Няма минали събития",
+    "historyButton": "История",
+    "showUpcomingButton": "Предстоящи",
+    "showHistoryTooltip": "Покажи минали събития",
+    "showUpcomingTooltip": "Покажи предстоящи събития",
+    "emptyStateCreator": "Няма планирани събития. Създайте първото си събитие!",
+    "emptyStateStudent": "Няма предстоящи събития за показване.",
+    "eventTypeLabel": "ТИП_СЪБИТИЕ",
+    "attendingText": "{{count}} присъстващи",
+    "withAttendeeText": "с {{name}}",
+    "joinOnlineButton": "Присъедини се онлайн",
+    "viewLocationButton": "Виж локацията",
+    "linkComingSoonButton": "Линкът идва скоро",
+    "addToCalendarButton": "Добави в календар",
+    "scheduledStatus": "Планирано",
+    "rsvpButton": "Потвърди участие",
+    "cancelRsvpButton": "Откажи участие",
+    "editEventTooltip": "Редактирай събитие",
+    "deleteEventTooltip": "Изтрий събитие",
+    "miniCalendar": {
+      "eventsOnDayText": "Събития на {{month}} {{day}}",
+      "noEventsOnDay": "Няма събития на този ден",
+      "dayAbbreviations": [
+        "Нд",
+        "Пн",
+        "Вт",
+        "Ср",
+        "Чт",
+        "Пт",
+        "Сб"
+      ]
+    },
+    "createEventModal": {
+      "title": "Създай ново събитие",
+      "eventTitleLabel": "Заглавие на събитието *",
+      "eventTitlePlaceholder": "напр. Седмична Q&A сесия",
+      "descriptionLabel": "Описание",
+      "descriptionPlaceholder": "За какво е това събитие?",
+      "communityLabel": "Общност",
+      "communitySelectPlaceholder": "Изберете общност...",
+      "communityHelpText": "Само членовете на тази общност ще видят събитието",
+      "eventTypeLabel": "Тип събитие",
+      "eventTypeGroup": "Групова сесия",
+      "eventTypeOneOnOne": "1:1 Сесия",
+      "scheduleWithLabel": "Планирай с *",
+      "scheduleWithPlaceholder": "Изберете член...",
+      "loadingMembers": "Зареждане на членове...",
+      "noMembersMessage": "Все още няма членове в тази общност.",
+      "selectCommunityFirst": "Първо изберете общност, за да изберете член за вашата 1:1 сесия.",
+      "dateLabel": "Дата *",
+      "startTimeLabel": "Начален час *",
+      "endTimeLabel": "Краен час *",
+      "locationTypeLabel": "Тип локация",
+      "locationTypeOnline": "Онлайн",
+      "locationTypeInPerson": "На живо",
+      "meetingLinkLabel": "Линк за среща (Zoom, Meet и др.)",
+      "meetingLinkPlaceholder": "https://zoom.us/j/...",
+      "addressLabel": "Адрес на локацията",
+      "addressPlaceholder": "Въведете адрес или Google Maps линк",
+      "addressHelpText": "Поставете Google Maps линк или въведете адреса",
+      "cancelButton": "Отказ",
+      "createButton": "Създай събитие",
+      "creatingButton": "Създаване..."
+    },
+    "editEventModal": {
+      "title": "Редактирай събитие",
+      "scheduledWithLabel": "Планирано с",
+      "scheduledWithPlaceholder": "Изберете член...",
+      "loadingMembers": "Зареждане на членове...",
+      "noAttendeeAssigned": "Няма назначен участник",
+      "eventTitleLabel": "Заглавие на събитието *",
+      "eventTitlePlaceholder": "напр. Седмична Q&A сесия",
+      "descriptionLabel": "Описание",
+      "descriptionPlaceholder": "За какво е това събитие?",
+      "dateLabel": "Дата *",
+      "startTimeLabel": "Начален час *",
+      "endTimeLabel": "Краен час *",
+      "locationTypeLabel": "Тип локация",
+      "locationTypeOnline": "Онлайн",
+      "locationTypeInPerson": "На живо",
+      "meetingLinkLabel": "Линк за среща (Zoom, Meet и др.)",
+      "meetingLinkPlaceholder": "https://zoom.us/j/...",
+      "addressLabel": "Адрес на локацията",
+      "addressPlaceholder": "Въведете адрес или Google Maps линк",
+      "addressHelpText": "Поставете Google Maps линк или въведете адреса",
+      "cancelButton": "Отказ",
+      "saveButton": "Запази промените",
+      "savingButton": "Запазване..."
+    },
+    "deleteEventModal": {
+      "title": "Изтрий събитие",
+      "confirmationText": "Сигурни ли сте, че искате да изтриете това събитие? Това действие не може да бъде отменено и ще премахне всички потвърдени участия.",
+      "cancelButton": "Отказ",
+      "deleteButton": "Изтрий събитие",
+      "deletingButton": "Изтриване..."
+    },
+    "markAttendanceButton": "Присъствие",
+    "markAttendanceTooltip": "Отбележете кой присъства на събитието",
+    "attendance": {
+      "modalTitle": "Отбелязване на присъствие",
+      "searchPlaceholder": "Търси членове...",
+      "attendedCount": "{{count}} присъстващи",
+      "totalCount": "{{count}} общо",
+      "noSearchResults": "Няма намерени членове",
+      "noMembers": "Няма членове за показване",
+      "rsvpYes": "Потвърдил",
+      "rsvpNo": "Не е потвърдил",
+      "cancelButton": "Отказ",
+      "saveButton": "Запази присъствие",
+      "savingButton": "Запазване..."
+    }
   },
-
   "settings": {
     "title": "Настройки",
     "account": "Акаунт",
@@ -404,7 +491,6 @@
     "deleteAccount": "Изтрий акаунта",
     "exportData": "Експортирай данни"
   },
-
   "notificationSettings": {
     "title": "Известия",
     "description": "Управлявайте как получавате известия",
@@ -433,23 +519,19 @@
     "communityCommentReply": "Отговори на коментари",
     "communityCommentReplyDescription": "Когато някой отговори на коментара ви"
   },
-
   "languages": {
     "en": "Английски",
     "bg": "Български"
   },
-
   "loading": {
     "foundersClub": "Зареждане на Founders Club..."
   },
-
   "errors": {
     "selectCommunity": "Моля, първо изберете общност.",
     "accessRestricted": "Достъпът е ограничен до създатели на общности.",
     "accessRestrictedCreators": "Достъпът е ограничен до създатели.",
     "underConstruction": "Секцията е в процес на разработка за MVP."
   },
-
   "onboarding": {
     "settingUp": "Настройване на вашия акаунт...",
     "selectAllThatApply": "Изберете всички приложими",
@@ -690,7 +772,6 @@
       "default": "множество разпръснати инструменти"
     }
   },
-
   "studentOnboarding": {
     "settingUp": "Настройваме твоя учебен профил...",
     "continue": "Продължи",
@@ -932,7 +1013,6 @@
       "default": "различни предизвикателства"
     }
   },
-
   "whopLanding": {
     "tagline": "Където създателите изграждат бизнеса си",
     "signIn": "Вход",
@@ -990,7 +1070,6 @@
     "privacy": "Поверителност",
     "terms": "Условия"
   },
-
   "marketingLanding": {
     "nav": {
       "pillars": "Стълбове",
@@ -1031,23 +1110,39 @@
       "communityHub": {
         "title": "Център за общност",
         "description": "Пълноценен форум с канали, дискусии и чат в реално време.",
-        "features": ["Канали", "Постове", "Чат в реално време"]
+        "features": [
+          "Канали",
+          "Постове",
+          "Чат в реално време"
+        ]
       },
       "courseLms": {
         "title": "LMS за курсове",
         "description": "Професионална платформа за курсове с модули и уроци.",
-        "features": ["Модули", "Уроци", "Прогрес"]
+        "features": [
+          "Модули",
+          "Уроци",
+          "Прогрес"
+        ]
       },
       "eventsBooking": {
         "title": "Събития и резервации",
         "description": "Групови събития и 1:1 резервации директно в платформата.",
-        "features": ["Събития", "1:1 Резервации", "Календар"]
+        "features": [
+          "Събития",
+          "1:1 Резервации",
+          "Календар"
+        ]
       },
       "aiSuccessManager": {
         "title": "AI Success Manager",
         "subtitle": "Твоят 24/7 асистент",
         "description": "Изкуствен интелект, който следи всеки студент, разпознава риска от отпадане и ти дава actionable insights в реално време.",
-        "features": ["Риск скор", "Известия", "Прозрения"],
+        "features": [
+          "Риск скор",
+          "Известия",
+          "Прозрения"
+        ],
         "riskScoring": "Risk Scoring",
         "riskScoringDesc": "Автоматично",
         "smartAlerts": "Smart Alerts",
@@ -1058,7 +1153,11 @@
       "analytics": {
         "title": "Анализи",
         "description": "Детайлни анализи на ангажираност и приходи.",
-        "features": ["Табла", "Отчети", "Метрики"]
+        "features": [
+          "Табла",
+          "Отчети",
+          "Метрики"
+        ]
       }
     },
     "aiSection": {
@@ -1161,21 +1260,41 @@
         "price": "€0",
         "description": "Перфектен за начало",
         "fee": "6.9%",
-        "features": ["До 50 студента", "2 курса", "1 общност", "AI Success Manager", "Stripe плащания"]
+        "features": [
+          "До 50 студента",
+          "2 курса",
+          "1 общност",
+          "AI Success Manager",
+          "Stripe плащания"
+        ]
       },
       "pro": {
         "name": "PRO",
         "price": "€30",
         "description": "За растящи бизнеси",
         "fee": "3.9%",
-        "features": ["До 500 студента", "10 курса", "3 общности", "Custom branding", "Priority support", "Advanced analytics"]
+        "features": [
+          "До 500 студента",
+          "10 курса",
+          "3 общности",
+          "Custom branding",
+          "Priority support",
+          "Advanced analytics"
+        ]
       },
       "scale": {
         "name": "SCALE",
         "price": "€99",
         "description": "За установени бизнеси",
         "fee": "1.9%",
-        "features": ["Неограничени студенти", "Неограничени курсове", "Неограничени общности", "White-label", "API достъп", "Dedicated manager"]
+        "features": [
+          "Неограничени студенти",
+          "Неограничени курсове",
+          "Неограничени общности",
+          "White-label",
+          "API достъп",
+          "Dedicated manager"
+        ]
       },
       "startFree": "Започни Безплатно",
       "choosePro": "Избери Pro",
@@ -1253,7 +1372,6 @@
       "inBulgaria": "в България"
     }
   },
-
   "exploreLanding": {
     "searchPlaceholder": "Търсете курсове...",
     "nav": {
@@ -1309,7 +1427,6 @@
       "free": "Безплатно"
     }
   },
-
   "studentHome": {
     "welcome": {
       "title": "Добре дошли, {{firstName}}!",
@@ -1357,7 +1474,6 @@
       "browseButton": "Разгледай общности"
     }
   },
-
   "courseLms": {
     "pageTitle": {
       "myLearning": "Моето обучение",
@@ -1437,7 +1553,6 @@
       "dragToReorder": "Плъзнете за пренареждане"
     }
   },
-
   "homework": {
     "page": {
       "title": "Домашни",
@@ -1478,122 +1593,6 @@
       "submissionError": "Неуспешно предаване на домашното. Може би вече сте предали тази задача."
     }
   },
-
-  "calendar": {
-    "title": "Календар на общността",
-    "subtitleCreator": "Управлявайте вашите сесии и уъркшопи.",
-    "subtitleStudent": "Предстоящи сесии и уъркшопи.",
-    "listViewTooltip": "Списъчен изглед",
-    "calendarViewTooltip": "Календарен изглед",
-    "newEventButton": "Ново събитие",
-    "upcomingEventsHeading": "Предстоящи събития",
-    "noUpcomingEventsHeading": "Няма предстоящи събития",
-    "pastEventsHeading": "Минали събития",
-    "noPastEventsHeading": "Няма минали събития",
-    "historyButton": "История",
-    "showUpcomingButton": "Предстоящи",
-    "showHistoryTooltip": "Покажи минали събития",
-    "showUpcomingTooltip": "Покажи предстоящи събития",
-    "emptyStateCreator": "Няма планирани събития. Създайте първото си събитие!",
-    "emptyStateStudent": "Няма предстоящи събития за показване.",
-    "eventTypeLabel": "ТИП_СЪБИТИЕ",
-    "attendingText": "{{count}} присъстващи",
-    "withAttendeeText": "с {{name}}",
-    "joinOnlineButton": "Присъедини се онлайн",
-    "viewLocationButton": "Виж локацията",
-    "linkComingSoonButton": "Линкът идва скоро",
-    "addToCalendarButton": "Добави в календар",
-    "scheduledStatus": "Планирано",
-    "rsvpButton": "Потвърди участие",
-    "cancelRsvpButton": "Откажи участие",
-    "editEventTooltip": "Редактирай събитие",
-    "deleteEventTooltip": "Изтрий събитие",
-    "miniCalendar": {
-      "eventsOnDayText": "Събития на {{month}} {{day}}",
-      "noEventsOnDay": "Няма събития на този ден",
-      "dayAbbreviations": ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
-    },
-    "createEventModal": {
-      "title": "Създай ново събитие",
-      "eventTitleLabel": "Заглавие на събитието *",
-      "eventTitlePlaceholder": "напр. Седмична Q&A сесия",
-      "descriptionLabel": "Описание",
-      "descriptionPlaceholder": "За какво е това събитие?",
-      "communityLabel": "Общност",
-      "communitySelectPlaceholder": "Изберете общност...",
-      "communityHelpText": "Само членовете на тази общност ще видят събитието",
-      "eventTypeLabel": "Тип събитие",
-      "eventTypeGroup": "Групова сесия",
-      "eventTypeOneOnOne": "1:1 Сесия",
-      "scheduleWithLabel": "Планирай с *",
-      "scheduleWithPlaceholder": "Изберете член...",
-      "loadingMembers": "Зареждане на членове...",
-      "noMembersMessage": "Все още няма членове в тази общност.",
-      "selectCommunityFirst": "Първо изберете общност, за да изберете член за вашата 1:1 сесия.",
-      "dateLabel": "Дата *",
-      "startTimeLabel": "Начален час *",
-      "endTimeLabel": "Краен час *",
-      "locationTypeLabel": "Тип локация",
-      "locationTypeOnline": "Онлайн",
-      "locationTypeInPerson": "На живо",
-      "meetingLinkLabel": "Линк за среща (Zoom, Meet и др.)",
-      "meetingLinkPlaceholder": "https://zoom.us/j/...",
-      "addressLabel": "Адрес на локацията",
-      "addressPlaceholder": "Въведете адрес или Google Maps линк",
-      "addressHelpText": "Поставете Google Maps линк или въведете адреса",
-      "cancelButton": "Отказ",
-      "createButton": "Създай събитие",
-      "creatingButton": "Създаване..."
-    },
-    "editEventModal": {
-      "title": "Редактирай събитие",
-      "scheduledWithLabel": "Планирано с",
-      "scheduledWithPlaceholder": "Изберете член...",
-      "loadingMembers": "Зареждане на членове...",
-      "noAttendeeAssigned": "Няма назначен участник",
-      "eventTitleLabel": "Заглавие на събитието *",
-      "eventTitlePlaceholder": "напр. Седмична Q&A сесия",
-      "descriptionLabel": "Описание",
-      "descriptionPlaceholder": "За какво е това събитие?",
-      "dateLabel": "Дата *",
-      "startTimeLabel": "Начален час *",
-      "endTimeLabel": "Краен час *",
-      "locationTypeLabel": "Тип локация",
-      "locationTypeOnline": "Онлайн",
-      "locationTypeInPerson": "На живо",
-      "meetingLinkLabel": "Линк за среща (Zoom, Meet и др.)",
-      "meetingLinkPlaceholder": "https://zoom.us/j/...",
-      "addressLabel": "Адрес на локацията",
-      "addressPlaceholder": "Въведете адрес или Google Maps линк",
-      "addressHelpText": "Поставете Google Maps линк или въведете адреса",
-      "cancelButton": "Отказ",
-      "saveButton": "Запази промените",
-      "savingButton": "Запазване..."
-    },
-    "deleteEventModal": {
-      "title": "Изтрий събитие",
-      "confirmationText": "Сигурни ли сте, че искате да изтриете това събитие? Това действие не може да бъде отменено и ще премахне всички потвърдени участия.",
-      "cancelButton": "Отказ",
-      "deleteButton": "Изтрий събитие",
-      "deletingButton": "Изтриване..."
-    },
-    "markAttendanceButton": "Присъствие",
-    "markAttendanceTooltip": "Отбележете кой присъства на събитието",
-    "attendance": {
-      "modalTitle": "Отбелязване на присъствие",
-      "searchPlaceholder": "Търси членове...",
-      "attendedCount": "{{count}} присъстващи",
-      "totalCount": "{{count}} общо",
-      "noSearchResults": "Няма намерени членове",
-      "noMembers": "Няма членове за показване",
-      "rsvpYes": "Потвърдил",
-      "rsvpNo": "Не е потвърдил",
-      "cancelButton": "Отказ",
-      "saveButton": "Запази присъствие",
-      "savingButton": "Запазване..."
-    }
-  },
-
   "creatorDashboard": {
     "pageTitle": "Табло на създателя",
     "welcomeMessage": "Добре дошли отново, {{name}}. Ето какво се случва днес.",
@@ -1757,7 +1756,6 @@
       "loadError": "Неуспешно зареждане на присъствието"
     }
   },
-
   "homeworkManagement": {
     "pageTitle": "Управление на домашни",
     "pageSubtitle": "Управлявайте задания и оценявайте предадени работи",
@@ -1870,7 +1868,6 @@
       "errorGradeFailed": "Неуспешно оценяване на работата. Моля, опитайте отново."
     }
   },
-
   "communityHub": {
     "emptyState": {
       "noCommunitiesTitle": "Все още няма общности",
@@ -2129,6 +2126,11 @@
       },
       "saving": "Запазване...",
       "savePricing": "Запази ценообразуване",
+      "billingGate": {
+        "title": "Завършете настройката на плащанията",
+        "description": "Трябва да завършите настройката на плащанията, преди да активирате платени общности.",
+        "goToBilling": "Към настройки за плащания →"
+      },
       "gatedAccess": {
         "title": "Изисквай одобрение за присъединяване",
         "description": "Членовете трябва да кандидатстват и да бъдат одобрени преди да се присъединят към тази общност",
@@ -2215,7 +2217,6 @@
       "saveMembers": "Запази членове"
     }
   },
-
   "chatbots": {
     "page": {
       "title": "AI Чат",
@@ -2241,7 +2242,6 @@
           "label": "Име на бота",
           "placeholder": "напр., Помощник за курса"
         },
-        "role": "Роля",
         "role": {
           "label": "Роля"
         },
@@ -2357,7 +2357,6 @@
       "defaultSystemPrompt": "Вие сте полезен асистент."
     }
   },
-
   "publicCommunities": {
     "directory": {
       "hero": {
@@ -2553,7 +2552,6 @@
       "copyright": "Founders Club. Всички права запазени."
     }
   },
-
   "billing": {
     "settings": {
       "loading": "Зареждане на информация за фактуриране...",
@@ -2906,7 +2904,6 @@
       }
     }
   },
-
   "creatorSettings": {
     "tabs": {
       "creator": "Настройки на създател",
@@ -3085,7 +3082,6 @@
       }
     }
   },
-
   "imageCrop": {
     "title": "Настройка на профилна снимка",
     "instructions": "Плъзнете за преместване, скролвайте за увеличение",
@@ -3097,7 +3093,6 @@
     "processing": "Обработка...",
     "cropPreviewAlt": "Преглед на изрязване"
   },
-
   "discounts": {
     "page": {
       "title": "Кодове за отстъпка",
@@ -3221,7 +3216,6 @@
       "months_other": "{{count}} месеца"
     }
   },
-
   "aiManager": {
     "title": "AI Мениджър за успех™",
     "subtitle": "Вашият интелигентен партньор за растеж на общността.",
@@ -3269,153 +3263,6 @@
       "resultsTitle": "Резултати от анализа"
     }
   },
-
-  "studentPlus": {
-    "page": {
-      "title": "Student Plus",
-      "tagline": "Ексклузивно членство",
-      "subtitle": "Вашето членство за предприемачески успех",
-      "pricePerMonth": "/месец",
-      "successTitle": "Добре дошли в Student Plus!",
-      "successMessage": "Абонаментът ви е активен. Започнете да печелите точки!",
-      "canceledTitle": "Плащането е отменено",
-      "canceledMessage": "Няма проблем! Абонаментът ви не е стартиран. Можете да се абонирате, когато сте готови.",
-      "checkoutError": "Неуспешно стартиране на плащане. Моля, опитайте отново.",
-      "redirectingToCheckout": "Пренасочване към плащане...",
-      "startYourJourney": "Започни пътешествието си",
-      "cancelAnytime": "Откажи по всяко време. Без въпроси.",
-      "readyToJoin": "Готови ли сте да се присъедините?",
-      "signInRequired": "Влезте, за да се абонирате",
-      "signInToSubscribe": "Влезте, за да се абонирате",
-      "noAccountYet": "Нямате акаунт?",
-      "createAccount": "Създайте такъв тук",
-      "memberSince": "Член от",
-      "tabs": {
-        "dashboard": "Табло",
-        "rewards": "Награди",
-        "history": "История"
-      },
-      "benefits": {
-        "exclusiveNewsletter": {
-          "title": "Ексклузивен бюлетин",
-          "description": "Частни практически съвети за предприемачество и бизнес, доставяни в пощата ви всяка седмица"
-        },
-        "communityPerks": {
-          "title": "Предимства в общността",
-          "description": "Ексклузивен достъп до премиум функции на общността, съдържание и събития само за членове"
-        },
-        "loyaltyRewards": {
-          "title": "Награди за лоялност",
-          "description": "Печелете точки всеки месец и отключвайте награди при етапи на 3, 6, 9 и 12 месеца"
-        },
-        "redeemRewards": {
-          "title": "Използвайте награди",
-          "description": "Използвайте точките си за отстъпки от курсове, пакети с шаблони, приоритетна поддръжка и други"
-        }
-      },
-      "milestonePreview": {
-        "title": "Етапи на лоялност",
-        "months": "месеца",
-        "pts": "точки"
-      },
-      "whatsIncluded": {
-        "title": "Какво е включено",
-        "weeklyNewsletter": "Седмичен ексклузивен бюлетин с приложими бизнес съвети",
-        "monthlyPoints": "50 точки за лоялност, печелени всеки месец (автоматично натрупване)"
-      }
-    },
-    "rewards": {
-      "title": "Налични награди",
-      "subtitle": "Използвайте точките си за ексклузивни награди",
-      "empty": "Скоро идват награди",
-      "emptyDescription": "Създателят скоро ще добави награди тук. Продължавайте да трупате точки!",
-      "pointsBalance": "Баланс точки",
-      "points": "точки",
-      "redeem": "Използвай",
-      "redeemFor": "Използвай за {{points}} точки",
-      "cost": "{{points}} точки",
-      "notEnoughPoints": "Нужни са ви още {{needed}} точки",
-      "redeemed": "Използвано",
-      "redemptionSuccess": "Успешно използване! {{name}} е ваша."
-    },
-    "dashboard": {
-      "title": "Вашият напредък",
-      "currentTier": "Текущо ниво",
-      "nextTier": "Следващо ниво",
-      "pointsToNext": "{{points}} точки до следващото ниво",
-      "totalPoints": "Общо точки",
-      "pointsThisMonth": "Точки този месец",
-      "streak": "Поредни дни",
-      "days": "дни",
-      "level": "Ниво {{level}}",
-      "earnMore": "Продължавайте да участвате, за да печелите повече точки!",
-      "tierBenefits": "Предимства на нивото",
-      "allBenefits": "Всички предимства на {{tier}}"
-    },
-    "milestones": {
-      "title": "Етапи",
-      "subtitle": "Вашето пътешествие към успеха",
-      "completed": "Завършено",
-      "inProgress": "В процес",
-      "locked": "Заключено",
-      "progress": "{{current}}/{{total}}",
-      "claim": "Вземи награда",
-      "claimed": "Взето",
-      "pointsReward": "+{{points}} точки"
-    },
-    "history": {
-      "title": "История на точките",
-      "subtitle": "Вашата активност и печалби",
-      "empty": "Все още няма история",
-      "emptyDescription": "Започнете да участвате, за да печелите точки!",
-      "earned": "Спечелени",
-      "spent": "Изразходвани",
-      "date": "Дата",
-      "action": "Действие",
-      "points": "Точки",
-      "balance": "Баланс",
-      "filter": {
-        "all": "Всички",
-        "earned": "Спечелени",
-        "spent": "Изразходвани"
-      }
-    },
-    "redemption": {
-      "title": "Използване на награда",
-      "confirm": "Потвърдете използването",
-      "confirmMessage": "Сигурни ли сте, че искате да използвате {{points}} точки за {{reward}}?",
-      "cancel": "Отказ",
-      "processing": "Обработка...",
-      "success": "Успех!",
-      "successMessage": "Успешно използвахте {{reward}}",
-      "error": "Възникна грешка",
-      "insufficientPoints": "Недостатъчно точки"
-    },
-    "rewardCard": {
-      "exclusive": "Ексклузивно",
-      "limitedTime": "Ограничено време",
-      "popular": "Популярно",
-      "new": "Ново",
-      "soldOut": "Изчерпано",
-      "remaining": "Остават {{count}}",
-      "expires": "Изтича {{date}}"
-    },
-    "subscription": {
-      "title": "Вашият абонамент",
-      "status": "Статус",
-      "active": "Активен",
-      "inactive": "Неактивен",
-      "cancelled": "Отменен",
-      "renewsOn": "Подновява се на {{date}}",
-      "expiresOn": "Изтича на {{date}}",
-      "manage": "Управление на абонамент",
-      "upgrade": "Надграждане",
-      "cancel": "Отмяна на абонамент",
-      "reactivate": "Повторно активиране",
-      "price": "{{price}}/месец"
-    }
-  },
-
   "dwyPackages": {
     "page": {
       "title": "Done-With-You пакети",
@@ -3520,7 +3367,6 @@
       "intensive": "Интензивна програма"
     }
   },
-
   "studentManager": {
     "page": {
       "title": "Мениджър на студенти",
@@ -3686,7 +3532,6 @@
       "close": "Затвори"
     }
   },
-
   "directMessages": {
     "teamCard": {
       "unknownMember": "Неизвестен член"
@@ -3761,7 +3606,6 @@
       "hint": "Enter за изпращане, Shift+Enter за нов ред"
     }
   },
-
   "team": {
     "roles": {
       "lecturer": "Лектор",
@@ -3886,7 +3730,6 @@
       "errorFailed": "Неуспешна актуализация на член от екипа"
     }
   },
-
   "teamMembers": {
     "pageTitle": "Членове на общността",
     "pageSubtitle": "{{count}} члена в тази общност",
@@ -3920,7 +3763,6 @@
       "awardFailed": "Неуспешно добавяне на бонус точки. Моля, опитайте отново."
     }
   },
-
   "teamDashboard": {
     "welcome": "Добре дошли",
     "roleAt": "{{role}} в {{community}}",
@@ -3937,7 +3779,6 @@
     "atRiskStudents": "Студенти в риск",
     "noAtRiskStudents": "Няма студенти в риск в момента"
   },
-
   "teamInbox": {
     "title": "Съобщения",
     "search": "Търсене на студенти...",
@@ -3950,7 +3791,6 @@
     "selectConversation": "Изберете разговор",
     "selectConversationHint": "Изберете студент отляво, за да видите съобщенията"
   },
-
   "surveys": {
     "questions": "{{count}} въпроса",
     "sections": "{{count}} секции",
@@ -3963,13 +3803,11 @@
     "courseIntake": "Прием в курс",
     "communityIntake": "Прием в общност",
     "attachedTo": "Прикачена към",
-
     "attachmentTypes": {
       "standalone": "Самостоятелна анкета",
       "course_intake": "Входяща форма за курс",
       "community_intake": "Входяща анкета"
     },
-
     "questionTypes": {
       "text": "Текстов отговор",
       "textDesc": "Свободен текст",
@@ -3982,7 +3820,6 @@
       "scale": "Скала (1-10)",
       "scaleDesc": "Оценка по скала"
     },
-
     "list": {
       "title": "Анкети",
       "subtitle": "Създавайте и управлявайте анкети и входящи форми",
@@ -4007,7 +3844,6 @@
       "deleteConfirm": "Сигурни ли сте, че искате да изтриете тази анкета? Всички отговори ще бъдат загубени.",
       "deleteError": "Неуспешно изтриване на анкета"
     },
-
     "responses": {
       "title": "Отговори на анкета",
       "description": "Преглед на отговорите, изпратени от студентите",
@@ -4033,7 +3869,6 @@
       "noAnswer": "Без отговор",
       "otherValue": "Друго: {{value}}"
     },
-
     "send": {
       "menuButton": "Изпрати на членове",
       "title": "Изпращане на анкета на членове",
@@ -4052,7 +3887,6 @@
       "allResponded": "Всички членове вече са получили тази анкета.",
       "noMembers": "Тази общност все още няма членове."
     },
-
     "create": {
       "title": "Създаване на анкета",
       "nameLabel": "Заглавие на анкетата",
@@ -4070,7 +3904,6 @@
       "createButton": "Създай анкета",
       "creating": "Създаване..."
     },
-
     "builder": {
       "title": "Редактор на анкета",
       "backToList": "Към анкетите",
@@ -4122,7 +3955,6 @@
       "noQuestions": "Все още няма въпроси",
       "noQuestionsHelp": "Добавете първия въпрос, за да започнете да изграждате анкетата."
     },
-
     "player": {
       "loading": "Зареждане на анкета...",
       "notFound": "Анкетата не е намерена",
@@ -4145,7 +3977,6 @@
       "continue": "Продължи",
       "close": "Затвори"
     },
-
     "pending": {
       "title": "Чакащи анкети",
       "empty": "Няма чакащи анкети",
@@ -4154,7 +3985,6 @@
       "count": "{{count}} анкети за попълване",
       "countSingle": "1 анкета за попълване"
     },
-
     "settings": {
       "title": "Настройки на анкетата",
       "generalTab": "Общи",
@@ -4168,7 +3998,6 @@
       "allowEdit": "Позволи редактиране на отговори",
       "saveSettings": "Запази настройки"
     },
-
     "errors": {
       "loadFailed": "Неуспешно зареждане на анкети",
       "createFailed": "Неуспешно създаване на анкета",
@@ -4178,7 +4007,6 @@
       "exportFailed": "Неуспешен експорт на отговори",
       "notFound": "Анкетата не е намерена"
     },
-
     "banner": {
       "title": "Имате анкети за попълване",
       "description": "{{count}} анкети чакат вашия отговор",
@@ -4186,7 +4014,6 @@
       "dismiss": "По-късно"
     }
   },
-
   "tracking": {
     "badge": "Обновява се в реално време",
     "title": "Аналитика в реално време",

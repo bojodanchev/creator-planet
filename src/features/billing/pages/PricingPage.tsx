@@ -160,14 +160,6 @@ const PricingPage: React.FC = () => {
             <CheckCircle size={20} className="text-[#FAFAFA]" />
             <span className="text-[#FAFAFA]">
               {t('billing.pricing.currentPlanLabel', { planName: billing.plan?.name || 'Starter' })}
-              {billing.has_first_sale
-                ? billing.monthly_fee_active
-                  ? ` ${t('billing.pricing.billingActive')}`
-                  : ''
-                : billing.plan?.tier !== 'starter'
-                ? ` ${t('billing.pricing.billingStartsAfterSale')}`
-                : ''
-              }
             </span>
           </div>
         )}
@@ -182,7 +174,6 @@ const PricingPage: React.FC = () => {
               isRecommended={plan.tier === 'pro'}
               onSelect={handlePlanSelect}
               currentPlanTier={currentPlanTier}
-              showFirstSaleNote={!billing?.has_first_sale}
             />
           ))}
         </div>
@@ -295,7 +286,6 @@ const PricingPage: React.FC = () => {
         <UpgradeModal
           currentPlan={billing.plan!}
           newPlan={selectedPlan}
-          hasFirstSale={billing.has_first_sale}
           onConfirm={handleConfirmPlanChange}
           onCancel={() => {
             setShowUpgradeModal(false);

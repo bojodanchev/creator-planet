@@ -36,7 +36,6 @@
     "optional": "optional",
     "confirm": "Confirm"
   },
-
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -51,7 +50,6 @@
     "contact": "Contact",
     "analytics": "Analytics"
   },
-
   "hero": {
     "badge": "The All-in-One Platform for Course Creators",
     "title": "Replace 5+ Tools with One",
@@ -61,7 +59,6 @@
     "freeTrial": "14-day free trial",
     "cancelAnytime": "Cancel anytime"
   },
-
   "painPoints": {
     "title": "Tired of the Tool Chaos?",
     "subtitle": "Course creators face real challenges every day",
@@ -78,7 +75,6 @@
       "description": "Manually tracking progress, engagement, and student health eats into your time. You should be creating, not doing admin work."
     }
   },
-
   "solution": {
     "title": "One Platform. Everything You Need.",
     "subtitle": "Founders Club replaces your entire tech stack with a unified, AI-powered solution",
@@ -99,7 +95,6 @@
       "description": "AI tracks every student, identifies at-risk learners, and suggests interventions."
     }
   },
-
   "features": {
     "title": "Features That Scale With You",
     "subtitle": "Everything you need to run a successful creator business",
@@ -128,7 +123,6 @@
       "description": "Let AI identify struggling students and suggest personalized interventions."
     }
   },
-
   "testimonials": {
     "title": "Loved by Creators Worldwide",
     "subtitle": "See what course creators are saying about Founders Club",
@@ -148,7 +142,6 @@
       "role": "Design Course Creator"
     }
   },
-
   "pricing": {
     "title": "Clear Pricing. No Surprises.",
     "subtitle": "Start free. Pay for growth only when you see results.",
@@ -201,13 +194,11 @@
       }
     }
   },
-
   "cta": {
     "title": "Ready to Simplify Your Creator Business?",
     "subtitle": "Join thousands of creators who've ditched the tool chaos and built thriving communities with Founders Club.",
     "trialInfo": "14-day free trial • No credit card required • Cancel anytime"
   },
-
   "footer": {
     "tagline": "The all-in-one platform for course creators, coaches, and mentors.",
     "product": "Product",
@@ -217,7 +208,6 @@
     "changelog": "Changelog",
     "copyright": "© 2026 Founders Club. All rights reserved."
   },
-
   "auth": {
     "loginTitle": "Log In",
     "loginSubtitle": "Sign in to Founders Club",
@@ -256,7 +246,6 @@
     "resetPasswordTitle": "Create new password",
     "resetPasswordSubtitle": "Enter your new password below.",
     "newPassword": "New Password",
-    "confirmPassword": "Confirm Password",
     "resetPassword": "Reset Password",
     "passwordResetSuccess": "Your password has been reset successfully. You can now log in with your new password.",
     "passwordsDoNotMatch": "Passwords do not match.",
@@ -273,7 +262,6 @@
     "marketingOptIn": "Send me special offers, personalized recommendations, and learning tips.",
     "termsAgreement": "By signing up, you agree to our"
   },
-
   "sidebar": {
     "dashboard": "Dashboard",
     "community": "Community",
@@ -292,7 +280,6 @@
     "createCommunity": "Create Community",
     "yourCommunity": "Your Community"
   },
-
   "teamDashboard": {
     "welcome": "Welcome back, {{name}}!",
     "roleAt": "You're a {{role}} at {{community}}",
@@ -310,7 +297,6 @@
     "atRiskStudents": "At-Risk Students",
     "noAtRiskStudents": "No at-risk students right now"
   },
-
   "teamInbox": {
     "title": "Messages",
     "search": "Search conversations...",
@@ -323,7 +309,6 @@
     "selectConversation": "Select a conversation",
     "selectConversationHint": "Choose a conversation from the list to view messages"
   },
-
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome back",
@@ -336,7 +321,6 @@
     "upcomingEvents": "Upcoming Events",
     "quickActions": "Quick Actions"
   },
-
   "courses": {
     "title": "Courses",
     "myCourses": "My Courses",
@@ -357,7 +341,6 @@
     "continueLearning": "Continue Learning",
     "viewCourse": "View Course"
   },
-
   "community": {
     "title": "Community",
     "channels": "Channels",
@@ -397,26 +380,128 @@
       "errorPortal": "Failed to open billing portal"
     }
   },
-
   "calendar": {
-    "title": "Calendar",
-    "today": "Today",
-    "week": "Week",
-    "month": "Month",
-    "createEvent": "Create Event",
-    "editEvent": "Edit Event",
-    "eventTitle": "Event Title",
-    "eventDescription": "Event Description",
-    "startTime": "Start Time",
-    "endTime": "End Time",
-    "allDay": "All Day",
-    "recurring": "Recurring",
-    "attendees": "Attendees",
-    "location": "Location",
-    "reminder": "Reminder",
-    "noEvents": "No events scheduled"
+    "title": "Community Calendar",
+    "subtitleCreator": "Manage your live sessions and workshops.",
+    "subtitleStudent": "Upcoming live sessions and workshops.",
+    "listViewTooltip": "List view",
+    "calendarViewTooltip": "Calendar view",
+    "newEventButton": "New Event",
+    "upcomingEventsHeading": "Upcoming Events",
+    "noUpcomingEventsHeading": "No Upcoming Events",
+    "pastEventsHeading": "Past Events",
+    "noPastEventsHeading": "No Past Events",
+    "historyButton": "History",
+    "showUpcomingButton": "Upcoming",
+    "showHistoryTooltip": "Show past events",
+    "showUpcomingTooltip": "Show upcoming events",
+    "emptyStateCreator": "No events scheduled. Create your first event!",
+    "emptyStateStudent": "No upcoming events to display.",
+    "eventTypeLabel": "EVENT_TYPE",
+    "attendingText": "{{count}} Attending",
+    "withAttendeeText": "with {{name}}",
+    "joinOnlineButton": "Join Online",
+    "viewLocationButton": "View Location",
+    "linkComingSoonButton": "Link Coming Soon",
+    "addToCalendarButton": "Add to Calendar",
+    "scheduledStatus": "Scheduled",
+    "rsvpButton": "RSVP",
+    "cancelRsvpButton": "Cancel RSVP",
+    "editEventTooltip": "Edit event",
+    "deleteEventTooltip": "Delete event",
+    "miniCalendar": {
+      "eventsOnDayText": "Events on {{month}} {{day}}",
+      "noEventsOnDay": "No events on this day",
+      "dayAbbreviations": [
+        "Su",
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr",
+        "Sa"
+      ]
+    },
+    "createEventModal": {
+      "title": "Create New Event",
+      "eventTitleLabel": "Event Title *",
+      "eventTitlePlaceholder": "e.g., Weekly Q&A Session",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "What's this event about?",
+      "communityLabel": "Community",
+      "communitySelectPlaceholder": "Select a community...",
+      "communityHelpText": "Only members of this community will see the event",
+      "eventTypeLabel": "Event Type",
+      "eventTypeGroup": "Group Session",
+      "eventTypeOneOnOne": "1:1 Session",
+      "scheduleWithLabel": "Schedule With *",
+      "scheduleWithPlaceholder": "Select a member...",
+      "loadingMembers": "Loading members...",
+      "noMembersMessage": "No members in this community yet.",
+      "selectCommunityFirst": "Select a community first to choose a member for your 1:1 session.",
+      "dateLabel": "Date *",
+      "startTimeLabel": "Start Time *",
+      "endTimeLabel": "End Time *",
+      "locationTypeLabel": "Location Type",
+      "locationTypeOnline": "Online",
+      "locationTypeInPerson": "In Person",
+      "meetingLinkLabel": "Meeting Link (Zoom, Meet, etc.)",
+      "meetingLinkPlaceholder": "https://zoom.us/j/...",
+      "addressLabel": "Location Address",
+      "addressPlaceholder": "Enter address or Google Maps link",
+      "addressHelpText": "Paste a Google Maps link or enter the address",
+      "cancelButton": "Cancel",
+      "createButton": "Create Event",
+      "creatingButton": "Creating..."
+    },
+    "editEventModal": {
+      "title": "Edit Event",
+      "scheduledWithLabel": "Scheduled With",
+      "scheduledWithPlaceholder": "Select a member...",
+      "loadingMembers": "Loading members...",
+      "noAttendeeAssigned": "No attendee assigned",
+      "eventTitleLabel": "Event Title *",
+      "eventTitlePlaceholder": "e.g., Weekly Q&A Session",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "What's this event about?",
+      "dateLabel": "Date *",
+      "startTimeLabel": "Start Time *",
+      "endTimeLabel": "End Time *",
+      "locationTypeLabel": "Location Type",
+      "locationTypeOnline": "Online",
+      "locationTypeInPerson": "In Person",
+      "meetingLinkLabel": "Meeting Link (Zoom, Meet, etc.)",
+      "meetingLinkPlaceholder": "https://zoom.us/j/...",
+      "addressLabel": "Location Address",
+      "addressPlaceholder": "Enter address or Google Maps link",
+      "addressHelpText": "Paste a Google Maps link or enter the address",
+      "cancelButton": "Cancel",
+      "saveButton": "Save Changes",
+      "savingButton": "Saving..."
+    },
+    "deleteEventModal": {
+      "title": "Delete Event",
+      "confirmationText": "Are you sure you want to delete this event? This action cannot be undone and will remove all attendee RSVPs.",
+      "cancelButton": "Cancel",
+      "deleteButton": "Delete Event",
+      "deletingButton": "Deleting..."
+    },
+    "markAttendanceButton": "Attendance",
+    "markAttendanceTooltip": "Mark who attended this event",
+    "attendance": {
+      "modalTitle": "Mark Attendance",
+      "searchPlaceholder": "Search members...",
+      "attendedCount": "{{count}} attended",
+      "totalCount": "{{count}} total",
+      "noSearchResults": "No members found matching your search",
+      "noMembers": "No members to display",
+      "rsvpYes": "RSVP'd",
+      "rsvpNo": "Not RSVP'd",
+      "cancelButton": "Cancel",
+      "saveButton": "Save Attendance",
+      "savingButton": "Saving..."
+    }
   },
-
   "settings": {
     "title": "Settings",
     "account": "Account",
@@ -435,7 +520,6 @@
     "deleteAccount": "Delete Account",
     "exportData": "Export Data"
   },
-
   "notificationSettings": {
     "title": "Notifications",
     "description": "Manage how you receive notifications",
@@ -464,23 +548,19 @@
     "communityCommentReply": "Comment Replies",
     "communityCommentReplyDescription": "When someone replies to your comment"
   },
-
   "languages": {
     "en": "English",
     "bg": "Bulgarian"
   },
-
   "loading": {
     "foundersClub": "Loading Founders Club..."
   },
-
   "errors": {
     "selectCommunity": "Please select a community first.",
     "accessRestricted": "Access restricted to community creators.",
     "accessRestrictedCreators": "Access restricted to creators.",
     "underConstruction": "Section under construction for MVP."
   },
-
   "onboarding": {
     "settingUp": "Setting up your account...",
     "selectAllThatApply": "Select all that apply",
@@ -721,7 +801,6 @@
       "default": "multiple scattered tools"
     }
   },
-
   "studentOnboarding": {
     "settingUp": "Setting up your learning profile...",
     "continue": "Continue",
@@ -963,7 +1042,6 @@
       "default": "various challenges"
     }
   },
-
   "whopLanding": {
     "tagline": "Where creators build their business",
     "signIn": "Sign in",
@@ -1021,7 +1099,6 @@
     "privacy": "Privacy",
     "terms": "Terms"
   },
-
   "marketingLanding": {
     "nav": {
       "pillars": "Pillars",
@@ -1062,23 +1139,39 @@
       "communityHub": {
         "title": "Community Hub",
         "description": "Full-featured forum with channels, discussions, and real-time chat.",
-        "features": ["Channels", "Posts", "Real-time chat"]
+        "features": [
+          "Channels",
+          "Posts",
+          "Real-time chat"
+        ]
       },
       "courseLms": {
         "title": "Course LMS",
         "description": "Professional course platform with modules and lessons.",
-        "features": ["Modules", "Lessons", "Progress"]
+        "features": [
+          "Modules",
+          "Lessons",
+          "Progress"
+        ]
       },
       "eventsBooking": {
         "title": "Events & Booking",
         "description": "Group events and 1:1 booking directly in the platform.",
-        "features": ["Events", "1:1 Booking", "Calendar"]
+        "features": [
+          "Events",
+          "1:1 Booking",
+          "Calendar"
+        ]
       },
       "aiSuccessManager": {
         "title": "AI Success Manager",
         "subtitle": "Your 24/7 assistant",
         "description": "Artificial intelligence that monitors every student, recognizes dropout risk, and gives you actionable insights in real time.",
-        "features": ["Risk Score", "Alerts", "Insights"],
+        "features": [
+          "Risk Score",
+          "Alerts",
+          "Insights"
+        ],
         "riskScoring": "Risk Scoring",
         "riskScoringDesc": "Automatic",
         "smartAlerts": "Smart Alerts",
@@ -1089,7 +1182,11 @@
       "analytics": {
         "title": "Analytics",
         "description": "Detailed engagement and revenue analytics.",
-        "features": ["Dashboards", "Reports", "Metrics"]
+        "features": [
+          "Dashboards",
+          "Reports",
+          "Metrics"
+        ]
       }
     },
     "aiSection": {
@@ -1192,21 +1289,41 @@
         "price": "€0",
         "description": "Perfect for getting started",
         "fee": "6.9%",
-        "features": ["Up to 50 students", "2 courses", "1 community", "AI Success Manager", "Stripe payments"]
+        "features": [
+          "Up to 50 students",
+          "2 courses",
+          "1 community",
+          "AI Success Manager",
+          "Stripe payments"
+        ]
       },
       "pro": {
         "name": "PRO",
         "price": "€30",
         "description": "For growing businesses",
         "fee": "3.9%",
-        "features": ["Up to 500 students", "10 courses", "3 communities", "Custom branding", "Priority support", "Advanced analytics"]
+        "features": [
+          "Up to 500 students",
+          "10 courses",
+          "3 communities",
+          "Custom branding",
+          "Priority support",
+          "Advanced analytics"
+        ]
       },
       "scale": {
         "name": "SCALE",
         "price": "€99",
         "description": "For established businesses",
         "fee": "1.9%",
-        "features": ["Unlimited students", "Unlimited courses", "Unlimited communities", "White-label", "API access", "Dedicated manager"]
+        "features": [
+          "Unlimited students",
+          "Unlimited courses",
+          "Unlimited communities",
+          "White-label",
+          "API access",
+          "Dedicated manager"
+        ]
       },
       "startFree": "Start Free",
       "choosePro": "Choose Pro",
@@ -1284,7 +1401,6 @@
       "inBulgaria": "in Bulgaria"
     }
   },
-
   "exploreLanding": {
     "searchPlaceholder": "Search for courses...",
     "nav": {
@@ -1340,7 +1456,6 @@
       "free": "Free"
     }
   },
-
   "studentHome": {
     "welcome": {
       "title": "Welcome back, {{firstName}}!",
@@ -1388,7 +1503,6 @@
       "browseButton": "Browse Communities"
     }
   },
-
   "courseLms": {
     "pageTitle": {
       "myLearning": "My Learning",
@@ -1468,7 +1582,6 @@
       "dragToReorder": "Drag to reorder"
     }
   },
-
   "homework": {
     "page": {
       "title": "Homework",
@@ -1509,122 +1622,6 @@
       "submissionError": "Failed to submit homework. You may have already submitted this assignment."
     }
   },
-
-  "calendar": {
-    "title": "Community Calendar",
-    "subtitleCreator": "Manage your live sessions and workshops.",
-    "subtitleStudent": "Upcoming live sessions and workshops.",
-    "listViewTooltip": "List view",
-    "calendarViewTooltip": "Calendar view",
-    "newEventButton": "New Event",
-    "upcomingEventsHeading": "Upcoming Events",
-    "noUpcomingEventsHeading": "No Upcoming Events",
-    "pastEventsHeading": "Past Events",
-    "noPastEventsHeading": "No Past Events",
-    "historyButton": "History",
-    "showUpcomingButton": "Upcoming",
-    "showHistoryTooltip": "Show past events",
-    "showUpcomingTooltip": "Show upcoming events",
-    "emptyStateCreator": "No events scheduled. Create your first event!",
-    "emptyStateStudent": "No upcoming events to display.",
-    "eventTypeLabel": "EVENT_TYPE",
-    "attendingText": "{{count}} Attending",
-    "withAttendeeText": "with {{name}}",
-    "joinOnlineButton": "Join Online",
-    "viewLocationButton": "View Location",
-    "linkComingSoonButton": "Link Coming Soon",
-    "addToCalendarButton": "Add to Calendar",
-    "scheduledStatus": "Scheduled",
-    "rsvpButton": "RSVP",
-    "cancelRsvpButton": "Cancel RSVP",
-    "editEventTooltip": "Edit event",
-    "deleteEventTooltip": "Delete event",
-    "miniCalendar": {
-      "eventsOnDayText": "Events on {{month}} {{day}}",
-      "noEventsOnDay": "No events on this day",
-      "dayAbbreviations": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
-    },
-    "createEventModal": {
-      "title": "Create New Event",
-      "eventTitleLabel": "Event Title *",
-      "eventTitlePlaceholder": "e.g., Weekly Q&A Session",
-      "descriptionLabel": "Description",
-      "descriptionPlaceholder": "What's this event about?",
-      "communityLabel": "Community",
-      "communitySelectPlaceholder": "Select a community...",
-      "communityHelpText": "Only members of this community will see the event",
-      "eventTypeLabel": "Event Type",
-      "eventTypeGroup": "Group Session",
-      "eventTypeOneOnOne": "1:1 Session",
-      "scheduleWithLabel": "Schedule With *",
-      "scheduleWithPlaceholder": "Select a member...",
-      "loadingMembers": "Loading members...",
-      "noMembersMessage": "No members in this community yet.",
-      "selectCommunityFirst": "Select a community first to choose a member for your 1:1 session.",
-      "dateLabel": "Date *",
-      "startTimeLabel": "Start Time *",
-      "endTimeLabel": "End Time *",
-      "locationTypeLabel": "Location Type",
-      "locationTypeOnline": "Online",
-      "locationTypeInPerson": "In Person",
-      "meetingLinkLabel": "Meeting Link (Zoom, Meet, etc.)",
-      "meetingLinkPlaceholder": "https://zoom.us/j/...",
-      "addressLabel": "Location Address",
-      "addressPlaceholder": "Enter address or Google Maps link",
-      "addressHelpText": "Paste a Google Maps link or enter the address",
-      "cancelButton": "Cancel",
-      "createButton": "Create Event",
-      "creatingButton": "Creating..."
-    },
-    "editEventModal": {
-      "title": "Edit Event",
-      "scheduledWithLabel": "Scheduled With",
-      "scheduledWithPlaceholder": "Select a member...",
-      "loadingMembers": "Loading members...",
-      "noAttendeeAssigned": "No attendee assigned",
-      "eventTitleLabel": "Event Title *",
-      "eventTitlePlaceholder": "e.g., Weekly Q&A Session",
-      "descriptionLabel": "Description",
-      "descriptionPlaceholder": "What's this event about?",
-      "dateLabel": "Date *",
-      "startTimeLabel": "Start Time *",
-      "endTimeLabel": "End Time *",
-      "locationTypeLabel": "Location Type",
-      "locationTypeOnline": "Online",
-      "locationTypeInPerson": "In Person",
-      "meetingLinkLabel": "Meeting Link (Zoom, Meet, etc.)",
-      "meetingLinkPlaceholder": "https://zoom.us/j/...",
-      "addressLabel": "Location Address",
-      "addressPlaceholder": "Enter address or Google Maps link",
-      "addressHelpText": "Paste a Google Maps link or enter the address",
-      "cancelButton": "Cancel",
-      "saveButton": "Save Changes",
-      "savingButton": "Saving..."
-    },
-    "deleteEventModal": {
-      "title": "Delete Event",
-      "confirmationText": "Are you sure you want to delete this event? This action cannot be undone and will remove all attendee RSVPs.",
-      "cancelButton": "Cancel",
-      "deleteButton": "Delete Event",
-      "deletingButton": "Deleting..."
-    },
-    "markAttendanceButton": "Attendance",
-    "markAttendanceTooltip": "Mark who attended this event",
-    "attendance": {
-      "modalTitle": "Mark Attendance",
-      "searchPlaceholder": "Search members...",
-      "attendedCount": "{{count}} attended",
-      "totalCount": "{{count}} total",
-      "noSearchResults": "No members found matching your search",
-      "noMembers": "No members to display",
-      "rsvpYes": "RSVP'd",
-      "rsvpNo": "Not RSVP'd",
-      "cancelButton": "Cancel",
-      "saveButton": "Save Attendance",
-      "savingButton": "Saving..."
-    }
-  },
-
   "creatorDashboard": {
     "pageTitle": "Creator Dashboard",
     "welcomeMessage": "Welcome back, {{name}}. Here's what's happening today.",
@@ -1788,7 +1785,6 @@
       "loadError": "Failed to load lecture attendance"
     }
   },
-
   "homeworkManagement": {
     "pageTitle": "Homework Management",
     "pageSubtitle": "Manage assignments and grade submissions",
@@ -1901,7 +1897,6 @@
       "errorGradeFailed": "Failed to grade submission. Please try again."
     }
   },
-
   "communityHub": {
     "emptyState": {
       "noCommunitiesTitle": "No Communities Yet",
@@ -2160,6 +2155,11 @@
       },
       "saving": "Saving...",
       "savePricing": "Save Pricing",
+      "billingGate": {
+        "title": "Complete your billing setup",
+        "description": "You need to complete your billing setup before enabling paid communities.",
+        "goToBilling": "Go to Billing Settings →"
+      },
       "gatedAccess": {
         "title": "Require Approval to Join",
         "description": "Members must apply and be approved before joining this community",
@@ -2246,7 +2246,6 @@
       "saveMembers": "Save Members"
     }
   },
-
   "chatbots": {
     "page": {
       "title": "AI Chat",
@@ -2387,7 +2386,6 @@
       "defaultSystemPrompt": "You are a helpful assistant."
     }
   },
-
   "publicCommunities": {
     "directory": {
       "hero": {
@@ -2583,7 +2581,6 @@
       "copyright": "Founders Club. All rights reserved."
     }
   },
-
   "billing": {
     "settings": {
       "loading": "Loading billing information...",
@@ -2936,7 +2933,6 @@
       }
     }
   },
-
   "creatorSettings": {
     "tabs": {
       "creator": "Creator Settings",
@@ -3115,7 +3111,6 @@
       }
     }
   },
-
   "imageCrop": {
     "title": "Adjust Profile Photo",
     "instructions": "Drag to reposition, scroll to zoom",
@@ -3127,7 +3122,6 @@
     "processing": "Processing...",
     "cropPreviewAlt": "Crop preview"
   },
-
   "discounts": {
     "page": {
       "title": "Discount Codes",
@@ -3251,7 +3245,6 @@
       "months_other": "{{count}} months"
     }
   },
-
   "aiManager": {
     "title": "AI Success Manager™",
     "subtitle": "Your intelligent partner for community growth.",
@@ -3299,175 +3292,6 @@
       "resultsTitle": "Analysis Results"
     }
   },
-
-  "studentPlus": {
-    "page": {
-      "title": "Student Plus",
-      "tagline": "Exclusive Membership",
-      "subtitle": "Your membership to entrepreneurial success",
-      "pricePerMonth": "/month",
-      "successTitle": "Welcome to Student Plus!",
-      "successMessage": "Your subscription is now active. Start earning loyalty points!",
-      "canceledTitle": "Checkout Canceled",
-      "canceledMessage": "No worries! Your subscription was not started. Feel free to subscribe when you're ready.",
-      "checkoutError": "Failed to start checkout. Please try again.",
-      "redirectingToCheckout": "Redirecting to checkout...",
-      "startYourJourney": "Start Your Journey",
-      "cancelAnytime": "Cancel anytime. No questions asked.",
-      "readyToJoin": "Ready to join?",
-      "signInRequired": "Sign in to Subscribe",
-      "signInToSubscribe": "Sign in to Subscribe",
-      "noAccountYet": "Don't have an account?",
-      "createAccount": "Create one here",
-      "benefits": {
-        "exclusiveNewsletter": {
-          "title": "Exclusive Newsletter",
-          "description": "Private entrepreneurship & business practical insights delivered to your inbox weekly"
-        },
-        "communityPerks": {
-          "title": "Community Perks",
-          "description": "Exclusive access to premium community features, content, and member-only events"
-        },
-        "loyaltyRewards": {
-          "title": "Loyalty Rewards",
-          "description": "Earn points every month and unlock milestone rewards at 3, 6, 9, and 12 months"
-        },
-        "redeemRewards": {
-          "title": "Redeem Rewards",
-          "description": "Use your points for course discounts, template packs, priority support, and more"
-        }
-      },
-      "milestonePreview": {
-        "title": "Loyalty Milestones",
-        "months": "months",
-        "pts": "pts"
-      },
-      "whatsIncluded": {
-        "title": "What's Included",
-        "weeklyNewsletter": "Weekly exclusive newsletter with actionable business insights",
-        "monthlyPoints": "50 loyalty points earned every month (auto-accumulated)",
-        "milestoneBadges": "Milestone badges: Bronze (3mo), Silver (6mo), Gold (9mo), Diamond (12mo)",
-        "bonusPoints": "Bonus points at each milestone (100 to 1,000 points)",
-        "redeemPoints": "Redeem points for course discounts, templates, and priority support",
-        "memberOnlyPerks": "Member-only community perks and early access to new features"
-      }
-    },
-    "rewards": {
-      "title": "Rewards",
-      "pointsAvailable": "points available",
-      "dismiss": "Dismiss",
-      "tabs": {
-        "availableRewards": "Available Rewards",
-        "myRewards": "My Rewards"
-      },
-      "noRewardsAvailable": "No rewards available at the moment. Check back soon!",
-      "noRedeemedRewards": "You haven't redeemed any rewards yet.",
-      "browseAvailableRewards": "Browse Available Rewards",
-      "loadError": "Failed to load rewards. Please try again.",
-      "redeemError": "Failed to redeem reward. Please try again."
-    },
-    "dashboard": {
-      "yourPoints": "Your Points",
-      "redeemRewards": "Redeem Rewards",
-      "totalEarned": "Total Earned:",
-      "totalSpent": "Total Spent:",
-      "recentActivity": "Recent Activity",
-      "noActivityYet": "No activity yet. Your points will appear here after your first payment.",
-      "loadError": "Failed to load loyalty data. Please try again."
-    },
-    "milestones": {
-      "title": "Milestone Progress",
-      "monthsTo": "months to",
-      "achieved": "Achieved!",
-      "mo": "mo",
-      "currentProgress": "Current Progress",
-      "month": "month",
-      "months": "months",
-      "nextReward": "Next Reward",
-      "points": "points",
-      "status": "Status",
-      "diamondMember": "Diamond Member",
-      "allMilestonesAchieved": "All milestones achieved!"
-    },
-    "history": {
-      "transactionTypes": {
-        "subscriptionPayment": "Monthly Payment",
-        "milestoneBonus": "Milestone Bonus",
-        "referral": "Referral Bonus",
-        "engagement": "Engagement Reward",
-        "redemption": "Reward Redeemed",
-        "adjustment": "Adjustment",
-        "expiration": "Points Expired"
-      },
-      "loading": "Loading...",
-      "loadMore": "Load More"
-    },
-    "redemption": {
-      "status": {
-        "pending": "Pending",
-        "active": "Active",
-        "used": "Used",
-        "expired": "Expired",
-        "revoked": "Revoked"
-      },
-      "redeemedOn": "Redeemed on",
-      "yourVoucherCode": "Your Voucher Code",
-      "copy": "Copy",
-      "expiresSoon": "Expires soon!",
-      "validUntil": "Valid until",
-      "daysLeft": "{{count}} day left",
-      "daysLeftPlural": "{{count}} days left",
-      "usedOn": "Used on",
-      "reference": "Reference:",
-      "pointsSpent": "Points spent:",
-      "na": "N/A"
-    },
-    "rewardCard": {
-      "rewardTypes": {
-        "voucher": "Discount Voucher",
-        "templatePack": "Template Pack",
-        "feeDiscount": "Fee Discount",
-        "prioritySupport": "Priority Support",
-        "exclusiveContent": "Exclusive Content",
-        "badge": "Badge"
-      },
-      "points": "points",
-      "redeeming": "Redeeming...",
-      "soldOut": "Sold Out",
-      "notEnoughPoints": "Not Enough Points",
-      "redeem": "Redeem",
-      "rewardDetails": {
-        "voucherTemplate": "{{percent}}% off - Valid for {{days}} days",
-        "prioritySupportTemplate": "{{days}} days of priority support",
-        "feeDiscountTemplate": "{{percent}}% fee reduction for {{days}} days",
-        "templatePackDescription": "Downloadable templates package"
-      }
-    },
-    "subscription": {
-      "title": "Student Plus",
-      "perMonth": "/month",
-      "manageSubscription": "Manage Subscription",
-      "loading": "Loading...",
-      "status": {
-        "active": "Active",
-        "trialing": "Trial",
-        "pastDue": "Past Due",
-        "canceled": "Canceled",
-        "incomplete": "Incomplete",
-        "incompleteExpired": "Expired",
-        "paused": "Paused"
-      },
-      "stats": {
-        "monthsActive": "Months Active",
-        "memberSince": "Member Since",
-        "nextBilling": "Next Billing"
-      },
-      "cancellationScheduled": "Cancellation scheduled:",
-      "cancellationMessage": "Your subscription will end on {{date}}. You'll continue to have access until then.",
-      "na": "N/A"
-    }
-  },
-
   "dwyPackages": {
     "page": {
       "activeEngagementsTitle": "Your Active Engagements",
@@ -3596,7 +3420,6 @@
       }
     }
   },
-
   "studentManager": {
     "page": {
       "title": "Student Manager",
@@ -3712,7 +3535,6 @@
       "close": "Close"
     }
   },
-
   "team": {
     "roles": {
       "lecturer": "Lecturer",
@@ -3837,7 +3659,6 @@
       "errorFailed": "Failed to update team member"
     }
   },
-
   "teamMembers": {
     "pageTitle": "Community Members",
     "pageSubtitle": "{{count}} members in this community",
@@ -3871,7 +3692,6 @@
       "awardFailed": "Failed to award bonus points. Please try again."
     }
   },
-
   "directMessages": {
     "teamCard": {
       "unknownMember": "Unknown Member"
@@ -3946,7 +3766,6 @@
       "hint": "Press Enter to send, Shift+Enter for new line"
     }
   },
-
   "surveys": {
     "questions": "{{count}} questions",
     "sections": "{{count}} sections",
@@ -4090,7 +3909,6 @@
       "dismiss": "Later"
     }
   },
-
   "tracking": {
     "badge": "Updating in real time",
     "title": "Live Platform Analytics",

@@ -12,7 +12,6 @@ import { getPlanDisplayInfo, formatAmount } from '../stripeService';
 export interface UpgradeModalProps {
   currentPlan: BillingPlan;
   newPlan: BillingPlan;
-  hasFirstSale: boolean;
   onConfirm: () => void;
   onCancel: () => void;
   isLoading?: boolean;
@@ -21,7 +20,6 @@ export interface UpgradeModalProps {
 const UpgradeModal: React.FC<UpgradeModalProps> = ({
   currentPlan,
   newPlan,
-  hasFirstSale,
   onConfirm,
   onCancel,
   isLoading = false,
@@ -134,21 +132,10 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({
             <h3 className="font-semibold text-[#FAFAFA] mb-2">{t('billing.upgradeModal.billingDetails.title')}</h3>
             {isUpgrade ? (
               <div className="space-y-2 text-sm text-[#A0A0A0]">
-                {hasFirstSale ? (
-                  <>
-                    <p>{t('billing.upgradeModal.billingDetails.upgradeImmediate')}</p>
-                    <p>
-                      {t('billing.upgradeModal.billingDetails.upgradeProrated', { amount: (priceDiff / 100).toFixed(2) })}
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p>{t('billing.upgradeModal.billingDetails.upgradeImmediate')}</p>
-                    <p className="text-[#FAFAFA] font-medium">
-                      {t('billing.upgradeModal.billingDetails.firstSaleNotMade', { amount: (newPlan.price_monthly_cents / 100).toFixed(0) })}
-                    </p>
-                  </>
-                )}
+                <p>{t('billing.upgradeModal.billingDetails.upgradeImmediate')}</p>
+                <p>
+                  {t('billing.upgradeModal.billingDetails.upgradeProrated', { amount: (priceDiff / 100).toFixed(2) })}
+                </p>
               </div>
             ) : (
               <div className="space-y-2 text-sm text-[#A0A0A0]">

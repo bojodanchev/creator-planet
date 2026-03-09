@@ -14,10 +14,9 @@ npm run preview    # Preview production build
 ```
 
 ## Deployment & Testing
-- **Production URL**: TBD (new domain pending)
-- **Vercel URL**: https://creator-planet.vercel.app (current deployment, will change)
-- **Hosting**: Vercel (auto-deploys from main branch)
-- **Testing**: Use the Vercel URL for Playwright/browser testing, NOT localhost
+- **Production URL**: https://founderclub.bg
+- **Hosting**: Vercel (auto-deploys from `main` branch on GitHub push)
+- **Testing**: Use the production URL for browser testing, NOT localhost
 
 ## Required Environment Variables
 ```bash
@@ -26,7 +25,7 @@ VITE_SUPABASE_URL=https://ilntxxutxbygjuixrzng.supabase.co
 VITE_SUPABASE_ANON_KEY=<anon_key>
 
 # Stripe (client-side)
-VITE_STRIPE_PUBLISHABLE_KEY=pk_live_...
+VITE_STRIPE_PUBLIC_KEY=pk_live_...
 
 # Stripe (server-side - Supabase secrets)
 STRIPE_SECRET_KEY=sk_live_...
@@ -70,19 +69,13 @@ Located in `supabase/functions/`:
 | `stripe-subscription` | Manage subscriptions |
 | `stripe-connect` | Creator payout onboarding |
 | `stripe-webhook` | Handle Stripe webhooks (deploy with `--no-verify-jwt`) |
-| `student-plus-checkout` | Student subscription checkout |
-| `student-plus-portal` | Student billing portal |
-| `community-checkout` | Paid community access checkout |
-| `release-pending-balances` | Cron: move pending→available after 7 days |
-| `creator-withdrawal` | Manual withdrawal API |
-| `process-payouts` | Cron: batch automatic payouts |
+| `community-checkout` | Paid community access checkout (deploy with `--no-verify-jwt`) |
 | `admin-reset-password` | Admin: reset user passwords |
 | `ai-chat` | Community chatbot AI |
 | `tbi-checkout` | TBI BNPL checkout |
 
-## Scheduled Jobs (GitHub Actions cron)
-- Daily 6:00 AM UTC: Release pending balances (7-day hold)
-- Friday 9:00 AM UTC: Process automatic payouts
+## Scheduled Jobs
+None active. Balance cron jobs removed with wallet model (2026-03-09).
 
 ## Admin Operations
 

@@ -16,7 +16,6 @@ export interface PlanCardProps {
   onSelect: (tier: PlanTier) => void;
   disabled?: boolean;
   currentPlanTier?: PlanTier;
-  showFirstSaleNote?: boolean;
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({
@@ -26,7 +25,6 @@ const PlanCard: React.FC<PlanCardProps> = ({
   onSelect,
   disabled = false,
   currentPlanTier,
-  showFirstSaleNote = false,
 }) => {
   const { t } = useTranslation();
   const displayInfo = getPlanDisplayInfo(plan);
@@ -93,11 +91,6 @@ const PlanCard: React.FC<PlanCardProps> = ({
             {t('billing.plans.platformFeeLabel', { fee: plan.platform_fee_percent })}
           </span>
         </div>
-        {showFirstSaleNote && plan.tier !== 'starter' && (
-          <p className="text-xs text-[#666666] mt-2">
-            {t('billing.plans.firstSaleNote')}
-          </p>
-        )}
       </div>
 
       {/* Break-even Info */}

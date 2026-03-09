@@ -32,7 +32,7 @@ supabase/functions/  # Edge functions with _shared/ utilities
 
 - **Feature modules**: `src/features/<name>/` with components/, hooks/, pages/
 - **Profile ID ≠ User ID**: ALL FKs reference `profiles.id`, NOT `auth.users.id` — use `profile.id` from `useAuth()`
-- **Billing**: Wallet model — platform collects 100%, tracks balances, pays out via Connect → [docs/billing.md](docs/billing.md)
+- **Billing**: Destination charges — Stripe splits payments automatically, platform takes fee via `application_fee_amount` → [docs/billing.md](docs/billing.md)
 - **i18n**: All text via `t('key')`. Verify BOTH `en.json` + `bg.json` after UI changes
 - **Edge functions**: Deploy via CLI (MCP can't resolve `_shared/` imports)
 
@@ -40,8 +40,8 @@ supabase/functions/  # Edge functions with _shared/ utilities
 > Details: [docs/environment.md](docs/environment.md) | [docs/mcp-config.md](docs/mcp-config.md)
 
 - **Supabase**: `ilntxxutxbygjuixrzng` (FC) — MCP has service_role access
-- **Stripe**: New account TBD — products not yet created
-- **Vercel**: https://creator-planet.vercel.app (will change)
+- **Stripe**: European Fashion Institute (`acct_1Sra05HH4asvT4B6`) — MCP via OAuth, products created
+- **Vercel**: Production at https://founderclub.bg — auto-deploys from `main` on GitHub push. Test changes there, not localhost.
 - **DB direct access**: Use CLI pooler from `supabase db dump --dry-run`, then `SET ROLE postgres`
 
 ## Rules & Style
@@ -64,14 +64,17 @@ supabase/functions/  # Edge functions with _shared/ utilities
 ## Skills
 Custom skills in `.claude/skills/`: billing-integration, stripe-integration, stripe-webhooks, stripe-best-practices
 
+## Recent Decisions
+> History: [docs/decisions/](docs/decisions/)
+
+- [2026-03-09] Wallet → Destination charges — Stripe manages all money, platform never holds funds
+
 ## Discovery Log (Recent)
 > Full log: [docs/discovery-log.md](docs/discovery-log.md)
 
-- [2026-03-05] CC → FC database migration (20 tables imported, modules/lessons still missing)
-- [2026-03-05] Full rebrand: Creator Club → Founders Club
-- [2026-02-14] Stripe webhook 401 fix, discount codes, dual pricing, billing settings
-- [2026-01-28] RLS policy role bug fix
-- [2026-01-24] Team member system review
+- [2026-03-09] Stripe wired to European Fashion Institute account — products, webhook, env vars, simplified billing
+- [2026-03-09] Full CC → FC schema sync complete (72 tables, 76 functions, 257 policies, 7 buckets)
+- [2026-03-05] CC → FC data migration (20 tables, 131 users/profiles imported)
 
 ## Active Context
-Database migrated from CC to FC Supabase. Still missing: modules, lessons, events, event_attendees, lesson_progress, quiz_attempts (need MCP on CC to extract — RLS blocks anon key). Schema differences exist (CC has extra columns). Stripe account not yet configured on FC.
+Stripe fully wired on European Fashion Institute account. Billing simplified to destination charges (no wallet). Edge functions deployed. Still missing from CC: modules, lessons, events, event_attendees, lesson_progress, quiz_attempts. Storage files (~11.2GB) remain on CC public URLs. Deprecated wallet tables remain in schema (can drop later).

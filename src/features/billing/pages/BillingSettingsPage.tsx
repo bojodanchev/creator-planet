@@ -332,6 +332,37 @@ const BillingSettingsPage: React.FC = () => {
     }
   };
 
+  // Setup checklist logic
+  const setupChecklist = (() => {
+    if (!dashboard?.billing) return null;
+    const items = [
+      {
+        key: 'activation',
+        label: t('billing.settings.checklist.activationFee'),
+        done: dashboard.billing.activation_fee_paid === true,
+        action: () => navigate('/onboarding'),
+        actionLabel: t('billing.settings.checklist.payActivation'),
+      },
+      {
+        key: 'plan',
+        label: t('billing.settings.checklist.choosePlan'),
+        done: dashboard.billing.plan_id != null,
+        action: () => navigate('/pricing'),
+        actionLabel: t('billing.settings.checklist.selectPlan'),
+      },
+      {
+        key: 'payout',
+        label: t('billing.settings.checklist.connectPayout'),
+        done: connectStatus?.status === 'active',
+        action: handleSetupPayouts,
+        actionLabel: t('billing.settings.checklist.connectAccount'),
+      },
+    ];
+    const completedCount = items.filter((i) => i.done).length;
+    if (completedCount === 3) return null;
+    return { items, completedCount };
+  })();
+
   // Loading state
   if (isLoading) {
     return (
@@ -386,6 +417,58 @@ const BillingSettingsPage: React.FC = () => {
         </div>
       )}
 
+      {/* Setup Checklist */}
+      {setupChecklist && (
+        <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] p-6">
+          <h2 className="text-lg font-semibold text-[#FAFAFA] mb-4">
+            {t('billing.settings.checklist.title')}
+          </h2>
+
+          <div className="space-y-3 mb-6">
+            {setupChecklist.items.map((item) => (
+              <div key={item.key} className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-3">
+                  {item.done ? (
+                    <CheckCircle size={20} className="text-[#22C55E]" />
+                  ) : (
+                    <div className="w-5 h-5 rounded-full border-2 border-[#666666]" />
+                  )}
+                  <span className={item.done ? 'text-[#A0A0A0]' : 'text-[#FAFAFA]'}>
+                    {item.label}
+                  </span>
+                </div>
+                {item.done ? (
+                  <span className="text-sm text-[#22C55E]">{t('billing.settings.checklist.done')}</span>
+                ) : (
+                  <button
+                    onClick={item.action}
+                    className="flex items-center gap-1 text-sm font-medium text-[#FAFAFA] hover:text-white bg-[#1F1F1F] hover:bg-[#333333] px-3 py-1.5 rounded-lg transition-colors"
+                  >
+                    {item.actionLabel}
+                    <ArrowRight size={14} />
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Progress bar */}
+          <div>
+            <div className="flex items-center justify-between text-sm mb-2">
+              <span className="text-[#A0A0A0]">
+                {t('billing.settings.checklist.progress', { done: setupChecklist.completedCount, total: 3 })}
+              </span>
+            </div>
+            <div className="h-2 bg-[#1F1F1F] rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[#22C55E] rounded-full transition-all duration-500"
+                style={{ width: `${(setupChecklist.completedCount / 3) * 100}%` }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Current Plan Section */}
       <div className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] p-6">
         <div className="flex items-start justify-between mb-6">
@@ -430,43 +513,6 @@ const BillingSettingsPage: React.FC = () => {
           )}
         </div>
 
-        {/* Activation & First Sale Status */}
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="p-4 border border-[#1F1F1F] rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              {billing.activation_fee_paid ? (
-                <CheckCircle size={18} className="text-[#22C55E]" />
-              ) : (
-                <Clock size={18} className="text-[#EAB308]" />
-              )}
-              <span className="font-medium text-[#FAFAFA]">{t('billing.settings.activationFeeTitle')}</span>
-            </div>
-            <p className="text-sm text-[#A0A0A0]">
-              {billing.activation_fee_paid
-                ? t('billing.settings.activationFeePaid', { date: new Date(billing.activation_fee_paid_at!).toLocaleDateString() })
-                : t('billing.settings.activationFeePending')}
-            </p>
-          </div>
-
-          <div className="p-4 border border-[#1F1F1F] rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              {billing.has_first_sale ? (
-                <CheckCircle size={18} className="text-[#22C55E]" />
-              ) : (
-                <Clock size={18} className="text-[#666666]" />
-              )}
-              <span className="font-medium text-[#FAFAFA]">{t('billing.settings.firstSaleTitle')}</span>
-            </div>
-            <p className="text-sm text-[#A0A0A0]">
-              {billing.has_first_sale
-                ? t('billing.settings.firstSaleMade', { date: new Date(billing.first_sale_at!).toLocaleDateString() })
-                : currentTier === 'starter'
-                ? t('billing.settings.firstSaleMakeSale')
-                : t('billing.settings.firstSaleBillingStarts')}
-            </p>
-          </div>
-        </div>
-
         {/* Cancellation Notice */}
         {billing.cancel_at_period_end && (
           <div className="p-4 bg-[#EAB308]/10 border border-[#EAB308]/20 rounded-lg mb-6">
@@ -495,8 +541,7 @@ const BillingSettingsPage: React.FC = () => {
 
         {/* Billing Actions */}
         <div className="flex flex-wrap gap-3">
-          {/* Only show Manage Payment Method if creator has a Stripe customer (not trial) */}
-          {billing.stripe_customer_id ? (
+          {billing.stripe_customer_id && (
             <button
               onClick={handleOpenBillingPortal}
               disabled={isProcessing}
@@ -505,64 +550,6 @@ const BillingSettingsPage: React.FC = () => {
               <ExternalLink size={16} />
               {t('billing.settings.managePaymentButton')}
             </button>
-          ) : (
-            // For trial creators without subscription, show option to start subscription early
-            billing.status === 'trialing' && (
-              <div className="w-full p-4 bg-[#151515] border border-[#1F1F1F] rounded-lg mb-2">
-                <div className="flex items-start gap-3">
-                  <CreditCard size={20} className="text-[#FAFAFA] shrink-0 mt-0.5" />
-                  <div className="flex-1">
-                    <p className="font-medium text-[#FAFAFA]">{t('billing.settings.trialCtaTitle')}</p>
-                    <p className="text-sm text-[#A0A0A0] mt-1">
-                      {currentTier === 'starter'
-                        ? t('billing.settings.trialCtaMessageStarter')
-                        : t('billing.settings.trialCtaMessage')
-                      }
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      {currentTier === 'starter' ? (
-                        // Starter users: show both "Continue Free" and "Upgrade to Pro"
-                        <>
-                          <button
-                            onClick={() => handlePlanChange('pro')}
-                            disabled={isProcessing}
-                            className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#E0E0E0] transition-colors disabled:opacity-50 flex items-center gap-2"
-                          >
-                            {isProcessing ? (
-                              <>
-                                <Loader2 size={16} className="animate-spin" />
-                                {t('billing.settings.processing')}
-                              </>
-                            ) : (
-                              <>
-                                <ArrowUpRight size={16} />
-                                {t('billing.settings.upgradeToProButton')}
-                              </>
-                            )}
-                          </button>
-                        </>
-                      ) : (
-                        // Pro/Scale trial users: show start subscription button
-                        <button
-                          onClick={handleStartCurrentSubscription}
-                          disabled={isProcessing}
-                          className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#E0E0E0] transition-colors disabled:opacity-50 flex items-center gap-2"
-                        >
-                          {isProcessing ? (
-                            <>
-                              <Loader2 size={16} className="animate-spin" />
-                              {t('billing.settings.processing')}
-                            </>
-                          ) : (
-                            t('billing.settings.startSubscriptionButton')
-                          )}
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
           )}
           {currentTier !== 'starter' && !billing.cancel_at_period_end && billing.stripe_subscription_id && (
             <button
@@ -783,7 +770,6 @@ const BillingSettingsPage: React.FC = () => {
         <UpgradeModal
           currentPlan={currentPlan}
           newPlan={selectedPlan}
-          hasFirstSale={billing.has_first_sale}
           onConfirm={handleConfirmPlanChange}
           onCancel={() => {
             setShowUpgradeModal(false);
