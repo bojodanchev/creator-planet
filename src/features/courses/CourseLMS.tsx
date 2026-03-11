@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { PlayCircle, FileText, CheckCircle, ChevronRight, ChevronDown, Plus, GraduationCap, Loader2, BookOpen, Pencil, BarChart3, ArrowUp, ArrowDown, MessageCircle, HelpCircle, X, Sparkles, Menu, GripVertical } from 'lucide-react';
+import { PlayCircle, FileText, CheckCircle, ChevronRight, ChevronDown, Plus, GraduationCap, Loader2, BookOpen, Pencil, BarChart3, ArrowUp, ArrowDown, MessageCircle, HelpCircle, X, Sparkles, Menu, GripVertical, Star } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -25,6 +25,8 @@ import { getCourseInstructor } from '../direct-messages/teamService';
 import type { TeamMemberWithProfile } from '../direct-messages/dmTypes';
 import { Avatar } from '../../shared/Avatar';
 import { getBadgeType } from '../direct-messages/dmTypes';
+import { getCourseProof } from '../../shared/courseProof';
+import type { CourseVoter } from '../../shared/courseProof';
 
 // ============================================================================
 // MODAL STATE PERSISTENCE
@@ -87,6 +89,7 @@ import {
   LessonWithProgress,
 } from './courseService';
 import { DbCourse, DbModule, DbLesson } from '../../core/supabase/database.types';
+import { supabase } from '../../core/supabase/client';
 import CourseAiHelper from './CourseAiHelper';
 import CourseEditModal from './components/CourseEditModal';
 import ModuleEditModal from './components/ModuleEditModal';
@@ -104,6 +107,7 @@ import { useCourseLimitCheck, UpgradePrompt } from '../billing';
 interface SortableCourseCardProps {
   course: CourseWithModules;
   isCreator: boolean;
+  communityMembers: CourseVoter[];
   onSelect: (course: CourseWithModules) => void;
   onEdit: (course: CourseWithModules) => void;
   onShowAnalytics: (courseId: string) => void;
@@ -113,6 +117,7 @@ interface SortableCourseCardProps {
 const SortableCourseCard: React.FC<SortableCourseCardProps> = ({
   course,
   isCreator,
+  communityMembers,
   onSelect,
   onEdit,
   onShowAnalytics,
@@ -171,6 +176,55 @@ const SortableCourseCard: React.FC<SortableCourseCardProps> = ({
             {course.is_published ? t('courseLms.courseCard.published') : t('courseLms.courseCard.draft')}
           </span>
           <h3 className="font-bold text-lg">{course.title}</h3>
+          {/* Rating & voter avatars */}
+          {(() => {
+            const proof = getCourseProof(course.id, communityMembers);
+            return (
+              <div className="flex items-center gap-2 mt-1.5">
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      size={12}
+                      className={
+                        star <= Math.round(proof.rating)
+                          ? 'text-[#EAB308] fill-[#EAB308]'
+                          : 'text-white/30'
+                      }
+                    />
+                  ))}
+                  <span className="text-xs text-white/70 ml-0.5">
+                    {proof.rating}
+                  </span>
+                </div>
+                {proof.displayVoters.length > 0 && (
+                  <>
+                    <span className="text-white/20">·</span>
+                    <div className="flex -space-x-1.5">
+                      {proof.displayVoters.map((voter, i) => (
+                        <div
+                          key={i}
+                          className="w-5 h-5 rounded-full border border-black/60 overflow-hidden bg-[#1F1F1F] flex-shrink-0"
+                          title={voter.full_name}
+                        >
+                          {voter.avatar_url ? (
+                            <img src={voter.avatar_url} alt="" className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="flex items-center justify-center w-full h-full text-[9px] text-white/50 font-medium">
+                              {voter.full_name.charAt(0)}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <span className="text-[11px] text-white/50">
+                      +{proof.votes - proof.displayVoters.length}
+                    </span>
+                  </>
+                )}
+              </div>
+            );
+          })()}
         </div>
         {/* Creator action buttons */}
         {isCreator && (
@@ -271,6 +325,9 @@ const CourseLMS: React.FC = () => {
   const [courseInstructor, setCourseInstructor] = useState<TeamMemberWithProfile | null>(null);
   const navigate = useNavigate();
 
+  // Community members for social proof voter avatars
+  const [communityMembers, setCommunityMembers] = useState<CourseVoter[]>([]);
+
   // DnD sensors for course reordering
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -339,6 +396,27 @@ const CourseLMS: React.FC = () => {
   useEffect(() => {
     loadCourses();
   }, [user, profile, role, selectedCommunity]);
+
+  // Fetch community members for social proof voter avatars
+  useEffect(() => {
+    if (!selectedCommunity) {
+      setCommunityMembers([]);
+      return;
+    }
+    (async () => {
+      const { data: members } = await supabase
+        .from('memberships')
+        .select('user_id, profiles!memberships_user_id_fkey(full_name, avatar_url)')
+        .eq('community_id', selectedCommunity.id);
+
+      const voters: CourseVoter[] = [];
+      members?.forEach((m: any) => {
+        const p = m.profiles;
+        if (p?.full_name) voters.push({ full_name: p.full_name, avatar_url: p.avatar_url });
+      });
+      setCommunityMembers(voters);
+    })();
+  }, [selectedCommunity]);
 
   // Restore modal state on mount (after tab switch or auth refresh)
   useEffect(() => {
@@ -892,6 +970,7 @@ const CourseLMS: React.FC = () => {
                     key={course.id}
                     course={course}
                     isCreator={true}
+                    communityMembers={communityMembers}
                     onSelect={handleSelectCourse}
                     onEdit={setEditingCourse}
                     onShowAnalytics={setShowAnalytics}
