@@ -236,6 +236,7 @@
     "studentDesc": "Learn & engage",
     "accountCreated": "Account created successfully!",
     "checkEmail": "Your account has been created. You can now sign in.",
+    "accountCreatedRedirecting": "Account created! Redirecting...",
     "forgotPassword": "Forgot password?",
     "forgotPasswordTitle": "Reset your password",
     "forgotPasswordSubtitle": "Enter your email address and we'll send you a link to reset your password.",

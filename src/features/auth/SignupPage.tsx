@@ -24,16 +24,16 @@ const SignupPage: React.FC = () => {
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Redirect if already authenticated
+  // Redirect if already authenticated (includes auto-confirm after signup)
   useEffect(() => {
-    if (user && !success) {
+    if (user) {
       if (returnUrl) {
         navigate(decodeURIComponent(returnUrl));
       } else {
         navigate('/app');
       }
     }
-  }, [user, success, returnUrl, navigate]);
+  }, [user, returnUrl, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ const SignupPage: React.FC = () => {
               <div>
                 <p className="text-[#22C55E] text-sm font-medium">{t('common.success')}!</p>
                 <p className="text-[#22C55E] text-xs mt-1">
-                  {t('auth.checkEmail')}
+                  {t('auth.accountCreatedRedirecting')}
                 </p>
               </div>
             </div>

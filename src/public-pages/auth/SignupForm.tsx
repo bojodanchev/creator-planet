@@ -28,9 +28,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Redirect if already authenticated - role-based redirect
+  // Redirect if already authenticated (includes auto-confirm after signup)
   useEffect(() => {
-    if (user && !success) {
+    if (user) {
       if (returnUrl) {
         navigate(decodeURIComponent(returnUrl));
       } else {
@@ -38,7 +38,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
         navigate(getDefaultRedirectPath(userRole));
       }
     }
-  }, [user, userRole, success, returnUrl, navigate]);
+  }, [user, userRole, returnUrl, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ onToggleForm }) => {
             <div>
               <p className="text-[#22C55E] text-sm font-medium">{t('auth.accountCreated')}</p>
               <p className="text-[#22C55E]/80 text-xs mt-1">
-                {t('auth.checkEmail')}
+                {t('auth.accountCreatedRedirecting')}
               </p>
             </div>
           </div>
