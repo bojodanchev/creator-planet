@@ -16,7 +16,7 @@ import { getCreatorCommunities, createCommunity, seedDefaultChannels, joinCommun
 import { DbCommunity } from '../../core/supabase/database.types';
 import AiResponseText from '../../components/ui/AiResponseText';
 import { getOrCreateCreatorConversation, sendMessage } from '../direct-messages/dmService';
-import RecommendedCourses from './components/RecommendedCourses';
+
 
 const StatCard = React.memo(({ title, value, change, icon: Icon, color, isPositive = true, showChange = true, vsLastWeekText, noPreviousDataText }: {
   title: string;
@@ -416,9 +416,6 @@ const Dashboard: React.FC = () => {
           showChange={false}
         />
       </div>
-
-      {/* Recommended Courses */}
-      <RecommendedCourses profileId={profile?.id} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Chart */}

@@ -18,6 +18,7 @@ import { useAuth } from '../../core/contexts/AuthContext';
 import { getMemberCommunities, getPublicCommunities } from '../community/communityService';
 import { getEnrolledCourses } from '../courses/courseService';
 import PendingSurveysWidget from '../surveys/components/PendingSurveysWidget';
+import RecommendedCourses from '../dashboard/components/RecommendedCourses';
 import type { DbCommunity, DbCourse } from '../../core/supabase/database.types';
 import type { CommunityListItem } from '../../core/types';
 
@@ -232,6 +233,11 @@ const StudentHome: React.FC<StudentHomeProps> = ({ onNavigate }) => {
             </div>
           </section>
         )}
+
+        {/* Recommended Courses */}
+        <div className="mb-8 md:mb-10">
+          <RecommendedCourses profileId={profile?.id} />
+        </div>
 
         {/* Discover Communities Section */}
         <section>
