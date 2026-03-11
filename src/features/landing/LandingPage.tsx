@@ -319,51 +319,71 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Certificates & Rewards Section */}
-      <section className="py-16 bg-[#0A0A0A] border-t border-[#1F1F1F]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Award className="w-12 h-12 text-[#EAB308] mx-auto mb-4" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-3">
-            {t('exploreLanding.certificates.title')}
-          </h2>
-          <p className="text-lg text-[#A0A0A0] mb-10">
-            {t('exploreLanding.certificates.subtitle')}
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center mb-3">
-                <Award className="w-5 h-5 text-[#EAB308]" />
-              </div>
-              <h3 className="font-semibold text-[#FAFAFA] mb-1">
-                {t('exploreLanding.certificates.european')}
-              </h3>
-              <p className="text-sm text-[#A0A0A0]">
-                {t('exploreLanding.certificates.europeanDesc')}
-              </p>
+      <section className="py-20 bg-[#0A0A0A] border-t border-[#1F1F1F]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Certificate Image */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#EAB308]/20 via-[#EAB308]/10 to-[#EAB308]/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <img
+                src="/certificate-preview.png"
+                alt={t('exploreLanding.certificates.european')}
+                className="relative w-full rounded-xl shadow-2xl shadow-[#EAB308]/5 border border-[#EAB308]/20"
+              />
             </div>
 
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center mb-3">
-                <Gift className="w-5 h-5 text-[#EAB308]" />
-              </div>
-              <h3 className="font-semibold text-[#FAFAFA] mb-1">
-                {t('exploreLanding.certificates.rewards')}
-              </h3>
-              <p className="text-sm text-[#A0A0A0]">
-                {t('exploreLanding.certificates.rewardsDesc')}
+            {/* Text Content */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-3">
+                {t('exploreLanding.certificates.title')}
+              </h2>
+              <p className="text-lg text-[#A0A0A0] mb-8">
+                {t('exploreLanding.certificates.subtitle')}
               </p>
-            </div>
 
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center mb-3">
-                <TrendingUp className="w-5 h-5 text-[#EAB308]" />
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5 text-[#EAB308]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#FAFAFA] mb-1">
+                      {t('exploreLanding.certificates.european')}
+                    </h3>
+                    <p className="text-sm text-[#A0A0A0]">
+                      {t('exploreLanding.certificates.europeanDesc')}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center shrink-0">
+                    <Gift className="w-5 h-5 text-[#EAB308]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#FAFAFA] mb-1">
+                      {t('exploreLanding.certificates.rewards')}
+                    </h3>
+                    <p className="text-sm text-[#A0A0A0]">
+                      {t('exploreLanding.certificates.rewardsDesc')}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#EAB308]/10 flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-5 h-5 text-[#EAB308]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#FAFAFA] mb-1">
+                      {t('exploreLanding.certificates.career')}
+                    </h3>
+                    <p className="text-sm text-[#A0A0A0]">
+                      {t('exploreLanding.certificates.careerDesc')}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-semibold text-[#FAFAFA] mb-1">
-                {t('exploreLanding.certificates.career')}
-              </h3>
-              <p className="text-sm text-[#A0A0A0]">
-                {t('exploreLanding.certificates.careerDesc')}
-              </p>
             </div>
           </div>
         </div>
