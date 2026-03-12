@@ -10,6 +10,7 @@ export interface RecommendedCourse {
   creator_avatar: string | null;
   enrollment_count: number;
   score: number;
+  community_id: string | null;
 }
 
 export function useRecommendedCourses(profileId: string | undefined) {

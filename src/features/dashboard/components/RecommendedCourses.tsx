@@ -52,7 +52,7 @@ const RecommendedCourses: React.FC<RecommendedCoursesProps> = ({ profileId }) =>
         {courses.map((course) => (
           <button
             key={course.id}
-            onClick={() => navigate('/courses')}
+            onClick={() => navigate(course.community_id ? `/community/${course.community_id}` : '/courses')}
             className="bg-[#0A0A0A] rounded-xl border border-[#1F1F1F] overflow-hidden text-left hover:border-[#333333] transition-colors group"
           >
             {course.thumbnail_url ? (
