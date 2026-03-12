@@ -12,6 +12,16 @@
     "label": "Category",
     "selectPlaceholder": "Select a category..."
   },
+  "categoryBenefits": {
+    "marketing": "Master the latest social media strategies and start generating real sales.",
+    "business": "Develop practical skills that will help you create and grow a successful business.",
+    "design": "Learn how to create visual masterpieces that will set you apart in the market.",
+    "video_photo": "Perfect your video and photo production skills at a professional level.",
+    "personal_development": "Build the confidence and leadership qualities that will take you to the next level.",
+    "finance": "Learn how to manage your money and build financial independence.",
+    "technology": "Master the technologies driving the future — from programming to AI.",
+    "health_fitness": "Discover proven methods for a healthier and more energetic lifestyle."
+  },
   "common": {
     "getStarted": "Get Started",
     "startFreeTrial": "Start Free Trial",
