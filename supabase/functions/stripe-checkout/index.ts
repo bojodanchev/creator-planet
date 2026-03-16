@@ -114,11 +114,12 @@ async function handleActivationCheckout(
   }
 
   // Get or create Stripe customer
-  const { data: billing } = await supabase
+  const { data: billing, error: billingError } = await supabase
     .from('creator_billing')
     .select('stripe_customer_id, activation_fee_paid')
     .eq('creator_id', creatorId)
     .single();
+  // billingError with PGRST116 means no record yet - that's OK, we'll create one
 
   // Check if already paid
   if (billing?.activation_fee_paid) {
@@ -213,25 +214,25 @@ async function handleSubscriptionCheckout(
   }
 
   // Get billing record with customer ID
-  const { data: billing } = await supabase
+  const { data: billing, error: billingErr } = await supabase
     .from('creator_billing')
     .select('stripe_customer_id, plan_id')
     .eq('creator_id', creatorId)
     .single();
 
-  if (!billing?.stripe_customer_id) {
+  if (billingErr || !billing?.stripe_customer_id) {
     return errorResponse('No Stripe customer found. Please complete activation first.');
   }
 
   // Get plan details from database (for plan ID and validation)
-  const { data: plan } = await supabase
+  const { data: plan, error: planErr } = await supabase
     .from('billing_plans')
     .select('id, tier')
     .eq('tier', planTier)
     .eq('is_active', true)
     .single();
 
-  if (!plan) {
+  if (planErr || !plan) {
     return errorResponse('Plan not found');
   }
 

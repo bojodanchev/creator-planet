@@ -115,12 +115,13 @@ async function handleCreateAccount(
   const profileId = profile.id;
 
   // Check if account already exists
-  const { data: billing } = await supabase
+  const { data: billing, error: billingLookupError } = await supabase
     .from('creator_billing')
     .select('stripe_account_id, stripe_account_status')
     .eq('creator_id', profileId)
     .single();
 
+  // Ignore PGRST116 (no rows) - it just means no billing record yet
   if (billing?.stripe_account_id) {
     return jsonResponse({
       accountId: billing.stripe_account_id,
@@ -212,13 +213,13 @@ async function handleOnboardingLink(
   }
 
   // Get Connect account ID using profile.id
-  const { data: billing } = await supabase
+  const { data: billing, error: billingErr } = await supabase
     .from('creator_billing')
     .select('stripe_account_id')
     .eq('creator_id', profile.id)
     .single();
 
-  if (!billing?.stripe_account_id) {
+  if (billingErr || !billing?.stripe_account_id) {
     return errorResponse('No Connect account found. Create one first.');
   }
 
@@ -284,13 +285,13 @@ async function handleDashboardLink(
   }
 
   // Get Connect account ID using profile.id
-  const { data: billing } = await supabase
+  const { data: billing, error: billingErr2 } = await supabase
     .from('creator_billing')
     .select('stripe_account_id, stripe_account_status')
     .eq('creator_id', profile.id)
     .single();
 
-  if (!billing?.stripe_account_id) {
+  if (billingErr2 || !billing?.stripe_account_id) {
     return errorResponse('No Connect account found');
   }
 
@@ -331,13 +332,14 @@ async function handleAccountStatus(
   }
 
   // Get Connect account ID using profile.id
-  const { data: billing } = await supabase
+  const { data: billing, error: billingError } = await supabase
     .from('creator_billing')
     .select('stripe_account_id, stripe_account_status')
     .eq('creator_id', profile.id)
     .single();
 
-  if (!billing?.stripe_account_id) {
+  // Handle missing record (PGRST116) or no stripe account gracefully
+  if (billingError || !billing?.stripe_account_id) {
     return jsonResponse({
       hasAccount: false,
       status: null,
@@ -431,13 +433,13 @@ async function handleDeleteAccount(
   }
 
   // Get Connect account ID using profile.id
-  const { data: billing } = await supabase
+  const { data: billing, error: billingErr3 } = await supabase
     .from('creator_billing')
     .select('stripe_account_id')
     .eq('creator_id', profile.id)
     .single();
 
-  if (!billing?.stripe_account_id) {
+  if (billingErr3 || !billing?.stripe_account_id) {
     return errorResponse('No Connect account found');
   }
 
