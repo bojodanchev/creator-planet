@@ -89,7 +89,11 @@ const BillingSettingsPage: React.FC = () => {
         setConnectStatus(connectData);
       } catch (err) {
         console.error('Error loading billing data:', err);
-        setError('Failed to load billing information');
+        const errMsg = err instanceof Error ? err.message : '';
+        // Don't show raw Edge Function errors - show user-friendly message
+        if (!errMsg.includes('non-2xx') && !errMsg.includes('Edge Function')) {
+          setError(t('billing.settings.loadError', 'Грешка при зареждане на информацията за фактуриране.'));
+        }
       } finally {
         setIsLoading(false);
       }
@@ -297,7 +301,7 @@ const BillingSettingsPage: React.FC = () => {
       if (!connectStatus) {
         const createResult = await createConnectAccount(profile.id, profile.email);
         if (!createResult.success) {
-          setError(createResult.error || 'Failed to create payout account');
+          setError(t('billing.settings.payoutsSetupError', 'Настройката на изплащанията не е налична в момента. Моля, опитайте по-късно.'));
           return;
         }
       }
@@ -307,11 +311,11 @@ const BillingSettingsPage: React.FC = () => {
       if (onboardingUrl) {
         window.location.href = onboardingUrl;
       } else {
-        setError('Failed to get onboarding link');
+        setError(t('billing.settings.payoutsSetupError', 'Настройката на изплащанията не е налична в момента. Моля, опитайте по-късно.'));
       }
     } catch (err) {
       console.error('Error setting up payouts:', err);
-      setError('An error occurred while setting up payouts');
+      setError(t('billing.settings.payoutsSetupError', 'Настройката на изплащанията не е налична в момента. Моля, опитайте по-късно.'));
     } finally {
       setIsConnectLoading(false);
     }
@@ -401,8 +405,8 @@ const BillingSettingsPage: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Error Display - hide raw Edge Function errors */}
-      {error && !error.includes('non-2xx') && !error.includes('Edge Function') && (
+      {/* Error Display */}
+      {error && (
         <div className="p-4 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg text-[#EF4444] flex items-start gap-3">
           <AlertCircle size={20} className="shrink-0 mt-0.5" />
           <div>
