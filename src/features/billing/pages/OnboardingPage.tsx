@@ -160,7 +160,7 @@ const OnboardingPage: React.FC = () => {
     );
   }
 
-  // Already activated
+  // Already activated - go to dashboard instead of billing (avoids loop)
   if (alreadyActivated) {
     return (
       <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center p-4">
@@ -173,7 +173,7 @@ const OnboardingPage: React.FC = () => {
             {t('billing.onboarding.alreadyActivatedMessage')}
           </p>
           <button
-            onClick={() => navigate('/settings?tab=billing')}
+            onClick={() => navigate('/app/dashboard')}
             className="px-6 py-2 bg-white text-black font-medium rounded-lg hover:bg-[#E0E0E0] transition-colors"
           >
             {t('billing.onboarding.goToBillingButton')}

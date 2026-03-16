@@ -225,8 +225,23 @@ export async function isActivationPaid(creatorId: string): Promise<boolean> {
 export async function getBillingDashboard(creatorId: string): Promise<BillingDashboardData | null> {
   // Validation handled by getCreatorBilling
   const billing = await getCreatorBilling(creatorId);
-  if (!billing || !billing.plan) {
+  if (!billing) {
     return null;
+  }
+
+  // If billing exists but no plan assigned, default to starter plan
+  if (!billing.plan) {
+    const starterPlan = await getPlanByTier('starter');
+    if (starterPlan) {
+      billing.plan = starterPlan;
+      // Auto-assign starter plan in DB so this doesn't happen again
+      await supabase
+        .from('creator_billing')
+        .update({ plan_id: starterPlan.id })
+        .eq('creator_id', creatorId);
+    } else {
+      return null;
+    }
   }
 
   // Get current period dates

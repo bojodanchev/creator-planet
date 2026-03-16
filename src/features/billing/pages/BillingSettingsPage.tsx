@@ -375,8 +375,8 @@ const BillingSettingsPage: React.FC = () => {
     );
   }
 
-  // No billing record or incomplete data
-  if (!dashboard || !dashboard.currentPlan || !dashboard.billing) {
+  // No billing record at all - show onboarding prompt
+  if (!dashboard || !dashboard.billing) {
     return (
       <div className="text-center py-12">
         <AlertCircle size={48} className="text-[#EAB308] mx-auto mb-4" />
