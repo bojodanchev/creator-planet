@@ -931,7 +931,7 @@ const Dashboard: React.FC = () => {
                 <div className="flex items-center justify-center py-12">
                   <Loader2 className="w-8 h-8 animate-spin text-white" />
                 </div>
-              ) : lectureData ? (
+              ) : lectureData && lectureData.stats ? (
                 <>
                   {/* Attendance Stats */}
                   <div className="bg-[#151515] rounded-lg p-4 border border-[#1F1F1F]">
@@ -1134,7 +1134,7 @@ const Dashboard: React.FC = () => {
                   </div>
 
                   {/* Sections */}
-                  {report.sections.map((section, index) => (
+                  {(report.sections ?? []).map((section, index) => (
                     <div key={index} className="bg-[#151515] rounded-lg p-4 border border-[#1F1F1F]">
                       <h4 className="font-semibold text-[#FAFAFA] mb-3">{section.title}</h4>
                       <div className="text-sm text-[#A0A0A0] whitespace-pre-wrap">

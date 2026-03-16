@@ -26,6 +26,7 @@ const ChatbotsPage: React.FC<ChatbotsPageProps> = ({ communityId, onManageChatbo
   const [chatbots, setChatbots] = useState<DbCommunityChatbot[]>([]);
   const [selectedChatbot, setSelectedChatbot] = useState<DbCommunityChatbot | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
 
   // Chat history sidebar state
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -36,6 +37,7 @@ const ChatbotsPage: React.FC<ChatbotsPageProps> = ({ communityId, onManageChatbo
   useEffect(() => {
     const loadChatbots = async () => {
       setIsLoading(true);
+      setLoadError(false);
       try {
         const activeChatbots = await getActiveChatbots(communityId);
         setChatbots(activeChatbots);
@@ -45,6 +47,7 @@ const ChatbotsPage: React.FC<ChatbotsPageProps> = ({ communityId, onManageChatbo
         }
       } catch (error) {
         console.error('Error loading chatbots:', error);
+        setLoadError(true);
       } finally {
         setIsLoading(false);
       }
@@ -83,6 +86,21 @@ const ChatbotsPage: React.FC<ChatbotsPageProps> = ({ communityId, onManageChatbo
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <Loader2 className="w-12 h-12 text-[#FAFAFA] animate-spin" />
+      </div>
+    );
+  }
+
+  // Error state - failed to load chatbots
+  if (loadError) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+        <p className="text-[#A0A0A0]">{t('chatbots.errorLoading', 'Failed to load chatbots. Please try again.')}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-4 py-2 bg-[#1F1F1F] text-[#FAFAFA] rounded-lg hover:bg-[#333333] transition-colors"
+        >
+          {t('common.retry', 'Retry')}
+        </button>
       </div>
     );
   }

@@ -79,6 +79,7 @@ const CreatorSettings: React.FC = () => {
       setConnectStatus(status);
     } catch (error) {
       console.error('Error loading connect status:', error);
+      // Don't show error for connect status - it's optional and the section will show setup prompt
     }
   };
 

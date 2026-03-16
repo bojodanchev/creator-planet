@@ -232,14 +232,20 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
   const handleSendMessage = async (content: string) => {
     if (!currentConversationId) return;
 
-    const newMessage = await sendMessage(
-      currentConversationId,
-      currentUserProfileId,
-      content
-    );
+    try {
+      const newMessage = await sendMessage(
+        currentConversationId,
+        currentUserProfileId,
+        content
+      );
 
-    if (newMessage) {
-      setMessages(prev => [...prev, newMessage]);
+      if (newMessage) {
+        setMessages(prev => [...prev, newMessage]);
+      } else {
+        console.error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
     }
   };
 
