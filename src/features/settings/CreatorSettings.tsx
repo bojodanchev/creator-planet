@@ -107,6 +107,7 @@ const CreatorSettings: React.FC = () => {
       }
     } catch (error) {
       console.error('Error setting up payouts:', error);
+      // Show user-friendly error instead of raw Edge Function errors
       setMessage({ type: 'error', text: t('creatorSettings.creator.payouts.error.setup') });
     } finally {
       setConnectLoading(false);
@@ -131,7 +132,15 @@ const CreatorSettings: React.FC = () => {
       setMessage({ type: 'success', text: t('creatorSettings.creator.save.success') });
     } catch (error) {
       console.error('Error saving creator settings:', error);
-      setMessage({ type: 'error', text: t('creatorSettings.creator.save.error') });
+      const errMsg = error instanceof Error ? error.message : '';
+      // Show user-friendly message instead of raw Supabase/Edge Function errors
+      const isTechnicalError = errMsg.includes('Edge Function') || errMsg.includes('PGRST') || errMsg.includes('non-2xx');
+      setMessage({
+        type: 'error',
+        text: isTechnicalError
+          ? t('creatorSettings.creator.save.error')
+          : (errMsg || t('creatorSettings.creator.save.error'))
+      });
     } finally {
       setSaving(false);
     }
