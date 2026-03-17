@@ -168,20 +168,17 @@ export function usePlanLimits(): PlanLimitsHook {
   }), [studentCount, courseCount, communityCount, limits]);
 
   // Check if can add more resources
+  // Platform owner: all limits disabled
   const canAddStudent = useMemo(() => {
-    if (role !== 'creator') return true; // Non-creators bypass limits
-    if (limits.max_students === -1) return true;
-    return studentCount < limits.max_students;
-  }, [role, studentCount, limits.max_students]);
+    return true;
+  }, []);
 
   const canAddCourse = useMemo(() => {
-    if (role !== 'creator') return true;
-    if (limits.max_courses === -1) return true;
-    return courseCount < limits.max_courses;
-  }, [role, courseCount, limits.max_courses]);
+    return true;
+  }, []);
 
   const canAddCommunity = useMemo(() => {
-    if (role !== 'creator') return true;
+    return true; // was: if (role !== 'creator') return true;
     if (limits.max_communities === -1) return true;
     return communityCount < limits.max_communities;
   }, [role, communityCount, limits.max_communities]);

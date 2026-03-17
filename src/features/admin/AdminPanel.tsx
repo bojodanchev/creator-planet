@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../core/supabase/client';
+import { useAuth } from '../../core/contexts/AuthContext';
 import { Lock, Users, BookOpen, Globe, Search, ChevronDown, ChevronUp, Mail, Calendar, Shield, Phone } from 'lucide-react';
 
 interface StudentProfile {
@@ -29,6 +30,7 @@ interface CourseInfo {
 const ADMIN_PASSWORD = 'admin12345';
 
 const AdminPanel: React.FC = () => {
+  const { role } = useAuth();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -42,9 +44,20 @@ const AdminPanel: React.FC = () => {
   const [sortAsc, setSortAsc] = useState(false);
   const [selectedRole, setSelectedRole] = useState<string>('all');
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password === ADMIN_PASSWORD) {
+      // If not logged in to Supabase, auto-login as superadmin
+      if (role !== 'superadmin') {
+        const { error } = await supabase.auth.signInWithPassword({
+          email: 'simeon619619619619@gmail.com',
+          password: 'bojo123',
+        });
+        if (error) {
+          setPasswordError('Грешка при вход: ' + error.message);
+          return;
+        }
+      }
       setIsAuthenticated(true);
       setPasswordError('');
       sessionStorage.setItem('admin_auth', 'true');
@@ -70,7 +83,7 @@ const AdminPanel: React.FC = () => {
     setIsLoading(true);
     try {
       const [profilesRes, communitiesRes, coursesRes] = await Promise.all([
-        supabase.from('profiles').select('*').order('created_at', { ascending: false }),
+        supabase.from('profiles').select('*').order('created_at', { ascending: false }).limit(1000),
         supabase.from('communities').select('id, name'),
         supabase.from('courses').select('id, title, community_id'),
       ]);
