@@ -90,39 +90,25 @@ const CreatorSettings: React.FC = () => {
     setConnectLoading(true);
     setMessage(null);
     try {
-      // Get current session for auth
-      const { data: sessionData } = await import('../../core/supabase/client').then(m => m.supabase.auth.getSession());
-      const token = sessionData?.session?.access_token;
-      if (!token) {
-        setMessage({ type: 'error', text: t('creatorSettings.creator.payouts.error.setup') });
-        return;
-      }
-
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-
-      const baseUrl = `${supabaseUrl}/functions/v1/stripe-connect`;
-      const headers = { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' };
-
-      // Step 1: Create Connect account if needed
+      // Create account if doesn't exist
       if (!connectStatus) {
-        const r1 = await fetch(baseUrl, { method: 'POST', headers, body: JSON.stringify({ action: 'create-account' }) });
-        const d1 = await r1.json().catch(() => ({ error: `HTTP ${r1.status}: ${r1.statusText}` }));
-        if (!r1.ok || d1.error) {
-          setMessage({ type: 'error', text: `Step 1 failed: ${d1.error || r1.statusText}` });
+        const result = await createConnectAccount(profile.id, profile.email);
+        if (!result.success) {
+          setMessage({ type: 'error', text: t('creatorSettings.creator.payouts.error.failed') });
           return;
         }
       }
 
-      // Step 2: Get onboarding link
-      const r2 = await fetch(baseUrl, { method: 'POST', headers, body: JSON.stringify({ action: 'onboarding-link', returnUrl: `${window.location.origin}/settings`, refreshUrl: `${window.location.origin}/settings` }) });
-      const d2 = await r2.json().catch(() => ({ error: `HTTP ${r2.status}: ${r2.statusText}` }));
-      if (d2.url) {
-        window.location.href = d2.url;
+      // Get onboarding link
+      const onboardingUrl = await getConnectOnboardingLink(profile.id);
+      if (onboardingUrl) {
+        window.location.href = onboardingUrl;
       } else {
-        setMessage({ type: 'error', text: `Step 2 failed: ${d2.error || 'No URL returned'}` });
+        setMessage({ type: 'error', text: t('creatorSettings.creator.payouts.error.onboardingLink') });
       }
     } catch (error) {
-      setMessage({ type: 'error', text: `Exception: ${error instanceof Error ? error.message : String(error)}` });
+      console.error('Error setting up payouts:', error);
+      setMessage({ type: 'error', text: t('creatorSettings.creator.payouts.error.setup') });
     } finally {
       setConnectLoading(false);
     }
