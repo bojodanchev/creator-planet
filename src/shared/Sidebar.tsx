@@ -41,9 +41,9 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, isOpen, 
   const navigate = useNavigate();
   const { signOut, profile, role, teamMemberships, isTeamMemberOnly } = useAuth();
   const { selectedCommunity } = useCommunity();
-  const isCreator = role === 'creator' || role === 'superadmin';
+  const isCreator = role === 'creator';
 
-  // Check if user is a student (not creator or superadmin)
+  // Check if user is a student (not creator)
   const isStudent = role === 'student' || role === 'member';
 
   // Get team role for display (if team member)

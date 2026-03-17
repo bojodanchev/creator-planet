@@ -15,7 +15,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './core/queryClient';
 
 // Public pages (lazy-loaded)
-const AdminPanel = React.lazy(() => import('./features/admin/AdminPanel'));
+// AdminPanel removed - had hardcoded credentials
 const LandingPage = React.lazy(() => import('./public-pages/LandingPage'));
 const MarketingLandingPage = React.lazy(() => import('./public-pages/MarketingLandingPage'));
 const WhopLandingPage = React.lazy(() => import('./public-pages/WhopLandingPage'));
@@ -58,6 +58,7 @@ const TeamProfilePage = React.lazy(() => import('./features/direct-messages/page
 const TeamDashboard = React.lazy(() => import('./features/team/TeamDashboard'));
 const TeamInboxPage = React.lazy(() => import('./features/team/TeamInboxPage'));
 const TeamMembersPage = React.lazy(() => import('./features/team/TeamMembersPage'));
+const AdminDashboard = React.lazy(() => import('./features/admin/pages/AdminDashboard'));
 
 // Loading component
 const LoadingScreen: React.FC = () => {
@@ -148,7 +149,7 @@ const AppLayout: React.FC = () => {
     }
   }, [location.pathname]);
 
-  // Check if user is a student (not creator or superadmin)
+  // Check if user is a student (not creator)
   const isStudent = role === 'student' || role === 'member';
 
   // Helper to convert view string to View enum and navigate
@@ -239,7 +240,7 @@ const AppLayout: React.FC = () => {
         return <AiSuccessManager />;
       case View.STUDENT_MANAGER:
         // Student Manager - creators only (shows all students across all communities)
-        if (role !== 'creator' && role !== 'superadmin') {
+        if (role !== 'creator') {
           return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         if (!profile?.id) {
@@ -248,13 +249,13 @@ const AppLayout: React.FC = () => {
         return <StudentManagerPage creatorId={profile.id} />;
       case View.DISCOUNTS:
         // Discounts page - creators only
-        if (role !== 'creator' && role !== 'superadmin') {
+        if (role !== 'creator') {
           return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         return <DiscountsPage />;
       case View.SURVEYS:
         // Surveys page - creators only
-        if (role !== 'creator' && role !== 'superadmin') {
+        if (role !== 'creator') {
           return <div className="p-8 text-center text-[#A0A0A0]">Access restricted to creators.</div>;
         }
         if (!profile?.id) {
@@ -334,7 +335,7 @@ const AppLayout: React.FC = () => {
 
 // Helper function to get the default redirect path based on user role
 export const getDefaultRedirectPath = (role: UserRole | null): string => {
-  if (role === 'creator' || role === 'superadmin') {
+  if (role === 'creator') {
     return '/dashboard';
   }
   // Students and members go to courses
@@ -434,14 +435,13 @@ const AppRoutes: React.FC = () => {
       {/* Student onboarding questionnaire (pre-signup) */}
       <Route path="/onboarding/student" element={<StudentOnboardingPage />} />
 
-      {/* Admin panel - standalone with own password */}
-      <Route path="/admin" element={<AdminPanel />} />
+      {/* Admin panel removed */}
 
       {/* Creator onboarding (activation fee) */}
       <Route
         path="/onboarding"
         element={
-          <ProtectedRouteWrapper allowedRoles={['creator', 'superadmin']}>
+          <ProtectedRouteWrapper allowedRoles={['creator']}>
             <OnboardingPage />
           </ProtectedRouteWrapper>
         }
@@ -503,7 +503,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/ai-manager"
         element={
-          <ProtectedRouteWrapper allowedRoles={['creator', 'superadmin']}>
+          <ProtectedRouteWrapper allowedRoles={['creator']}>
             <CommunityProvider>
               <AppLayout />
             </CommunityProvider>
@@ -543,7 +543,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/student-manager"
         element={
-          <ProtectedRouteWrapper allowedRoles={['creator', 'superadmin']}>
+          <ProtectedRouteWrapper allowedRoles={['creator']}>
             <CommunityProvider>
               <AppLayout />
             </CommunityProvider>
@@ -553,7 +553,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/surveys"
         element={
-          <ProtectedRouteWrapper allowedRoles={['creator', 'superadmin']}>
+          <ProtectedRouteWrapper allowedRoles={['creator']}>
             <CommunityProvider>
               <AppLayout />
             </CommunityProvider>
@@ -563,7 +563,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/discounts"
         element={
-          <ProtectedRouteWrapper allowedRoles={['creator', 'superadmin']}>
+          <ProtectedRouteWrapper allowedRoles={['creator']}>
             <CommunityProvider>
               <AppLayout />
             </CommunityProvider>
@@ -593,6 +593,16 @@ const AppRoutes: React.FC = () => {
 
       {/* Legacy redirect /app to role-based default */}
       <Route path="/app" element={<Navigate to="/dashboard" replace />} />
+
+      {/* Admin dashboard - password-gated, any authenticated user */}
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRouteWrapper>
+            <AdminDashboard />
+          </ProtectedRouteWrapper>
+        }
+      />
 
       {/* Catch-all redirect to home */}
       <Route path="*" element={<Navigate to="/" replace />} />
