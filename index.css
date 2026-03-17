@@ -35,6 +35,21 @@ button, a, input, select, textarea, [role="button"] {
   transition: all 150ms ease;
 }
 
+/* Fix input contrast in dark modals - ensure all form elements have dark bg */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea,
+select {
+  background-color: #0A0A0A;
+  color: #FAFAFA;
+}
+input::placeholder, textarea::placeholder {
+  color: #666666;
+}
+select option {
+  background-color: #0A0A0A;
+  color: #FAFAFA;
+}
+
 /* Mobile bottom nav safe area for iPhones with home indicator */
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
