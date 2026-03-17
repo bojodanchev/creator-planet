@@ -197,6 +197,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setSession(session);
       setUser(session?.user ?? null);
 
+      // Skip re-fetching profile on token refresh to prevent video interruption
+      if (_event === 'TOKEN_REFRESHED') return;
+
       if (session?.user) {
         fetchProfile(session.user.id).then(async (profileData) => {
           setProfile(profileData);
