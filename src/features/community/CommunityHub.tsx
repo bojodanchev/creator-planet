@@ -1921,9 +1921,13 @@ const CommunityHub: React.FC<CommunityHubProps> = ({ showCreateModal = false, on
                       <button
                         onClick={async () => {
                           const input = document.getElementById('access-code-input') as HTMLInputElement;
+                          const btn = input?.nextElementSibling as HTMLButtonElement;
                           const code = input?.value?.trim() || null;
-                          await supabase.from('communities').update({ access_code: code }).eq('id', selectedCommunity.id);
-                          await refreshCommunities();
+                          const { error } = await supabase.from('communities').update({ access_code: code }).eq('id', selectedCommunity.id);
+                          if (btn) {
+                            btn.textContent = error ? 'Грешка!' : 'Запазено!';
+                            setTimeout(() => { btn.textContent = 'Запази'; }, 2000);
+                          }
                         }}
                         className="px-4 py-2 bg-white text-black rounded-lg hover:bg-[#E0E0E0] transition-colors text-sm font-medium"
                       >
